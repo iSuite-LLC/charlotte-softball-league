@@ -389,14 +389,19 @@ function renderLineup() {
     }
 
     html += `<div class="card"><h3>Batting Order</h3>`;
-    (lineup.batting_order || []).forEach(b => {
-      html += `<div class="row">
-        <span><strong>${b.order}.</strong> #${jerseyByNick[b.nickname] || "?"} <strong>${b.nickname}</strong>
-          <span class="label">(${nameByNick[b.nickname] || ""})</span>
-          ${b.eh_only ? `<span class="badge" style="background:#eee;color:#333;">EH</span>` : ""}
-        </span>
-      </div>`;
-    });
+    const order = lineup.batting_order || [];
+    if (order.length === 0) {
+      html += `<p class="label" style="margin:0;">Batting order not recorded.</p>`;
+    } else {
+      order.forEach(b => {
+        html += `<div class="row">
+          <span><strong>${b.order}.</strong> #${jerseyByNick[b.nickname] || "?"} <strong>${b.nickname}</strong>
+            <span class="label">(${nameByNick[b.nickname] || ""})</span>
+            ${b.eh_only ? `<span class="badge" style="background:#eee;color:#333;">EH</span>` : ""}
+          </span>
+        </div>`;
+      });
+    }
     html += `</div>`;
 
     html += `<div class="card"><h3>Defense (4-OF)</h3>${diamondSvg(lineup.defense || {})}</div>`;
