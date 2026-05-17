@@ -327,9 +327,36 @@ function renderRsvpModal() {
   });
 }
 
-// Task 15 wires this up to JSONBin
-function submitRsvp(status) {
-  toast(`(stub) Would set ${currentRsvpName} to ${status} for ${currentRsvpDate}`);
+async function submitRsvp(status) {
+  if (!currentRsvpName || !currentRsvpDate) return;
+
+  // Optimistic update
+  const prev = JSON.parse(JSON.stringify(RSVPS));
+  if (!RSVPS[currentRsvpDate]) RSVPS[currentRsvpDate] = {};
+  RSVPS[currentRsvpDate][currentRsvpName] = { status, ts: new Date().toISOString() };
+  renderRsvpModal();
+  renderSchedule();
+  renderHome();
+
+  try {
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${KEYS.binId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": KEYS.writeKey,
+      },
+      body: JSON.stringify(RSVPS),
+    });
+    if (!res.ok) throw new Error("Bin write failed: " + res.status);
+    toast(`Got it — you're ${status}`);
+  } catch (e) {
+    console.error(e);
+    RSVPS = prev;  // revert
+    renderRsvpModal();
+    renderSchedule();
+    renderHome();
+    toast("Couldn't save — try again");
+  }
 }
 
 function renderLineup() {
@@ -498,6 +525,17 @@ function renderStats() {
 }
 
 load();
+
+// Poll JSONBin every 30s so cross-device updates show up
+setInterval(async () => {
+  await loadRsvps();
+  // only re-render the tabs that show RSVP info
+  renderHome();
+  renderSchedule();
+  if (document.getElementById("rsvp-modal").classList.contains("active")) {
+    renderRsvpModal();
+  }
+}, 30000);
 </script>
 </body>
 </html>
