@@ -8,7 +8,7 @@
       "W": 0,
       "L": 1
     },
-    "_data_note": "Game 1 stats are partial; batting order and lines for HAM, E-Luke, and Woah-Joe pending Monday 2026-05-19 update."
+    "_data_note": "Game 1 stats partial; batting lines for HAM, E-Luke, and Woah-Joe pending."
   },
   "roster": [
     {
@@ -227,7 +227,19 @@
     {
       "game": 1,
       "date": "2026-05-14",
-      "batting_order": [],
+      "batting_order": [
+        { "order": 1,  "nickname": "Woah-Joe",         "jersey": "3",  "eh_only": false },
+        { "order": 2,  "nickname": "E-Train",          "jersey": "16", "eh_only": false },
+        { "order": 3,  "nickname": "C-Bass",           "jersey": "10", "eh_only": false },
+        { "order": 4,  "nickname": "E-Luke",           "jersey": "9",  "eh_only": false },
+        { "order": 5,  "nickname": "Mahhz",            "jersey": "5",  "eh_only": false },
+        { "order": 6,  "nickname": "HAM",              "jersey": "96", "eh_only": false },
+        { "order": 7,  "nickname": "Pedersen",         "jersey": "99", "eh_only": false },
+        { "order": 8,  "nickname": "Cogs",             "jersey": "53", "eh_only": false },
+        { "order": 9,  "nickname": "Mad Dog",          "jersey": "07", "eh_only": false },
+        { "order": 10, "nickname": "Trash Man",        "jersey": "72", "eh_only": false },
+        { "order": 11, "nickname": "All-Star Reserve", "jersey": "4",  "eh_only": true  }
+      ],
       "defense": {
         "P": "Woah-Joe",
         "C": "Mad Dog",
