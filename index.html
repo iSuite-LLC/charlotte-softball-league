@@ -155,7 +155,69 @@ async function loadRsvps() {
 }
 
 // --- Render stubs (each tab task fills these in) ---
-function renderHome() { document.getElementById("home").innerHTML = "<p>Home — TBD</p>"; }
+function renderHome() {
+  const home = document.getElementById("home");
+  const { season, schedule, stats_summary } = DATA;
+  const played = schedule.filter(g => g.status === "played");
+  const upcoming = schedule.filter(g => g.status === "upcoming")
+                            .sort((a, b) => a.date.localeCompare(b.date));
+  const lastGame = played[played.length - 1];
+  const nextGame = upcoming[0];
+  const recordStr = `${season.record.W}–${season.record.L}`;
+
+  // Top stat leaders
+  const players = Object.entries(stats_summary || {});
+  const sortedByAVG = [...players].filter(([, s]) => s.AB >= 1)
+                                   .sort((a, b) => b[1].AVG - a[1].AVG).slice(0, 3);
+  const sortedByOPS = [...players].filter(([, s]) => s.AB >= 1)
+                                   .sort((a, b) => b[1].OPS - a[1].OPS).slice(0, 3);
+
+  let html = "";
+  html += `<div class="card"><h3>Season Record</h3><div class="big">${recordStr}</div></div>`;
+
+  if (nextGame) {
+    const rsvps = RSVPS[nextGame.date] || {};
+    const inCount = Object.values(rsvps).filter(r => r.status === "IN").length;
+    const outCount = Object.values(rsvps).filter(r => r.status === "OUT").length;
+    const unconfirmed = DATA.roster.length - inCount - outCount;
+    html += `<div class="card">
+      <h3>Next Game</h3>
+      <div><strong>${nextGame.date}</strong> · vs. ${nextGame.opponent || "TBD"}</div>
+      <div class="label" style="margin-top:6px;">${nextGame.location || ""} · ${nextGame.time || ""}</div>
+      <div style="margin-top:10px;">
+        <span class="label">RSVPs:</span>
+        ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
+      </div>
+    </div>`;
+  }
+
+  if (lastGame) {
+    const r = lastGame.result || {};
+    const badgeCls = r.outcome === "W" ? "win" : "loss";
+    html += `<div class="card">
+      <h3>Last Game</h3>
+      <div><strong>${lastGame.date}</strong> vs. ${lastGame.opponent || "TBD"}</div>
+      <div style="margin-top:6px;">${r.score || "?"} <span class="badge ${badgeCls}">${r.outcome || "?"}</span></div>
+    </div>`;
+  }
+
+  if (sortedByAVG.length) {
+    html += `<div class="card"><h3>Top Avg</h3>`;
+    sortedByAVG.forEach(([nick, s]) => {
+      html += `<div class="row"><span>${nick}</span><span>${s.AVG.toFixed(3)}</span></div>`;
+    });
+    html += `</div>`;
+  }
+  if (sortedByOPS.length) {
+    html += `<div class="card"><h3>Top OPS</h3>`;
+    sortedByOPS.forEach(([nick, s]) => {
+      html += `<div class="row"><span>${nick}</span><span>${s.OPS.toFixed(3)}</span></div>`;
+    });
+    html += `</div>`;
+  }
+
+  home.innerHTML = html;
+}
 function renderSchedule() { document.getElementById("schedule").innerHTML = "<p>Schedule — TBD</p>"; }
 function renderLineup() { document.getElementById("lineup").innerHTML = "<p>Lineup — TBD</p>"; }
 function renderRoster() { document.getElementById("roster").innerHTML = "<p>Roster — TBD</p>"; }
