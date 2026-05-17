@@ -1,4 +1,14 @@
 {
+  "season": {
+    "year": 2026,
+    "league": "IMI",
+    "team": "Charlotte",
+    "format": "Slow-pitch \u00b7 EH \u00b7 4-OF \u00b7 3-HR cap \u00b7 280ft \u00b7 7 inn / 1 hr",
+    "record": {
+      "W": 0,
+      "L": 0
+    }
+  },
   "roster": [
     {
       "name": "Brian Wojcio",
@@ -176,5 +186,10 @@
         "bat": 0
       }
     }
-  ]
+  ],
+  "schedule": [],
+  "lineups": [],
+  "game_logs": [],
+  "stats_summary": {},
+  "notes": {}
 }
