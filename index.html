@@ -218,7 +218,58 @@ function renderHome() {
 
   home.innerHTML = html;
 }
-function renderSchedule() { document.getElementById("schedule").innerHTML = "<p>Schedule — TBD</p>"; }
+function renderSchedule() {
+  const el = document.getElementById("schedule");
+  const games = [...DATA.schedule].sort((a, b) => a.date.localeCompare(b.date));
+  let html = `<h2 style="margin-top:0;">Schedule</h2>`;
+  if (games.length === 0) {
+    html += `<p class="label">No games scheduled yet.</p>`;
+  }
+  games.forEach(g => {
+    if (g.status === "played") {
+      const r = g.result || {};
+      const badgeCls = r.outcome === "W" ? "win" : "loss";
+      html += `<div class="card">
+        <div class="row" style="border:0;padding:0;">
+          <div>
+            <div class="label">Game ${g.game} · ${g.date}</div>
+            <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
+          </div>
+          <div style="text-align:right;">
+            <div>${r.score || "?"}</div>
+            <span class="badge ${badgeCls}">${r.outcome || "?"}</span>
+          </div>
+        </div>
+      </div>`;
+    } else {
+      const rsvps = RSVPS[g.date] || {};
+      const inCount = Object.values(rsvps).filter(r => r.status === "IN").length;
+      const outCount = Object.values(rsvps).filter(r => r.status === "OUT").length;
+      const unconfirmed = DATA.roster.length - inCount - outCount;
+      html += `<div class="card">
+        <div class="row" style="border:0;padding:0;align-items:flex-start;">
+          <div>
+            <div class="label">Game ${g.game} · ${g.date}</div>
+            <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
+            <div class="label" style="margin-top:4px;">${g.location || ""} · ${g.time || ""}</div>
+            <div style="margin-top:8px;font-size:13px;">
+              ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
+            </div>
+          </div>
+          <button class="primary" onclick="openRsvp('${g.date}')">RSVP</button>
+        </div>
+      </div>`;
+    }
+  });
+  el.innerHTML = html;
+}
+
+// Stub — Task 14 fills this in
+function openRsvp(date) {
+  console.log("RSVP for", date);
+  toast("RSVP coming in Task 14");
+}
+
 function renderLineup() { document.getElementById("lineup").innerHTML = "<p>Lineup — TBD</p>"; }
 function renderRoster() { document.getElementById("roster").innerHTML = "<p>Roster — TBD</p>"; }
 function renderStats() { document.getElementById("stats").innerHTML = "<p>Stats — TBD</p>"; }
