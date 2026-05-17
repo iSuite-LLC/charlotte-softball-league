@@ -43,3 +43,14 @@ def test_multi_game_aggregate():
     assert summary["AB"] == 7
     assert summary["H"] == 3
     assert summary["AVG"] == round(3/7, 3)
+
+
+def test_ops_precision_on_thirds():
+    """OPS must use unrounded OBP+SLG. 1-for-3 with no walks: OBP=SLG=1/3=0.333,
+    raw OPS = 0.6667 -> round to 0.667. Double-rounding would give 0.666."""
+    lines = [{"PA": 3, "AB": 3, "1B": 1, "2B": 0, "3B": 0, "HR": 0,
+              "BB": 0, "K": 0, "RBI": 0, "R": 0, "errors": 0}]
+    summary = compute_player_summary(lines)
+    assert summary["OBP"] == 0.333
+    assert summary["SLG"] == 0.333
+    assert summary["OPS"] == 0.667, f"Got {summary['OPS']} — likely double-rounded"

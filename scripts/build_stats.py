@@ -28,10 +28,12 @@ def compute_player_summary(lines):
     TB = totals["1B"] + 2 * totals["2B"] + 3 * totals["3B"] + 4 * totals["HR"]
     AB = totals["AB"]
     PA_ob_denom = AB + totals["BB"]  # simplified OBP (no HBP/SF tracked)
+    obp_raw = (H + totals["BB"]) / PA_ob_denom if PA_ob_denom > 0 else 0.0
+    slg_raw = TB / AB if AB > 0 else 0.0
     AVG = round(H / AB, 3) if AB > 0 else 0.0
-    OBP = round((H + totals["BB"]) / PA_ob_denom, 3) if PA_ob_denom > 0 else 0.0
-    SLG = round(TB / AB, 3) if AB > 0 else 0.0
-    OPS = round(OBP + SLG, 3)
+    OBP = round(obp_raw, 3)
+    SLG = round(slg_raw, 3)
+    OPS = round(obp_raw + slg_raw, 3)
     totals.update({"H": H, "AVG": AVG, "OBP": OBP, "SLG": SLG, "OPS": OPS})
     return totals
 
