@@ -298,7 +298,58 @@ function rosterCard(p) {
     ${statLine ? `<div class="label" style="margin-top:6px;">AVG / OPS</div><div style="font-size:13px;">${statLine}</div>` : ""}
   </div>`;
 }
-function renderStats() { document.getElementById("stats").innerHTML = "<p>Stats — TBD</p>"; }
+function renderStats() {
+  const el = document.getElementById("stats");
+  const rows = Object.entries(DATA.stats_summary || {})
+                     .filter(([, s]) => s.PA > 0)
+                     .map(([nick, s]) => ({ nick, ...s }));
+  if (rows.length === 0) {
+    el.innerHTML = `<h2>Stats</h2><p class="label">No stats yet.</p>`;
+    return;
+  }
+  const leaders = (key) => [...rows].sort((a, b) => b[key] - a[key]).slice(0, 3);
+  const fmt = (n, d = 3) => Number(n).toFixed(d);
+
+  let html = `<h2 style="margin-top:0;">Stats</h2>`;
+  ["AVG", "OBP", "SLG", "OPS"].forEach(key => {
+    html += `<div class="card"><h3>Top ${key}</h3>`;
+    leaders(key).forEach(r => {
+      html += `<div class="row"><span>${r.nick}</span><span>${fmt(r[key])}</span></div>`;
+    });
+    html += `</div>`;
+  });
+  ["HR", "RBI"].forEach(key => {
+    html += `<div class="card"><h3>${key} Leaders</h3>`;
+    leaders(key).forEach(r => {
+      html += `<div class="row"><span>${r.nick}</span><span>${r[key]}</span></div>`;
+    });
+    html += `</div>`;
+  });
+
+  // Full sortable table
+  const cols = ["nick", "G", "PA", "AB", "H", "HR", "RBI", "R", "BB", "K", "AVG", "OBP", "SLG", "OPS"];
+  html += `<div class="card"><h3>Full Table</h3><div style="overflow-x:auto;"><table id="stats-table">
+    <thead><tr>${cols.map(c => `<th data-col="${c}">${c.toUpperCase()}</th>`).join("")}</tr></thead><tbody>
+    ${rows.map(r => `<tr>${cols.map(c => {
+      const v = r[c];
+      const cell = typeof v === "number" && c.match(/AVG|OBP|SLG|OPS/) ? fmt(v) : v;
+      return `<td>${cell}</td>`;
+    }).join("")}</tr>`).join("")}
+    </tbody></table></div></div>`;
+  el.innerHTML = html;
+
+  // Sortable columns
+  document.querySelectorAll("#stats-table th").forEach(th => {
+    th.addEventListener("click", () => {
+      const col = th.dataset.col;
+      rows.sort((a, b) => {
+        if (typeof a[col] === "number") return b[col] - a[col];
+        return String(a[col]).localeCompare(String(b[col]));
+      });
+      renderStats();  // simple rerender
+    });
+  });
+}
 
 load();
 </script>
