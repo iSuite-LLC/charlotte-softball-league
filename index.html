@@ -270,7 +270,91 @@ function openRsvp(date) {
   toast("RSVP coming in Task 14");
 }
 
-function renderLineup() { document.getElementById("lineup").innerHTML = "<p>Lineup — TBD</p>"; }
+function renderLineup() {
+  const el = document.getElementById("lineup");
+  const lineups = [...DATA.lineups].sort((a, b) => b.date.localeCompare(a.date));
+  if (lineups.length === 0) {
+    el.innerHTML = `<h2>Lineup</h2><p class="label">Lineup posts Wed/Thu. RSVP on the Schedule tab.</p>`;
+    return;
+  }
+
+  let selected = lineups[0];
+  function render(lineup) {
+    const sched = DATA.schedule.find(s => s.date === lineup.date) || {};
+    const nameByNick = Object.fromEntries(DATA.roster.map(p => [p.nickname, p.name]));
+    const jerseyByNick = Object.fromEntries(DATA.roster.map(p => [p.nickname, p.jersey]));
+
+    let html = `<div style="display:flex;justify-content:space-between;align-items:center;">
+      <h2 style="margin:0;">Lineup — Game ${lineup.game}</h2>
+      <a class="secondary" href="lineups/${lineup.date}-lineup.pdf" target="_blank"
+         style="text-decoration:none;display:inline-block;">Print PDF</a>
+    </div>
+    <div class="label" style="margin:4px 0 16px 0;">
+      ${lineup.date} · vs. ${sched.opponent || "TBD"} · ${sched.location || ""} · ${sched.time || ""}
+    </div>`;
+
+    if (lineups.length > 1) {
+      html += `<select id="lineup-picker" style="margin-bottom:14px;padding:6px;">
+        ${lineups.map(l => `<option value="${l.date}" ${l.date === lineup.date ? "selected" : ""}>${l.date} — Game ${l.game}</option>`).join("")}
+      </select>`;
+    }
+
+    html += `<div class="card"><h3>Batting Order</h3>`;
+    (lineup.batting_order || []).forEach(b => {
+      html += `<div class="row">
+        <span><strong>${b.order}.</strong> #${jerseyByNick[b.nickname] || "?"} <strong>${b.nickname}</strong>
+          <span class="label">(${nameByNick[b.nickname] || ""})</span>
+          ${b.eh_only ? `<span class="badge" style="background:#eee;color:#333;">EH</span>` : ""}
+        </span>
+      </div>`;
+    });
+    html += `</div>`;
+
+    html += `<div class="card"><h3>Defense (4-OF)</h3>${diamondSvg(lineup.defense || {})}</div>`;
+
+    el.innerHTML = html;
+    const picker = document.getElementById("lineup-picker");
+    if (picker) picker.addEventListener("change", (e) => {
+      const next = lineups.find(l => l.date === e.target.value);
+      if (next) render(next);
+    });
+  }
+  render(selected);
+}
+
+function diamondSvg(defense) {
+  // Coordinates in a 400x400 box. Mirror of POSITIONS in make_lineup_pdf.py.
+  const pos = {
+    "P":   [200, 240],
+    "C":   [200, 360],
+    "1B":  [290, 260],
+    "2B":  [240, 200],
+    "SS":  [160, 200],
+    "3B":  [110, 260],
+    "LF":  [50, 100],
+    "LCF": [140, 60],
+    "RCF": [260, 60],
+    "RF":  [350, 100],
+  };
+  const labels = Object.entries(pos).map(([p, [x, y]]) => `
+    <g>
+      <rect x="${x - 38}" y="${y - 14}" width="76" height="28" fill="white" stroke="black" stroke-width="1" rx="4"/>
+      <text x="${x}" y="${y + 4}" text-anchor="middle" font-size="12" font-weight="700">${defense[p] || "?"}</text>
+      <text x="${x}" y="${y + 24}" text-anchor="middle" font-size="9" fill="#666">${p}</text>
+    </g>`).join("");
+  return `<svg class="diamond" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- foul lines -->
+    <line x1="200" y1="360" x2="20" y2="20" stroke="black" stroke-width="1"/>
+    <line x1="200" y1="360" x2="380" y2="20" stroke="black" stroke-width="1"/>
+    <!-- fence arc -->
+    <path d="M 20 20 A 220 220 0 0 1 380 20" stroke="black" fill="none" stroke-width="1"/>
+    <!-- infield diamond -->
+    <polygon points="200,360 290,270 200,180 110,270" fill="none" stroke="black" stroke-width="1.5"/>
+    <!-- pitcher's mound -->
+    <circle cx="200" cy="240" r="10" fill="none" stroke="black"/>
+    ${labels}
+  </svg>`;
+}
 function renderRoster() {
   const el = document.getElementById("roster");
   const main = DATA.roster.filter(p => p.type === "main");
