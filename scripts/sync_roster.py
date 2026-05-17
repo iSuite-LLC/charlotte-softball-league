@@ -5,8 +5,9 @@ Rewrites `data.json`["roster"] in place, preserving all other sections.
 Run from repo root: `python scripts/sync_roster.py`
 
 NOTE: The Roster tab has a two-row header (row 1 = section title, row 2 = column names).
-      The Extras sub-section starts at row 18 with its own sub-header at row 19.
-      The script reads both sections explicitly rather than relying on a single header row.
+      The Extras sub-section is introduced by an 'Extras' section-title row followed by
+      a 'Name' sub-header row.  The script reads all rows in sequence and uses the
+      section-title row to switch context rather than relying on fixed row numbers.
 """
 import json
 from pathlib import Path
@@ -16,22 +17,15 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 XLSX = REPO_ROOT.parent / "Softball Lineup.xlsx"
 DATA_JSON = REPO_ROOT / "data.json"
 
-# Extras: these players are listed in the Extras section of the Roster tab.
-EXTRAS = {"Brandon Ballard", "Ezra Pierce", "Rick Staadt"}
-
 
 def read_roster_tab(wb):
     """Return list of {name, nickname, jersey, type} from the Roster tab.
 
-    The tab has a two-section layout:
-      Row 1: section title ('Roster')
-      Row 2: column headers (Name, Jersey Name, Jersey Number, Position)
-      Rows 3-15: main players (skip 'Extra' placeholder at jersey '00')
-      Row 16: 'Extra' placeholder row — skip it
-      Row 17: blank
-      Row 18: 'Extras' section title — skip
-      Row 19: sub-header row for extras — skip
-      Rows 20-22: extra players (Brandon Ballard, Ezra Pierce, Rick Staadt)
+    The tab has a two-section layout introduced by section-title rows:
+      - Rows before the 'Extras' section title are classified as type='main'.
+      - Rows after the 'Extras' section title are classified as type='extra'.
+      - Section-title rows (name == 'Extra', 'Extras', or 'Name') are skipped.
+      - Blank rows are skipped.
     """
     ws = wb["Roster"]
     # Row 2 has the real headers (1-indexed); row 1 is a title.
@@ -41,24 +35,28 @@ def read_roster_tab(wb):
     nick_col = headers["Jersey Name"]
     jersey_col = headers["Jersey Number"]
 
+    in_extras_section = False
     rows = []
     for row in ws.iter_rows(min_row=3, values_only=True):
         name = row[name_col]
         nickname = row[nick_col]
         jersey = row[jersey_col]
 
-        # Stop at a fully blank row that is followed only by blank rows
-        # (we handle the Extras section by reading ALL rows and filtering).
+        # Skip blank rows.
         if name is None:
             continue
 
-        # Skip section-title / sub-header rows (non-player rows)
-        # These are rows where name is a label like 'Extra', 'Extras', 'Name'.
-        if str(name).strip() in ("Extra", "Extras", "Name"):
+        # 'Extras' section-title row: flip context flag and skip — not a player.
+        if str(name).strip() == "Extras":
+            in_extras_section = True
             continue
 
-        # Determine type: extras are listed in the EXTRAS set
-        player_type = "extra" if str(name).strip() in EXTRAS else "main"
+        # Skip other section-title / sub-header rows (non-player rows).
+        if str(name).strip() in ("Extra", "Name"):
+            continue
+
+        # Classify by current section position in the sheet.
+        player_type = "extra" if in_extras_section else "main"
 
         rows.append({
             "name": str(name).strip(),
