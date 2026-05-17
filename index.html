@@ -271,7 +271,33 @@ function openRsvp(date) {
 }
 
 function renderLineup() { document.getElementById("lineup").innerHTML = "<p>Lineup — TBD</p>"; }
-function renderRoster() { document.getElementById("roster").innerHTML = "<p>Roster — TBD</p>"; }
+function renderRoster() {
+  const el = document.getElementById("roster");
+  const main = DATA.roster.filter(p => p.type === "main");
+  const extras = DATA.roster.filter(p => p.type === "extra");
+  let html = `<h2 style="margin-top:0;">Roster</h2><div class="grid">`;
+  main.forEach(p => {
+    html += rosterCard(p);
+  });
+  html += `</div>`;
+  if (extras.length) {
+    html += `<h3 style="margin-top:24px;color:var(--muted);font-size:14px;">EXTRAS</h3><div class="grid">`;
+    extras.forEach(p => html += rosterCard(p));
+    html += `</div>`;
+  }
+  el.innerHTML = html;
+}
+
+function rosterCard(p) {
+  const stats = (DATA.stats_summary || {})[p.nickname];
+  const statLine = stats ? `${stats.AVG.toFixed(3)} / ${stats.OPS.toFixed(3)}` : "";
+  return `<div class="roster-card">
+    <div class="jersey">#${p.jersey}</div>
+    <div class="nick">${p.nickname}</div>
+    <div class="real">${p.name}</div>
+    ${statLine ? `<div class="label" style="margin-top:6px;">AVG / OPS</div><div style="font-size:13px;">${statLine}</div>` : ""}
+  </div>`;
+}
 function renderStats() { document.getElementById("stats").innerHTML = "<p>Stats — TBD</p>"; }
 
 load();
