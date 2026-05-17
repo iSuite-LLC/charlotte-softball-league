@@ -6,8 +6,9 @@
     "format": "Slow-pitch \u00b7 EH \u00b7 4-OF \u00b7 3-HR cap \u00b7 280ft \u00b7 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 0
-    }
+      "L": 1
+    },
+    "_data_note": "Game 1 stats are partial; batting order and lines for HAM, E-Luke, and Woah-Joe pending Monday 2026-05-19 update."
   },
   "roster": [
     {
@@ -187,9 +188,186 @@
       }
     }
   ],
-  "schedule": [],
-  "lineups": [],
-  "game_logs": [],
+  "schedule": [
+    {
+      "game": 1,
+      "date": "2026-05-14",
+      "opponent": "Dirtbags",
+      "location": "Park Road Park, Field 3",
+      "time": "18:30",
+      "status": "played",
+      "result": {
+        "score": "2-18",
+        "outcome": "L"
+      },
+      "attendance": [
+        "Woah-Joe",
+        "Mad Dog",
+        "Pedersen",
+        "E-Luke",
+        "Trash Man",
+        "C-Bass",
+        "HAM",
+        "E-Train",
+        "Mahhz",
+        "Cogs",
+        "All-Star Reserve"
+      ]
+    }
+  ],
+  "lineups": [
+    {
+      "game": 1,
+      "date": "2026-05-14",
+      "batting_order": [],
+      "defense": {
+        "P": "Woah-Joe",
+        "C": "Mad Dog",
+        "1B": "Pedersen",
+        "2B": "E-Luke",
+        "SS": "Trash Man",
+        "3B": "C-Bass",
+        "LF": "HAM",
+        "LCF": "E-Train",
+        "RCF": "Mahhz",
+        "RF": "Cogs"
+      }
+    }
+  ],
+  "game_logs": [
+    {
+      "game": 1,
+      "date": "2026-05-14",
+      "player_lines": {
+        "Mahhz": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 0,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {
+            "RCF": 7
+          }
+        },
+        "E-Train": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 1,
+          "2B": 0,
+          "3B": 1,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 1,
+          "errors": 0,
+          "innings": {
+            "LCF": 7
+          }
+        },
+        "Cogs": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 1,
+          "innings": {
+            "RF": 7
+          }
+        },
+        "Mad Dog": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {
+            "C": 7
+          }
+        },
+        "All-Star Reserve": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {}
+        },
+        "C-Bass": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {
+            "3B": 7
+          }
+        },
+        "Pedersen": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {
+            "1B": 7
+          }
+        },
+        "Trash Man": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 1,
+          "errors": 0,
+          "innings": {
+            "SS": 7
+          }
+        }
+      }
+    }
+  ],
   "stats_summary": {},
   "notes": {}
 }
