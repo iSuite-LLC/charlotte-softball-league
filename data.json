@@ -1,0 +1,180 @@
+{
+  "roster": [
+    {
+      "name": "Brian Wojcio",
+      "nickname": "Woah-Joe",
+      "jersey": "3",
+      "type": "main",
+      "skills": {
+        "glove": 7,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Matt Mosley",
+      "nickname": "Mahhz",
+      "jersey": "5",
+      "type": "main",
+      "skills": {
+        "glove": 8,
+        "arm": 0,
+        "bat": 8
+      }
+    },
+    {
+      "name": "Nick Coglianese",
+      "nickname": "Cogs",
+      "jersey": "53",
+      "type": "main",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "David Maddox",
+      "nickname": "Mad Dog",
+      "jersey": "07",
+      "type": "main",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Jerome Martin",
+      "nickname": "All-Star Reserve",
+      "jersey": "4",
+      "type": "main",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Carson Bass",
+      "nickname": "C-Bass",
+      "jersey": "10",
+      "type": "main",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Rob Bass",
+      "nickname": "The Rob",
+      "jersey": "17",
+      "type": "main",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Eric Luke",
+      "nickname": "E-Luke",
+      "jersey": "9",
+      "type": "main",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Charlie Stuckey",
+      "nickname": "Charlie",
+      "jersey": "12",
+      "type": "main",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Greg Pedersen",
+      "nickname": "Pedersen",
+      "jersey": "99",
+      "type": "main",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Ethan High",
+      "nickname": "E-Train",
+      "jersey": "16",
+      "type": "main",
+      "skills": {
+        "glove": 8,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Curtis Lynn",
+      "nickname": "HAM",
+      "jersey": "96",
+      "type": "main",
+      "skills": {
+        "glove": 6,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Jeremy Mahala",
+      "nickname": "Trash Man",
+      "jersey": "72",
+      "type": "main",
+      "skills": {
+        "glove": 8,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Brandon Ballard",
+      "nickname": "",
+      "jersey": "00",
+      "type": "extra",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Ezra Pierce",
+      "nickname": "",
+      "jersey": "00",
+      "type": "extra",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Rick Staadt",
+      "nickname": "",
+      "jersey": "00",
+      "type": "extra",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    }
+  ]
+}
