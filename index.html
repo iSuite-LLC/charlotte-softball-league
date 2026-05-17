@@ -264,10 +264,72 @@ function renderSchedule() {
   el.innerHTML = html;
 }
 
-// Stub — Task 14 fills this in
+let currentRsvpDate = null;
+let currentRsvpName = null;
+
 function openRsvp(date) {
-  console.log("RSVP for", date);
-  toast("RSVP coming in Task 14");
+  currentRsvpDate = date;
+  currentRsvpName = null;
+  document.getElementById("rsvp-modal").classList.add("active");
+  renderRsvpModal();
+}
+
+function closeRsvp() {
+  document.getElementById("rsvp-modal").classList.remove("active");
+}
+
+function renderRsvpModal() {
+  const date = currentRsvpDate;
+  const game = DATA.schedule.find(s => s.date === date) || {};
+  const rsvps = RSVPS[date] || {};
+  const myStatus = currentRsvpName ? (rsvps[currentRsvpName]?.status || "unconfirmed") : null;
+
+  const inList = Object.entries(rsvps).filter(([, r]) => r.status === "IN").map(([n]) => n);
+  const outList = Object.entries(rsvps).filter(([, r]) => r.status === "OUT").map(([n]) => n);
+  const responded = new Set([...inList, ...outList]);
+  const unconfirmed = DATA.roster.map(p => p.nickname).filter(n => !responded.has(n));
+
+  let html = `<div style="display:flex;justify-content:space-between;align-items:start;">
+    <div>
+      <h2>${date} · vs. ${game.opponent || "TBD"}</h2>
+      <div class="label">${game.location || ""} · ${game.time || ""}</div>
+    </div>
+    <button class="secondary" onclick="closeRsvp()" style="padding:6px 12px;">Close</button>
+  </div>
+  <div style="margin-top:16px;">
+    <label class="label">Who are you?</label>
+    <select id="rsvp-name-picker" style="width:100%;padding:8px;font-size:14px;margin-top:4px;">
+      <option value="">-- Select your name --</option>
+      ${DATA.roster.map(p => `<option value="${p.nickname}" ${p.nickname === currentRsvpName ? "selected" : ""}>${p.nickname} (${p.name})</option>`).join("")}
+    </select>
+  </div>`;
+
+  if (currentRsvpName) {
+    html += `<div style="margin-top:16px;text-align:center;">
+      <div style="margin-bottom:8px;">Hey <strong>${currentRsvpName}</strong> — you're <strong>${myStatus}</strong></div>
+      <button class="primary" onclick="submitRsvp('IN')" style="margin-right:8px;padding:14px 24px;">I'M IN</button>
+      <button class="primary" onclick="submitRsvp('OUT')" style="background:#a82020;padding:14px 24px;">I'M OUT</button>
+    </div>`;
+  }
+
+  html += `<div style="margin-top:20px;border-top:1px solid var(--border);padding-top:14px;">
+    <div class="label">Team status</div>
+    <div style="margin-top:8px;"><strong>IN (${inList.length}):</strong> ${inList.join(", ") || "—"}</div>
+    <div style="margin-top:6px;"><strong>OUT (${outList.length}):</strong> ${outList.join(", ") || "—"}</div>
+    <div style="margin-top:6px;color:var(--muted);"><strong>? (${unconfirmed.length}):</strong> ${unconfirmed.join(", ") || "—"}</div>
+  </div>`;
+
+  document.getElementById("rsvp-modal-content").innerHTML = html;
+  const picker = document.getElementById("rsvp-name-picker");
+  if (picker) picker.addEventListener("change", (e) => {
+    currentRsvpName = e.target.value || null;
+    renderRsvpModal();
+  });
+}
+
+// Task 15 wires this up to JSONBin
+function submitRsvp(status) {
+  toast(`(stub) Would set ${currentRsvpName} to ${status} for ${currentRsvpDate}`);
 }
 
 function renderLineup() {

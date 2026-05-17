@@ -190,6 +190,14 @@
   ],
   "schedule": [
     {
+      "game": 99,
+      "date": "2099-12-31",
+      "opponent": "Test",
+      "location": "Field 1",
+      "time": "18:30",
+      "status": "upcoming"
+    },
+    {
       "game": 1,
       "date": "2026-05-14",
       "opponent": "Dirtbags",
