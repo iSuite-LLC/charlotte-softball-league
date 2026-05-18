@@ -144,8 +144,9 @@ async function load() {
 async function loadRsvps() {
   try {
     const res = await fetch(`https://api.jsonbin.io/v3/b/${KEYS.binId}/latest`, {
-      headers: { "X-Master-Key": KEYS.readKey }
+      headers: { "X-Access-Key": KEYS.readKey }
     });
+    if (!res.ok) throw new Error("Bin read failed: " + res.status);
     const json = await res.json();
     RSVPS = json.record || {};
   } catch (e) {
