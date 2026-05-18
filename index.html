@@ -122,6 +122,16 @@ document.getElementById("tabs").addEventListener("click", (e) => {
 });
 
 // --- Toast helper ---
+// Format a "HH:MM" 24-hour string as 12-hour with AM/PM. Empty string passes through.
+function fmtTime(t) {
+  if (!t) return "";
+  const [h, m] = t.split(":").map(Number);
+  if (isNaN(h) || isNaN(m)) return t;
+  const period = h >= 12 ? "PM" : "AM";
+  const h12 = h % 12 || 12;
+  return `${h12}:${String(m).padStart(2, "0")} ${period}`;
+}
+
 function toast(msg) {
   const el = document.getElementById("toast");
   el.textContent = msg;
@@ -184,7 +194,7 @@ function renderHome() {
     html += `<div class="card">
       <h3>Next Game</h3>
       <div><strong>${nextGame.date}</strong> · vs. ${nextGame.opponent || "TBD"}</div>
-      <div class="label" style="margin-top:6px;">${nextGame.location || ""} · ${nextGame.time || ""}</div>
+      <div class="label" style="margin-top:6px;">${nextGame.location || ""} · ${fmtTime(nextGame.time)}</div>
       <div style="margin-top:10px;">
         <span class="label">RSVPs:</span>
         ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
@@ -252,7 +262,7 @@ function renderSchedule() {
           <div>
             <div class="label">Game ${g.game} · ${g.date}</div>
             <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
-            <div class="label" style="margin-top:4px;">${g.location || ""} · ${g.time || ""}</div>
+            <div class="label" style="margin-top:4px;">${g.location || ""} · ${fmtTime(g.time)}</div>
             <div style="margin-top:8px;font-size:13px;">
               ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
             </div>
@@ -293,7 +303,7 @@ function renderRsvpModal() {
   let html = `<div style="display:flex;justify-content:space-between;align-items:start;">
     <div>
       <h2>${date} · vs. ${game.opponent || "TBD"}</h2>
-      <div class="label">${game.location || ""} · ${game.time || ""}</div>
+      <div class="label">${game.location || ""} · ${fmtTime(game.time)}</div>
     </div>
     <button class="secondary" onclick="closeRsvp()" style="padding:6px 12px;">Close</button>
   </div>
@@ -380,7 +390,7 @@ function renderLineup() {
          style="text-decoration:none;display:inline-block;">Print PDF</a>
     </div>
     <div class="label" style="margin:4px 0 16px 0;">
-      ${lineup.date} · vs. ${sched.opponent || "TBD"} · ${sched.location || ""} · ${sched.time || ""}
+      ${lineup.date} · vs. ${sched.opponent || "TBD"} · ${sched.location || ""} · ${fmtTime(sched.time)}
     </div>`;
 
     if (lineups.length > 1) {

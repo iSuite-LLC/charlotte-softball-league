@@ -35,6 +35,19 @@ POSITIONS = {
 }
 
 
+def fmt_time(t):
+    """Format a 'HH:MM' 24-hour string as 12-hour with AM/PM. Empty passes through."""
+    if not t:
+        return ""
+    try:
+        h, m = map(int, t.split(":"))
+    except (ValueError, AttributeError):
+        return t
+    period = "PM" if h >= 12 else "AM"
+    h12 = h % 12 or 12
+    return f"{h12}:{m:02d} {period}"
+
+
 def find_lineup(data, date):
     for ln in data.get("lineups", []):
         if ln.get("date") == date:
@@ -70,7 +83,7 @@ def make_pdf(date):
     if sched.get("location"):
         sub += f"  ·  {sched['location']}"
     if sched.get("time"):
-        sub += f"  ·  {sched['time']}"
+        sub += f"  ·  {fmt_time(sched['time'])}"
     fig.text(0.5, 0.93, sub, ha="center", fontsize=11)
 
     # --- Batting order (top half) ---
