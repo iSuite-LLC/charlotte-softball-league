@@ -190,11 +190,11 @@
   ],
   "schedule": [
     {
-      "game": 99,
-      "date": "2099-12-31",
-      "opponent": "Test",
-      "location": "Field 1",
-      "time": "18:30",
+      "game": 2,
+      "date": "2026-05-21",
+      "opponent": "Kodiaks-Mens",
+      "location": "Park Road Park, Field 3",
+      "time": "20:30",
       "status": "upcoming"
     },
     {
