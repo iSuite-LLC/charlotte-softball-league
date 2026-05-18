@@ -412,6 +412,9 @@ function renderLineup() {
           </span>
         </div>`;
       });
+      if (order.some(b => b.eh_only)) {
+        html += `<div class="label" style="margin-top:10px;font-style:italic;">* EH = Extra Hitter (bats only, does not field)</div>`;
+      }
     }
     html += `</div>`;
 
