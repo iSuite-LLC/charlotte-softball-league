@@ -87,7 +87,7 @@ def make_pdf(date):
     fig.text(0.5, 0.93, sub, ha="center", fontsize=11)
 
     # --- Batting order (top half) ---
-    ax_bat = fig.add_axes([0.08, 0.55, 0.84, 0.34])
+    ax_bat = fig.add_axes([0.08, 0.49, 0.84, 0.40])
     ax_bat.axis("off")
     ax_bat.text(0.0, 1.0, "BATTING ORDER", fontsize=13, fontweight="bold",
                 transform=ax_bat.transAxes)
@@ -103,7 +103,7 @@ def make_pdf(date):
         y -= 0.07
 
     # --- Diamond (bottom half) ---
-    ax_dia = fig.add_axes([0.08, 0.06, 0.84, 0.46])
+    ax_dia = fig.add_axes([0.08, 0.06, 0.84, 0.40])
     ax_dia.set_xlim(0, 10)
     ax_dia.set_ylim(0, 10)
     ax_dia.set_aspect("equal")
