@@ -19,9 +19,12 @@
   html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
                font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
                -webkit-font-smoothing: antialiased; }
-  header { background: var(--fg); color: #fff; padding: 14px 20px; }
+  header { background: var(--fg); color: #fff; padding: 14px 20px;
+           display: flex; align-items: center; gap: 12px; }
   header h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
   header .subtitle { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+  .imi-dots { display: flex; gap: 5px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
   nav.tabs { display: flex; background: #fff; border-bottom: 1px solid var(--border);
              overflow-x: auto; position: sticky; top: 0; z-index: 10; }
   nav.tabs button { background: transparent; border: 0; padding: 14px 18px;
@@ -81,8 +84,16 @@
 <body>
 
 <header>
-  <h1>Charlotte Softball</h1>
-  <div class="subtitle">IMI 2026 Season</div>
+  <div class="imi-dots">
+    <span class="dot" style="background:#cc2027"></span>
+    <span class="dot" style="background:#1a6fc4"></span>
+    <span class="dot" style="background:#5aaa35"></span>
+    <span class="dot" style="background:#e87722"></span>
+  </div>
+  <div>
+    <h1>Charlotte Softball</h1>
+    <div class="subtitle">IMI 2026 Season</div>
+  </div>
 </header>
 
 <nav class="tabs" id="tabs">
