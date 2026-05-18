@@ -91,16 +91,32 @@ def make_pdf(date):
     ax_bat.axis("off")
     ax_bat.text(0.0, 1.0, "BATTING ORDER", fontsize=13, fontweight="bold",
                 transform=ax_bat.transAxes)
-    y = 0.92
+
+    # Build table data: header row + one row per batter.
+    header = ["#", "Player", "AB", "H", "HR", "RBI", "R", "BB", "K"]
+    rows = []
     for entry in lineup.get("batting_order", []):
         nick = entry["nickname"]
         jersey = entry.get("jersey", jersey_by_nick.get(nick, "?"))
         real = name_by_nick.get(nick, "")
         tag = "  [EH]" if entry.get("eh_only") else ""
-        line = f"{entry['order']:>2}.  {nick:<14}  #{jersey:<3}  ({real}){tag}"
-        ax_bat.text(0.0, y, line, fontsize=11, family="monospace",
-                    transform=ax_bat.transAxes)
-        y -= 0.07
+        player_cell = f"{nick}  #{jersey}  ({real}){tag}"
+        rows.append([str(entry["order"]), player_cell, "", "", "", "", "", "", ""])
+
+    # Column widths as a fraction of the axes width. Must sum to 1.0.
+    # 0.4 + 2.5 + 7*0.6 = 7.1 inches over 7.14 inches of body width
+    # → normalize each by 7.1 so they sum to ~1.0.
+    col_widths = [w / 7.1 for w in (0.4, 2.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6)]
+
+    table = ax_bat.table(
+        cellText=[header] + rows,
+        colWidths=col_widths,
+        cellLoc="center",
+        loc="upper left",
+        bbox=[0.0, 0.0, 1.0, 0.93],  # leave top 7% of axes for "BATTING ORDER" heading
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
 
     # --- Diamond (bottom half) ---
     ax_dia = fig.add_axes([0.08, 0.06, 0.84, 0.40])
