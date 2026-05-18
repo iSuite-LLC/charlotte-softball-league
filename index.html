@@ -406,7 +406,7 @@ function renderLineup() {
     } else {
       order.forEach(b => {
         html += `<div class="row">
-          <span><strong>${b.order}.</strong> #${jerseyByNick[b.nickname] || "?"} <strong>${b.nickname}</strong>
+          <span><strong>${b.order}.</strong> <strong>${b.nickname}</strong> #${jerseyByNick[b.nickname] || "?"}
             <span class="label">(${nameByNick[b.nickname] || ""})</span>
             ${b.eh_only ? `<span class="badge" style="background:#eee;color:#333;">EH</span>` : ""}
           </span>

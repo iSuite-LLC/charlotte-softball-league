@@ -97,7 +97,7 @@ def make_pdf(date):
         jersey = entry.get("jersey", jersey_by_nick.get(nick, "?"))
         real = name_by_nick.get(nick, "")
         tag = "  [EH]" if entry.get("eh_only") else ""
-        line = f"{entry['order']:>2}.  #{jersey:<3}  {nick:<14}  ({real}){tag}"
+        line = f"{entry['order']:>2}.  {nick:<14}  #{jersey:<3}  ({real}){tag}"
         ax_bat.text(0.0, y, line, fontsize=11, family="monospace",
                     transform=ax_bat.transAxes)
         y -= 0.07
