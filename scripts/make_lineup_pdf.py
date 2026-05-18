@@ -18,18 +18,20 @@ DATA_JSON = REPO_ROOT / "data.json"
 LINEUPS_DIR = REPO_ROOT / "lineups"
 
 # Position coordinates on the diamond, in arbitrary units (0..10 both axes).
-# Origin (0,0) = bottom-left of plot; home plate is bottom-center.
+# Origin (0,0) = bottom-left of plot. Home plate at (5, 1.2). 45-deg foul lines
+# extend to foul poles at (1.5, 4.7) and (8.5, 4.7). Fence is a semicircle
+# centered at (5, 4.7) radius 3.5, bulging up to (5, 8.2).
 POSITIONS = {
-    "P":   (5.0, 4.5),
-    "C":   (5.0, 2.0),
-    "1B":  (7.0, 4.0),
-    "2B":  (6.0, 5.5),
-    "SS":  (4.0, 5.5),
-    "3B":  (3.0, 4.0),
-    "LF":  (1.5, 8.0),
-    "LCF": (3.5, 8.5),
-    "RCF": (6.5, 8.5),
-    "RF":  (8.5, 8.0),
+    "P":   (5.0, 3.2),
+    "C":   (5.0, 0.7),
+    "1B":  (7.0, 3.7),
+    "2B":  (6.0, 4.9),
+    "SS":  (4.0, 4.9),
+    "3B":  (3.0, 3.7),
+    "LF":  (2.0, 5.7),
+    "LCF": (3.7, 6.7),
+    "RCF": (6.3, 6.7),
+    "RF":  (8.0, 5.7),
 }
 
 
@@ -96,23 +98,23 @@ def make_pdf(date):
     ax_dia.text(0.0, 1.02, "DEFENSE  (4-OF alignment)",
                 fontsize=13, fontweight="bold", transform=ax_dia.transAxes)
 
-    # Field outline (foul lines + arc)
-    ax_dia.plot([5, 0.5], [2, 9.5], color="black", linewidth=0.8)
-    ax_dia.plot([5, 9.5], [2, 9.5], color="black", linewidth=0.8)
-    # Simple curved fence
+    # Fence: semicircle behind outfielders, from foul pole to foul pole
     import math
-    arc_pts = [(5 + 4.7 * math.cos(math.pi * (1 - t)),
-                2 + 4.7 * math.sin(math.pi * (1 - t)))
+    arc_pts = [(5 + 3.5 * math.cos(math.pi * (1 - t)),
+                4.7 + 3.5 * math.sin(math.pi * (1 - t)))
                for t in [i / 50 for i in range(51)]]
     ax_dia.plot([p[0] for p in arc_pts], [p[1] for p in arc_pts],
-                color="black", linewidth=0.8)
+                color="black", linewidth=1.0)
+    # Foul lines: home plate to foul poles
+    ax_dia.plot([5, 1.5], [1.2, 4.7], color="black", linewidth=0.8)
+    ax_dia.plot([5, 8.5], [1.2, 4.7], color="black", linewidth=0.8)
 
     # Infield diamond
-    diamond = Polygon([(5, 2), (7, 4), (5, 6), (3, 4)],
+    diamond = Polygon([(5, 1.2), (7, 3.2), (5, 5.2), (3, 3.2)],
                       closed=True, fill=False, edgecolor="black", linewidth=1.2)
     ax_dia.add_patch(diamond)
     # Pitcher's mound
-    ax_dia.add_patch(Circle((5, 4.5), 0.25, fill=False, edgecolor="black"))
+    ax_dia.add_patch(Circle((5, 3.2), 0.2, fill=False, edgecolor="black"))
 
     # Place player labels at each position
     for pos, (x, y) in POSITIONS.items():

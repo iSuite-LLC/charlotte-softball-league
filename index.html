@@ -417,35 +417,45 @@ function renderLineup() {
 }
 
 function diamondSvg(defense) {
-  // Coordinates in a 400x400 box. Mirror of POSITIONS in make_lineup_pdf.py.
+  // viewBox 400x400. Home plate corner at (200, 360). Foul lines extend 45° up-outward
+  // to foul poles at (40, 200) and (360, 200). Fence is a semicircle behind the
+  // outfielders, from foul pole to foul pole, centered at (200, 200), radius 160.
   const pos = {
-    "P":   [200, 240],
-    "C":   [200, 360],
-    "1B":  [290, 260],
-    "2B":  [240, 200],
-    "SS":  [160, 200],
-    "3B":  [110, 260],
-    "LF":  [50, 100],
-    "LCF": [140, 60],
-    "RCF": [260, 60],
-    "RF":  [350, 100],
+    "P":   [200, 285],
+    "C":   [200, 375],
+    "1B":  [270, 250],
+    "2B":  [240, 195],
+    "SS":  [160, 195],
+    "3B":  [130, 250],
+    "LF":  [100, 130],
+    "LCF": [155, 80],
+    "RCF": [245, 80],
+    "RF":  [300, 130],
   };
+  // Fence: polyline approximation of a semicircle bulging upward away from home
+  const fencePts = [];
+  for (let i = 0; i <= 60; i++) {
+    const t = Math.PI + Math.PI * (i / 60);    // pi -> 2*pi
+    const x = 200 + 160 * Math.cos(t);
+    const y = 200 + 160 * Math.sin(t);          // sin negative in (pi, 2pi) -> smaller y -> UP
+    fencePts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
+  }
   const labels = Object.entries(pos).map(([p, [x, y]]) => `
     <g>
-      <rect x="${x - 38}" y="${y - 14}" width="76" height="28" fill="white" stroke="black" stroke-width="1" rx="4"/>
-      <text x="${x}" y="${y + 4}" text-anchor="middle" font-size="12" font-weight="700">${defense[p] || "?"}</text>
-      <text x="${x}" y="${y + 24}" text-anchor="middle" font-size="9" fill="#666">${p}</text>
+      <rect x="${x - 32}" y="${y - 11}" width="64" height="22" fill="white" stroke="black" stroke-width="1" rx="4"/>
+      <text x="${x}" y="${y + 4}" text-anchor="middle" font-size="11" font-weight="700">${defense[p] || "?"}</text>
+      <text x="${x}" y="${y + 22}" text-anchor="middle" font-size="9" fill="#666">${p}</text>
     </g>`).join("");
   return `<svg class="diamond" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-    <!-- foul lines -->
-    <line x1="200" y1="360" x2="20" y2="20" stroke="black" stroke-width="1"/>
-    <line x1="200" y1="360" x2="380" y2="20" stroke="black" stroke-width="1"/>
-    <!-- fence arc -->
-    <path d="M 20 20 A 220 220 0 0 1 380 20" stroke="black" fill="none" stroke-width="1"/>
-    <!-- infield diamond -->
-    <polygon points="200,360 290,270 200,180 110,270" fill="none" stroke="black" stroke-width="1.5"/>
+    <!-- fence (semicircle behind outfielders) -->
+    <polyline points="${fencePts.join(" ")}" stroke="black" fill="none" stroke-width="1.5"/>
+    <!-- foul lines: home plate (200,360) to foul poles (40,200) and (360,200) -->
+    <line x1="200" y1="360" x2="40" y2="200" stroke="black" stroke-width="1"/>
+    <line x1="200" y1="360" x2="360" y2="200" stroke="black" stroke-width="1"/>
+    <!-- infield diamond: home, 1B, 2B, 3B -->
+    <polygon points="200,360 275,285 200,210 125,285" fill="none" stroke="black" stroke-width="1.5"/>
     <!-- pitcher's mound -->
-    <circle cx="200" cy="240" r="10" fill="none" stroke="black"/>
+    <circle cx="200" cy="285" r="8" fill="none" stroke="black"/>
     ${labels}
   </svg>`;
 }
