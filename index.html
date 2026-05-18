@@ -504,11 +504,14 @@ function renderRoster() {
 function rosterCard(p) {
   const stats = (DATA.stats_summary || {})[p.nickname];
   const statLine = stats ? `${stats.AVG.toFixed(3)} / ${stats.OPS.toFixed(3)}` : "";
+  const fun = (DATA.fun_stats || {})[p.nickname];
+  const funLines = fun ? Object.entries(fun).map(([label, v]) => `${label}: ${v}`).join(", ") : "";
   return `<div class="roster-card">
     <div class="jersey">#${p.jersey}</div>
     <div class="nick">${p.nickname}</div>
     <div class="real">${p.name}</div>
     ${statLine ? `<div class="label" style="margin-top:6px;">AVG / OPS</div><div style="font-size:13px;">${statLine}</div>` : ""}
+    ${funLines ? `<div class="label" style="margin-top:6px;">FUN STAT</div><div style="font-size:13px;">${funLines}</div>` : ""}
   </div>`;
 }
 function renderStats() {
