@@ -8,7 +8,7 @@
       "W": 0,
       "L": 1
     },
-    "_data_note": "Game 1 stats partial; batting lines for HAM, E-Luke, and Woah-Joe pending."
+    "_data_note": "Game 1 stats partial; full batting lines for HAM, E-Luke, and Woah-Joe still pending (E-Luke logged with 1 RBI only)."
   },
   "roster": [
     {
@@ -228,17 +228,72 @@
       "game": 1,
       "date": "2026-05-14",
       "batting_order": [
-        { "order": 1,  "nickname": "Woah-Joe",         "jersey": "3",  "eh_only": false },
-        { "order": 2,  "nickname": "E-Train",          "jersey": "16", "eh_only": false },
-        { "order": 3,  "nickname": "C-Bass",           "jersey": "10", "eh_only": false },
-        { "order": 4,  "nickname": "E-Luke",           "jersey": "9",  "eh_only": false },
-        { "order": 5,  "nickname": "Mahhz",            "jersey": "5",  "eh_only": false },
-        { "order": 6,  "nickname": "HAM",              "jersey": "96", "eh_only": false },
-        { "order": 7,  "nickname": "Pedersen",         "jersey": "99", "eh_only": false },
-        { "order": 8,  "nickname": "Cogs",             "jersey": "53", "eh_only": false },
-        { "order": 9,  "nickname": "Mad Dog",          "jersey": "07", "eh_only": false },
-        { "order": 10, "nickname": "Trash Man",        "jersey": "72", "eh_only": false },
-        { "order": 11, "nickname": "All-Star Reserve", "jersey": "4",  "eh_only": true  }
+        {
+          "order": 1,
+          "nickname": "Woah-Joe",
+          "jersey": "3",
+          "eh_only": false
+        },
+        {
+          "order": 2,
+          "nickname": "E-Train",
+          "jersey": "16",
+          "eh_only": false
+        },
+        {
+          "order": 3,
+          "nickname": "C-Bass",
+          "jersey": "10",
+          "eh_only": false
+        },
+        {
+          "order": 4,
+          "nickname": "E-Luke",
+          "jersey": "9",
+          "eh_only": false
+        },
+        {
+          "order": 5,
+          "nickname": "Mahhz",
+          "jersey": "5",
+          "eh_only": false
+        },
+        {
+          "order": 6,
+          "nickname": "HAM",
+          "jersey": "96",
+          "eh_only": false
+        },
+        {
+          "order": 7,
+          "nickname": "Pedersen",
+          "jersey": "99",
+          "eh_only": false
+        },
+        {
+          "order": 8,
+          "nickname": "Cogs",
+          "jersey": "53",
+          "eh_only": false
+        },
+        {
+          "order": 9,
+          "nickname": "Mad Dog",
+          "jersey": "07",
+          "eh_only": false
+        },
+        {
+          "order": 10,
+          "nickname": "Trash Man",
+          "jersey": "72",
+          "eh_only": false
+        },
+        {
+          "order": 11,
+          "nickname": "All-Star Reserve",
+          "jersey": "4",
+          "eh_only": true
+        }
       ],
       "defense": {
         "P": "Woah-Joe",
@@ -383,6 +438,22 @@
           "errors": 0,
           "innings": {
             "SS": 7
+          }
+        },
+        "E-Luke": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 0,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 1,
+          "R": 0,
+          "errors": 0,
+          "innings": {
+            "2B": 7
           }
         }
       }
@@ -532,6 +603,24 @@
       "OBP": 0.667,
       "SLG": 0.667,
       "OPS": 1.333
+    },
+    "E-Luke": {
+      "G": 1,
+      "PA": 3,
+      "AB": 3,
+      "1B": 0,
+      "2B": 0,
+      "3B": 0,
+      "HR": 0,
+      "BB": 0,
+      "K": 0,
+      "RBI": 1,
+      "R": 0,
+      "H": 0,
+      "AVG": 0.0,
+      "OBP": 0.0,
+      "SLG": 0.0,
+      "OPS": 0.0
     }
   },
   "notes": {}
