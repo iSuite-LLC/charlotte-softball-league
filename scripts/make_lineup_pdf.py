@@ -103,10 +103,10 @@ def make_pdf(date):
         player_cell = f"{nick}  #{jersey}  ({real}){tag}"
         rows.append([str(entry["order"]), player_cell, "", "", "", "", "", "", ""])
 
-    # Column widths as a fraction of the axes width. Must sum to 1.0.
-    # 0.4 + 2.5 + 7*0.6 = 7.1 inches over 7.14 inches of body width
-    # → normalize each by 7.1 so they sum to ~1.0.
-    col_widths = [w / 7.1 for w in (0.4, 2.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6)]
+    # Column widths as a fraction of the axes width.
+    # 0.4 + 3.0 + 7*0.5 = 6.9 inches over 7.14 inches of body width
+    # → normalize each by 6.9 so they sum to ~1.0.
+    col_widths = [w / 6.9 for w in (0.4, 3.0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5)]
 
     table = ax_bat.table(
         cellText=[header] + rows,
@@ -129,7 +129,7 @@ def make_pdf(date):
     n_rows = len(rows)
     for row in range(0, n_rows + 1):  # include header row so "Player" header is also monospace
         cell = table[(row, 1)]
-        cell.set_text_props(family="monospace")
+        cell.set_text_props(family="monospace", size=9)
         # Left-align by setting the cell's text horizontal alignment.
         cell.get_text().set_horizontalalignment("left")
         # Add small left padding so text doesn't kiss the left border.
