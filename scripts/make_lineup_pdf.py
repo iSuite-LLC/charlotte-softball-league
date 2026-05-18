@@ -129,7 +129,7 @@ def make_pdf(date):
     n_rows = len(rows)
     for row in range(0, n_rows + 1):  # include header row so "Player" header is also monospace
         cell = table[(row, 1)]
-        cell.set_text_props(family="monospace", size=9)
+        cell.set_text_props(family="monospace", size=8)
         # Left-align by setting the cell's text horizontal alignment.
         cell.get_text().set_horizontalalignment("left")
         # Add small left padding so text doesn't kiss the left border.
