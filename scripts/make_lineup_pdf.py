@@ -118,6 +118,25 @@ def make_pdf(date):
     table.auto_set_font_size(False)
     table.set_fontsize(10)
 
+    # Style header row: bold text on all 9 columns.
+    n_cols = len(header)
+    for col in range(n_cols):
+        cell = table[(0, col)]
+        cell.set_text_props(weight="bold")
+
+    # Style Player column (column index 1): monospace + left-aligned.
+    # Cells are keyed (row_index, col_index); row 0 is header, rows 1..N are batters.
+    n_rows = len(rows)
+    for row in range(0, n_rows + 1):  # include header row so "Player" header is also monospace
+        cell = table[(row, 1)]
+        cell.set_text_props(family="monospace")
+        # Left-align by setting the cell's text horizontal alignment.
+        cell.get_text().set_horizontalalignment("left")
+        # Add small left padding so text doesn't kiss the left border.
+        # matplotlib has no native cell padding; achieve it with a leading space.
+        existing = cell.get_text().get_text()
+        cell.get_text().set_text(" " + existing)
+
     # --- Diamond (bottom half) ---
     ax_dia = fig.add_axes([0.08, 0.06, 0.84, 0.40])
     ax_dia.set_xlim(0, 10)
