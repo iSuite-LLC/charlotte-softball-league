@@ -31,6 +31,10 @@
            display: flex; align-items: center; gap: 12px; }
   header h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
   header .subtitle { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+  header .header-right { margin-left: auto; text-align: right; font-size: 11px;
+                         opacity: 0.85; line-height: 1.3; }
+  header .last-updated-label { text-transform: uppercase; letter-spacing: 0.05em;
+                                font-size: 9px; opacity: 0.7; }
   .imi-dots { display: flex; gap: 5px; }
   .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
   nav.tabs { display: flex; background: #fff; border-bottom: 1px solid var(--border);
@@ -102,6 +106,10 @@
     <h1>Icon Mech · Charlotte</h1>
     <div class="subtitle">Softball 2026 Season</div>
   </div>
+  <div class="header-right">
+    <div class="last-updated-label">Updated</div>
+    <div id="last-updated">—</div>
+  </div>
 </header>
 
 <nav class="tabs" id="tabs">
@@ -163,6 +171,8 @@ async function load() {
   DATA = await fetch("data.json").then(r => r.json());
   KEYS = await fetch("keys.json").then(r => r.json());
   await loadRsvps();
+  const lu = DATA.season && DATA.season.lastUpdated;
+  if (lu) document.getElementById("last-updated").textContent = lu;
   renderHome();
   renderSchedule();
   renderLineup();
