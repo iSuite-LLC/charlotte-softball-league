@@ -7,7 +7,7 @@
 <style>
   :root {
     --bg: #f2ebd8;
-    --fg: #111;
+    --fg: #1b2a4e;
     --muted: #666;
     --accent: #1b2a4e;
     --card: #fff;
@@ -427,7 +427,7 @@ function renderLineup() {
         html += `<div class="row">
           <span><strong>${b.order}.</strong> <strong>${b.nickname}</strong> #${jerseyByNick[b.nickname] || "?"}
             <span class="label">(${nameByNick[b.nickname] || ""})</span>
-            ${b.eh_only ? `<span class="badge" style="background:#eee;color:#333;">EH</span>` : ""}
+            ${b.eh_only ? `<span class="badge" style="background:#eee;color:var(--navy);">EH</span>` : ""}
           </span>
         </div>`;
       });
