@@ -3,23 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Charlotte Softball · IMI 2026</title>
+<title>Icon Mech · Charlotte · IMI 2026</title>
 <style>
   :root {
-    --bg: #f7f7f4;
+    --bg: #f2ebd8;
     --fg: #111;
     --muted: #666;
-    --accent: #111;
+    --accent: #1b2a4e;
     --card: #fff;
     --border: #ddd;
     --good: #1c7c3a;
     --bad: #a82020;
+    --navy: #1b2a4e;
+    --carolina: #7bb6e6;
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+  html, body { margin: 0; padding: 0; color: var(--fg);
                font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
                -webkit-font-smoothing: antialiased; }
-  header { background: var(--fg); color: #fff; padding: 14px 20px;
+  body { background:
+           repeating-linear-gradient(to right,
+             transparent 0, transparent 23px,
+             rgba(27,42,78,0.14) 23px, rgba(27,42,78,0.14) 24px),
+           var(--bg);
+         background-attachment: fixed; }
+  header { background: var(--navy); color: #fff; padding: 14px 20px;
            display: flex; align-items: center; gap: 12px; }
   header h1 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
   header .subtitle { font-size: 12px; opacity: 0.8; margin-top: 2px; }
@@ -30,7 +38,7 @@
   nav.tabs button { background: transparent; border: 0; padding: 14px 18px;
                     font-size: 14px; font-weight: 600; color: var(--muted);
                     cursor: pointer; border-bottom: 3px solid transparent; }
-  nav.tabs button.active { color: var(--fg); border-bottom-color: var(--fg); }
+  nav.tabs button.active { color: var(--navy); border-bottom-color: var(--carolina); }
   main { max-width: 720px; margin: 0 auto; padding: 16px; }
   .panel { display: none; }
   .panel.active { display: block; }
@@ -55,10 +63,10 @@
   .roster-card .jersey { font-size: 28px; font-weight: 800; }
   .roster-card .nick { font-weight: 700; margin-top: 4px; }
   .roster-card .real { font-size: 12px; color: var(--muted); }
-  button.primary { background: var(--fg); color: #fff; border: 0;
+  button.primary { background: var(--navy); color: #fff; border: 0;
                    padding: 10px 16px; border-radius: 6px; font-weight: 600;
                    cursor: pointer; }
-  button.secondary { background: #fff; color: var(--fg); border: 1px solid var(--fg);
+  button.secondary { background: #fff; color: var(--navy); border: 1px solid var(--navy);
                      padding: 10px 16px; border-radius: 6px; font-weight: 600;
                      cursor: pointer; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; background: #fff;
@@ -74,7 +82,7 @@
            width: 100%; max-height: 90vh; overflow-y: auto; }
   .modal h2 { margin: 0 0 4px 0; font-size: 18px; }
   .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-           background: var(--fg); color: #fff; padding: 10px 16px; border-radius: 6px;
+           background: var(--navy); color: #fff; padding: 10px 16px; border-radius: 6px;
            opacity: 0; transition: opacity 0.2s; z-index: 200; pointer-events: none; }
   .toast.show { opacity: 1; }
   /* Diamond */
@@ -91,7 +99,7 @@
     <span class="dot" style="background:#e87722"></span>
   </div>
   <div>
-    <h1>Charlotte Softball</h1>
+    <h1>Icon Mech · Charlotte</h1>
     <div class="subtitle">IMI 2026 Season</div>
   </div>
 </header>
