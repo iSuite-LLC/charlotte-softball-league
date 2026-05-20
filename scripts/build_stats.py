@@ -3,8 +3,9 @@
 Run from repo root: `python scripts/build_stats.py`
 """
 import json
-from datetime import datetime
 from pathlib import Path
+
+from stamp import stamp
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_JSON = REPO_ROOT / "data.json"
@@ -47,10 +48,7 @@ def main():
             by_player.setdefault(player, []).append(line)
     summary = {p: compute_player_summary(lines) for p, lines in by_player.items()}
     data["stats_summary"] = summary
-    now = datetime.now()
-    data.setdefault("season", {})["lastUpdated"] = (
-        now.strftime("%Y-%m-%d ") + now.strftime("%I:%M %p").lstrip("0") + " ET"
-    )
+    stamp(data)
     DATA_JSON.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote stats_summary for {len(summary)} players")
 
