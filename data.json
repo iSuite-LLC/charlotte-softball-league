@@ -8,7 +8,7 @@
       "W": 0,
       "L": 1
     },
-    "_data_note": "Game 1 stats partial; full batting lines for HAM, E-Luke, and Woah-Joe still pending (E-Luke logged with 1 RBI only)."
+    "_data_note": "Game 1 batting lines complete as of 2026-05-20."
   },
   "roster": [
     {
@@ -443,7 +443,7 @@
         "E-Luke": {
           "PA": 3,
           "AB": 3,
-          "1B": 0,
+          "1B": 1,
           "2B": 0,
           "3B": 0,
           "HR": 0,
@@ -454,6 +454,22 @@
           "errors": 0,
           "innings": {
             "2B": 7
+          }
+        },
+        "HAM": {
+          "PA": 2,
+          "AB": 2,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {
+            "LF": 7
           }
         },
         "Woah-Joe": {
@@ -624,7 +640,7 @@
       "G": 1,
       "PA": 3,
       "AB": 3,
-      "1B": 0,
+      "1B": 1,
       "2B": 0,
       "3B": 0,
       "HR": 0,
@@ -632,11 +648,29 @@
       "K": 0,
       "RBI": 1,
       "R": 0,
-      "H": 0,
-      "AVG": 0.0,
-      "OBP": 0.0,
-      "SLG": 0.0,
-      "OPS": 0.0
+      "H": 1,
+      "AVG": 0.333,
+      "OBP": 0.333,
+      "SLG": 0.333,
+      "OPS": 0.667
+    },
+    "HAM": {
+      "G": 1,
+      "PA": 2,
+      "AB": 2,
+      "1B": 1,
+      "2B": 0,
+      "3B": 0,
+      "HR": 0,
+      "BB": 0,
+      "K": 0,
+      "RBI": 0,
+      "R": 0,
+      "H": 1,
+      "AVG": 0.5,
+      "OBP": 0.5,
+      "SLG": 0.5,
+      "OPS": 1.0
     },
     "Woah-Joe": {
       "G": 1,
