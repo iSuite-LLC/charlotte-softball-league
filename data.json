@@ -157,7 +157,7 @@
     },
     {
       "name": "Brandon Ballard",
-      "nickname": "",
+      "nickname": "Blue",
       "jersey": "00",
       "type": "extra",
       "skills": {
@@ -179,6 +179,17 @@
     },
     {
       "name": "Rick Staadt",
+      "nickname": "",
+      "jersey": "00",
+      "type": "extra",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Jeremy Phillips",
       "nickname": "",
       "jersey": "00",
       "type": "extra",
