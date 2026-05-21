@@ -9,7 +9,7 @@
       "L": 1
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20.",
-    "lastUpdated": "2026-05-21 1:59 PM ET"
+    "lastUpdated": "2026-05-21 3:30 PM ET"
   },
   "roster": [
     {
@@ -236,6 +236,90 @@
     }
   ],
   "lineups": [
+    {
+      "game": 2,
+      "date": "2026-05-21",
+      "batting_order": [
+        {
+          "order": 1,
+          "nickname": "Charlie",
+          "jersey": "12",
+          "eh_only": false
+        },
+        {
+          "order": 2,
+          "nickname": "Cogs",
+          "jersey": "53",
+          "eh_only": false
+        },
+        {
+          "order": 3,
+          "nickname": "Trash Man",
+          "jersey": "72",
+          "eh_only": false
+        },
+        {
+          "order": 4,
+          "nickname": "HAM",
+          "jersey": "96",
+          "eh_only": false
+        },
+        {
+          "order": 5,
+          "nickname": "The Rob",
+          "jersey": "17",
+          "eh_only": false
+        },
+        {
+          "order": 6,
+          "nickname": "Mad Dog",
+          "jersey": "07",
+          "eh_only": false
+        },
+        {
+          "order": 7,
+          "nickname": "Blue",
+          "jersey": "00",
+          "eh_only": false
+        },
+        {
+          "order": 8,
+          "nickname": "All-Star Reserve",
+          "jersey": "4",
+          "eh_only": false
+        },
+        {
+          "order": 9,
+          "nickname": "Ezra Pierce",
+          "jersey": "00",
+          "eh_only": false
+        },
+        {
+          "order": 10,
+          "nickname": "Jeremy Phillips",
+          "jersey": "00",
+          "eh_only": false
+        },
+        {
+          "order": 11,
+          "nickname": "Woah-Joe",
+          "jersey": "3",
+          "eh_only": true
+        }
+      ],
+      "defense": {
+        "P": "The Rob",
+        "C": "Mad Dog",
+        "1B": "Jeremy Phillips",
+        "2B": "Charlie",
+        "SS": "Trash Man",
+        "3B": "All-Star Reserve",
+        "LF": "Ezra Pierce",
+        "LCF": "Blue",
+        "RCF": "HAM",
+        "RF": "Cogs"
+      }
+    },
     {
       "game": 1,
       "date": "2026-05-14",

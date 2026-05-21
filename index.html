@@ -427,8 +427,8 @@ function renderLineup() {
   let selected = lineups[0];
   function render(lineup) {
     const sched = DATA.schedule.find(s => s.date === lineup.date) || {};
-    const nameByNick = Object.fromEntries(DATA.roster.map(p => [p.nickname, p.name]));
-    const jerseyByNick = Object.fromEntries(DATA.roster.map(p => [p.nickname, p.jersey]));
+    const nameByNick = Object.fromEntries(DATA.roster.map(p => [p.nickname || p.name, p.name]));
+    const jerseyByNick = Object.fromEntries(DATA.roster.map(p => [p.nickname || p.name, p.jersey]));
 
     let html = `<div style="display:flex;justify-content:space-between;align-items:center;">
       <h2 style="margin:0;">Lineup — Game ${lineup.game}</h2>
@@ -451,9 +451,11 @@ function renderLineup() {
       html += `<p class="label" style="margin:0;">Batting order not recorded.</p>`;
     } else {
       order.forEach(b => {
+        const full = nameByNick[b.nickname] || "";
+        const parens = (full && full !== b.nickname) ? `<span class="label">(${full})</span>` : "";
         html += `<div class="row">
           <span><strong>${b.order}.</strong> <strong>${b.nickname}</strong> #${jerseyByNick[b.nickname] || "?"}
-            <span class="label">(${nameByNick[b.nickname] || ""})</span>
+            ${parens}
             ${b.eh_only ? `<span class="badge" style="background:#eee;color:var(--navy);">EH</span>` : ""}
           </span>
         </div>`;
