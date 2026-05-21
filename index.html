@@ -44,6 +44,14 @@
   main { max-width: 720px; margin: 0 auto; padding: 16px; }
   .panel { display: none; }
   .panel.active { display: block; }
+  .panel > h2,
+  .panel > h3,
+  .panel > p.label,
+  .panel > div.label,
+  .panel > div:has(> h2) { background: var(--card); border: 1px solid var(--border);
+                           border-radius: 8px; padding: 10px 14px;
+                           margin: 0 0 12px 0; }
+  .panel > h2 { font-size: 18px; }
   .card { background: var(--card); border: 1px solid var(--border);
           border-radius: 8px; padding: 14px; margin-bottom: 12px; }
   .card h3 { margin: 0 0 6px 0; font-size: 14px; color: var(--muted);
