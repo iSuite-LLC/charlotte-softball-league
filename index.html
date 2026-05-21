@@ -333,7 +333,10 @@ function renderRsvpModal() {
   const inList = Object.entries(rsvps).filter(([, r]) => r.status === "IN").map(([n]) => n);
   const outList = Object.entries(rsvps).filter(([, r]) => r.status === "OUT").map(([n]) => n);
   const responded = new Set([...inList, ...outList]);
-  const unconfirmed = DATA.roster.filter(p => p.type === "main").map(p => p.nickname).filter(n => !responded.has(n));
+  const unconfirmed = DATA.roster
+    .filter(p => p.type === "main")
+    .map(p => p.nickname || p.name)
+    .filter(n => !responded.has(n));
 
   let html = `<div style="display:flex;justify-content:space-between;align-items:start;">
     <div>
