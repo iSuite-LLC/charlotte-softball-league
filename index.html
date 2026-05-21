@@ -225,7 +225,9 @@ function renderHome() {
     const rsvps = RSVPS[nextGame.date] || {};
     const inCount = Object.values(rsvps).filter(r => r.status === "IN").length;
     const outCount = Object.values(rsvps).filter(r => r.status === "OUT").length;
-    const unconfirmed = DATA.roster.filter(p => p.type === "main").length - inCount - outCount;
+    const mainKeys = new Set(DATA.roster.filter(p => p.type === "main").map(p => p.nickname || p.name));
+    const respondedMains = Object.keys(rsvps).filter(k => mainKeys.has(k)).length;
+    const unconfirmed = mainKeys.size - respondedMains;
     html += `<div class="card">
       <h3>Next Game</h3>
       <div><strong>${nextGame.date}</strong> · vs. ${nextGame.opponent || "TBD"}</div>
@@ -291,7 +293,9 @@ function renderSchedule() {
       const rsvps = RSVPS[g.date] || {};
       const inCount = Object.values(rsvps).filter(r => r.status === "IN").length;
       const outCount = Object.values(rsvps).filter(r => r.status === "OUT").length;
-      const unconfirmed = DATA.roster.filter(p => p.type === "main").length - inCount - outCount;
+      const mainKeys = new Set(DATA.roster.filter(p => p.type === "main").map(p => p.nickname || p.name));
+      const respondedMains = Object.keys(rsvps).filter(k => mainKeys.has(k)).length;
+      const unconfirmed = mainKeys.size - respondedMains;
       html += `<div class="card">
         <div class="row" style="border:0;padding:0;align-items:flex-start;">
           <div>
