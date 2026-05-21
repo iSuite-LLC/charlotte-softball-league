@@ -346,7 +346,11 @@ function renderRsvpModal() {
     <label class="label">Who are you?</label>
     <select id="rsvp-name-picker" style="width:100%;padding:8px;font-size:14px;margin-top:4px;">
       <option value="">-- Select your name --</option>
-      ${DATA.roster.filter(p => p.type === "main").map(p => `<option value="${p.nickname}" ${p.nickname === currentRsvpName ? "selected" : ""}>${p.nickname} (${p.name})</option>`).join("")}
+      ${DATA.roster.map(p => {
+        const key = p.nickname || p.name;
+        const label = p.nickname ? `${p.nickname} (${p.name})` : p.name;
+        return `<option value="${key}" ${key === currentRsvpName ? "selected" : ""}>${label}</option>`;
+      }).join("")}
     </select>
   </div>`;
 
