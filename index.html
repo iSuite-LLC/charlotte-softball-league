@@ -569,7 +569,7 @@ function renderStats() {
   // Full sortable table
   const cols = ["nick", "G", "PA", "AB", "H", "HR", "RBI", "R", "BB", "K", "AVG", "OBP", "SLG", "OPS"];
   html += `<div class="card"><h3>Full Table</h3><div style="overflow-x:auto;"><table id="stats-table">
-    <thead><tr>${cols.map(c => `<th data-col="${c}">${c.toUpperCase()}</th>`).join("")}</tr></thead><tbody>
+    <thead><tr>${cols.map(c => `<th data-col="${c}">${c === "nick" ? "PLAYER" : c.toUpperCase()}</th>`).join("")}</tr></thead><tbody>
     ${rows.map(r => `<tr>${cols.map(c => {
       const v = r[c];
       const cell = typeof v === "number" && c.match(/AVG|OBP|SLG|OPS/) ? fmt(v) : v;
