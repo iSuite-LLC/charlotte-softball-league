@@ -289,6 +289,18 @@ function renderSchedule() {
           </div>
         </div>
       </div>`;
+    } else if (g.status === "postponed") {
+      html += `<div class="card">
+        <div class="row" style="border:0;padding:0;align-items:flex-start;">
+          <div>
+            <div class="label">Game ${g.game} · ${g.date}</div>
+            <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
+            <div class="label" style="margin-top:4px;text-decoration:line-through;">${g.location || ""} · ${fmtTime(g.time)}</div>
+            ${g.note ? `<div class="label" style="margin-top:6px;font-style:italic;">${g.note}</div>` : ""}
+          </div>
+          <span class="badge" style="background:#eee;color:var(--muted);">POSTPONED</span>
+        </div>
+      </div>`;
     } else {
       const rsvps = RSVPS[g.date] || {};
       const inCount = Object.values(rsvps).filter(r => r.status === "IN").length;
