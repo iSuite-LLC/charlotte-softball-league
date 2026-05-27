@@ -1,5 +1,4 @@
 {
-  "binId": "6a0a0d83c0954111d839e96e",
-  "readKey": "$2a$10$AWgJV5vPeBEgHs9FKL0.q.YaV4NtPGjnWZTr1EJv4MsexsBQwn31O",
-  "writeKey": "$2a$10$pfM6OHRAvawhg7gY0DUj0OfayFwXBqxMvk24.myWw3LpDZSbIE1KW"
+  "supabaseUrl": "https://pinjhguydjhocvkjmgvz.supabase.co",
+  "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpbmpoZ3V5ZGpob2N2a2ptZ3Z6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4NzQwNzksImV4cCI6MjA5NTQ1MDA3OX0.zrY4b7Oao8bZtac7_7c4xdek3d9bsrDqdRlzg0uvgB0"
 }

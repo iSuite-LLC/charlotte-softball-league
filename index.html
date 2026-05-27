@@ -140,10 +140,12 @@
 
 <div class="toast" id="toast"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 // Global state
 let DATA = null;
 let KEYS = null;
+let sb = null;   // Supabase client
 let RSVPS = {};  // { "YYYY-MM-DD": { nick: { status, ts } } }
 
 // --- Tab switching ---
@@ -176,7 +178,9 @@ function toast(msg) {
 async function load() {
   DATA = await fetch("data.json").then(r => r.json());
   KEYS = await fetch("keys.json").then(r => r.json());
+  sb = supabase.createClient(KEYS.supabaseUrl, KEYS.supabaseAnonKey);
   await loadRsvps();
+  subscribeRsvps();
   const lu = DATA.season && DATA.season.lastUpdated;
   if (lu) document.getElementById("last-updated").textContent = lu;
   renderHome();
@@ -188,16 +192,37 @@ async function load() {
 
 async function loadRsvps() {
   try {
-    const res = await fetch(`https://api.jsonbin.io/v3/b/${KEYS.binId}/latest`, {
-      headers: { "X-Access-Key": KEYS.readKey }
-    });
-    if (!res.ok) throw new Error("Bin read failed: " + res.status);
-    const json = await res.json();
-    RSVPS = json.record || {};
+    const { data, error } = await sb.from("rsvps").select("*");
+    if (error) throw error;
+    RSVPS = {};
+    for (const r of data || []) {
+      if (!RSVPS[r.game_date]) RSVPS[r.game_date] = {};
+      RSVPS[r.game_date][r.player_nick] = { status: r.status, ts: r.updated_at };
+    }
   } catch (e) {
     console.error("Could not load RSVPs:", e);
     RSVPS = {};
   }
+}
+
+function subscribeRsvps() {
+  sb.channel("rsvps-changes")
+    .on("postgres_changes", { event: "*", schema: "public", table: "rsvps" }, (payload) => {
+      const r = payload.new || payload.old;
+      if (!r) return;
+      if (payload.eventType === "DELETE") {
+        if (RSVPS[r.game_date]) delete RSVPS[r.game_date][r.player_nick];
+      } else {
+        if (!RSVPS[r.game_date]) RSVPS[r.game_date] = {};
+        RSVPS[r.game_date][r.player_nick] = { status: r.status, ts: r.updated_at };
+      }
+      renderHome();
+      renderSchedule();
+      if (document.getElementById("rsvp-modal").classList.contains("active")) {
+        renderRsvpModal();
+      }
+    })
+    .subscribe();
 }
 
 // --- Render stubs (each tab task fills these in) ---
@@ -408,15 +433,13 @@ async function submitRsvp(status) {
   renderHome();
 
   try {
-    const res = await fetch(`https://api.jsonbin.io/v3/b/${KEYS.binId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Master-Key": KEYS.writeKey,
-      },
-      body: JSON.stringify(RSVPS),
+    const { error } = await sb.from("rsvps").upsert({
+      game_date: currentRsvpDate,
+      player_nick: currentRsvpName,
+      status,
+      updated_at: new Date().toISOString(),
     });
-    if (!res.ok) throw new Error("Bin write failed: " + res.status);
+    if (error) throw error;
     toast(`Got it — you're ${status}`);
   } catch (e) {
     console.error(e);
@@ -617,17 +640,6 @@ function renderStats() {
 }
 
 load();
-
-// Poll JSONBin every 30s so cross-device updates show up
-setInterval(async () => {
-  await loadRsvps();
-  // only re-render the tabs that show RSVP info
-  renderHome();
-  renderSchedule();
-  if (document.getElementById("rsvp-modal").classList.contains("active")) {
-    renderRsvpModal();
-  }
-}, 30000);
 </script>
 </body>
 </html>
