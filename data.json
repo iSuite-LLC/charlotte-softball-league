@@ -9,7 +9,7 @@
       "L": 1
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20.",
-    "lastUpdated": "2026-05-27 9:39 AM ET"
+    "lastUpdated": "2026-05-28 Game 3 lineup posted"
   },
   "roster": [
     {
@@ -245,6 +245,90 @@
     }
   ],
   "lineups": [
+    {
+      "game": 3,
+      "date": "2026-05-28",
+      "batting_order": [
+        {
+          "order": 1,
+          "nickname": "Woah-Joe",
+          "jersey": "3",
+          "eh_only": false
+        },
+        {
+          "order": 2,
+          "nickname": "E-Train",
+          "jersey": "16",
+          "eh_only": false
+        },
+        {
+          "order": 3,
+          "nickname": "Mahhz",
+          "jersey": "5",
+          "eh_only": false
+        },
+        {
+          "order": 4,
+          "nickname": "Trash Man",
+          "jersey": "72",
+          "eh_only": false
+        },
+        {
+          "order": 5,
+          "nickname": "E-Luke",
+          "jersey": "9",
+          "eh_only": false
+        },
+        {
+          "order": 6,
+          "nickname": "C-Bass",
+          "jersey": "10",
+          "eh_only": false
+        },
+        {
+          "order": 7,
+          "nickname": "Cogs",
+          "jersey": "53",
+          "eh_only": false
+        },
+        {
+          "order": 8,
+          "nickname": "Jeremy Phillips",
+          "jersey": "00",
+          "eh_only": false
+        },
+        {
+          "order": 9,
+          "nickname": "The Rob",
+          "jersey": "17",
+          "eh_only": false
+        },
+        {
+          "order": 10,
+          "nickname": "HAM",
+          "jersey": "96",
+          "eh_only": false
+        },
+        {
+          "order": 11,
+          "nickname": "Mad Dog",
+          "jersey": "07",
+          "eh_only": true
+        }
+      ],
+      "defense": {
+        "P": "The Rob",
+        "C": "Jeremy Phillips",
+        "1B": "Cogs",
+        "2B": "E-Luke",
+        "SS": "Trash Man",
+        "3B": "C-Bass",
+        "LF": "Woah-Joe",
+        "LCF": "Mahhz",
+        "RCF": "E-Train",
+        "RF": "HAM"
+      }
+    },
     {
       "game": 1,
       "date": "2026-05-14",
