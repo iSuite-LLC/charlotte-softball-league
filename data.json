@@ -6,10 +6,10 @@
     "format": "Slow-pitch \u00b7 EH \u00b7 4-OF \u00b7 3-HR cap \u00b7 280ft \u00b7 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 1
+      "L": 2
     },
-    "_data_note": "Game 1 batting lines complete as of 2026-05-20.",
-    "lastUpdated": "2026-05-28 10:19 AM ET"
+    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending.",
+    "lastUpdated": "2026-05-29 09:00 AM ET"
   },
   "roster": [
     {
@@ -241,7 +241,23 @@
       "opponent": "RawDogs",
       "location": "Park Road Park, Field 3",
       "time": "19:30",
-      "status": "upcoming"
+      "status": "played",
+      "result": {
+        "score": "3-18",
+        "outcome": "L"
+      },
+      "attendance": [
+        "Woah-Joe",
+        "E-Train",
+        "Mahhz",
+        "Trash Man",
+        "C-Bass",
+        "Cogs",
+        "Jeremy Phillips",
+        "The Rob",
+        "HAM",
+        "Mad Dog"
+      ]
     }
   ],
   "lineups": [
@@ -275,58 +291,52 @@
         },
         {
           "order": 5,
-          "nickname": "E-Luke",
-          "jersey": "9",
-          "eh_only": false
-        },
-        {
-          "order": 6,
           "nickname": "C-Bass",
           "jersey": "10",
           "eh_only": false
         },
         {
-          "order": 7,
+          "order": 6,
           "nickname": "Cogs",
           "jersey": "53",
           "eh_only": false
         },
         {
-          "order": 8,
+          "order": 7,
           "nickname": "Jeremy Phillips",
           "jersey": "00",
           "eh_only": false
         },
         {
-          "order": 9,
+          "order": 8,
           "nickname": "The Rob",
           "jersey": "17",
           "eh_only": false
         },
         {
-          "order": 10,
+          "order": 9,
           "nickname": "HAM",
           "jersey": "96",
           "eh_only": false
         },
         {
-          "order": 11,
+          "order": 10,
           "nickname": "Mad Dog",
           "jersey": "07",
-          "eh_only": true
+          "eh_only": false
         }
       ],
       "defense": {
         "P": "The Rob",
-        "C": "Jeremy Phillips",
-        "1B": "Cogs",
-        "2B": "E-Luke",
+        "C": "Mad Dog",
+        "1B": "Jeremy Phillips",
+        "2B": "HAM",
         "SS": "Trash Man",
         "3B": "C-Bass",
         "LF": "Woah-Joe",
         "LCF": "Mahhz",
         "RCF": "E-Train",
-        "RF": "HAM"
+        "RF": "Cogs"
       }
     },
     {
