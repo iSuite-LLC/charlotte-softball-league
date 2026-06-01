@@ -9,7 +9,7 @@
       "L": 2
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending.",
-    "lastUpdated": "2026-05-29 09:00 AM ET"
+    "lastUpdated": "2026-06-01 10:00 AM ET"
   },
   "roster": [
     {
@@ -201,6 +201,14 @@
     }
   ],
   "schedule": [
+    {
+      "game": 4,
+      "date": "2026-06-04",
+      "opponent": "Goon Squad",
+      "location": "Park Road Park, Field 3",
+      "time": "18:30",
+      "status": "scheduled"
+    },
     {
       "game": 2,
       "date": "2026-05-21",
