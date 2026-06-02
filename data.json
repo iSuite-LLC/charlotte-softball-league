@@ -11,6 +11,27 @@
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending.",
     "lastUpdated": "2026-06-01 10:00 AM ET"
   },
+  "standings": {
+    "lastUpdated": "2026-06-02",
+    "teams": [
+      { "team": "Ed's Dugout Drinkers", "W": 3, "L": 0, "T": 0, "PF": 56, "PA": 16 },
+      { "team": "Kodiaks-MENS",         "W": 1, "L": 0, "T": 0, "PF": 25, "PA": 6 },
+      { "team": "Slippery Slugs",       "W": 1, "L": 0, "T": 0, "PF": 21, "PA": 4 },
+      { "team": "Back Door Sliders",    "W": 1, "L": 0, "T": 0, "PF": 18, "PA": 3 },
+      { "team": "Boone Goons",          "W": 1, "L": 0, "T": 0, "PF": 7,  "PA": 0 },
+      { "team": "Cobra Kai",            "W": 1, "L": 0, "T": 0, "PF": 20, "PA": 17 },
+      { "team": "YankDeez",             "W": 1, "L": 0, "T": 0, "PF": 9,  "PA": 7 },
+      { "team": "Dirtbags",             "W": 2, "L": 1, "T": 0, "PF": 39, "PA": 13 },
+      { "team": "RawDogs – Thur",       "W": 1, "L": 1, "T": 0, "PF": 20, "PA": 17 },
+      { "team": "Purple Cows",          "W": 1, "L": 1, "T": 0, "PF": 19, "PA": 19 },
+      { "team": "Yap City – Men",       "W": 0, "L": 1, "T": 0, "PF": 17, "PA": 20 },
+      { "team": "Thoinkees",            "W": 0, "L": 1, "T": 0, "PF": 5,  "PA": 10 },
+      { "team": "Bad News Bears",       "W": 0, "L": 1, "T": 0, "PF": 0,  "PA": 7 },
+      { "team": "Icon",                 "W": 0, "L": 2, "T": 0, "PF": 5,  "PA": 36 },
+      { "team": "Goon Squad",           "W": 0, "L": 2, "T": 0, "PF": 10, "PA": 45 },
+      { "team": "Rally Caps",           "W": 0, "L": 3, "T": 0, "PF": 12, "PA": 63 }
+    ]
+  },
   "roster": [
     {
       "name": "Brian Wojcio",

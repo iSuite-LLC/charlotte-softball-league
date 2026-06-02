@@ -167,6 +167,25 @@ function fmtTime(t) {
   return `${h12}:${String(m).padStart(2, "0")} ${period}`;
 }
 
+// Normalize a team name for fuzzy matching: lowercase, drop a trailing
+// qualifier after a dash/en-dash, strip punctuation, collapse whitespace.
+function normalizeTeamName(name) {
+  if (!name) return "";
+  let s = String(name).toLowerCase();
+  s = s.split(/\s*[–-]\s*/)[0];
+  s = s.replace(/[^a-z0-9 ]/g, " ");
+  s = s.replace(/\s+/g, " ").trim();
+  return s;
+}
+
+// Augment a stored standings row with computed GP / PD / PCT.
+function computeStandingsRow(t) {
+  const GP = t.W + t.L + t.T;
+  const PD = t.PF - t.PA;
+  const PCT = GP > 0 ? (t.W + 0.5 * t.T) / GP : 0;
+  return { ...t, GP, PD, PCT };
+}
+
 function toast(msg) {
   const el = document.getElementById("toast");
   el.textContent = msg;
@@ -228,20 +247,13 @@ function subscribeRsvps() {
 // --- Render stubs (each tab task fills these in) ---
 function renderHome() {
   const home = document.getElementById("home");
-  const { season, schedule, stats_summary } = DATA;
+  const { season, schedule } = DATA;
   const played = schedule.filter(g => g.status === "played");
-  const upcoming = schedule.filter(g => g.status === "upcoming")
+  const upcoming = schedule.filter(g => g.status === "scheduled" || g.status === "upcoming")
                             .sort((a, b) => a.date.localeCompare(b.date));
   const lastGame = played[played.length - 1];
   const nextGame = upcoming[0];
   const recordStr = `${season.record.W}–${season.record.L}`;
-
-  // Top stat leaders
-  const players = Object.entries(stats_summary || {});
-  const sortedByAVG = [...players].filter(([, s]) => s.AB >= 1)
-                                   .sort((a, b) => b[1].AVG - a[1].AVG).slice(0, 3);
-  const sortedByOPS = [...players].filter(([, s]) => s.AB >= 1)
-                                   .sort((a, b) => b[1].OPS - a[1].OPS).slice(0, 3);
 
   let html = "";
   html += `<div class="card"><h3>Season Record</h3><div class="big">${recordStr}</div></div>`;
@@ -274,19 +286,53 @@ function renderHome() {
     </div>`;
   }
 
-  if (sortedByAVG.length) {
-    html += `<div class="card"><h3>Top Avg</h3>`;
-    sortedByAVG.forEach(([nick, s]) => {
-      html += `<div class="row"><span>${nick}</span><span>${s.AVG.toFixed(3)}</span></div>`;
+  // League standings
+  const standings = DATA.standings;
+  if (standings && Array.isArray(standings.teams) && standings.teams.length) {
+    // The league standings feed lists our team as "Icon" (season.team is "Icon Mech").
+    const US_TEAM_KEY = "icon";
+    // Map normalized opponent name -> array of played-game result objects.
+    const playedByOpp = {};
+    played.forEach(g => {
+      const key = normalizeTeamName(g.opponent);
+      if (!key) return;
+      const r = g.result || {};
+      (playedByOpp[key] = playedByOpp[key] || []).push(r);
     });
-    html += `</div>`;
-  }
-  if (sortedByOPS.length) {
-    html += `<div class="card"><h3>Top OPS</h3>`;
-    sortedByOPS.forEach(([nick, s]) => {
-      html += `<div class="row"><span>${nick}</span><span>${s.OPS.toFixed(3)}</span></div>`;
+
+    const cols = ["W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
+
+    let rows = "";
+    standings.teams.forEach(raw => {
+      const t = computeStandingsRow(raw);
+      const isUs = normalizeTeamName(t.team) === US_TEAM_KEY;
+      const meetings = playedByOpp[normalizeTeamName(t.team)] || [];
+      const vsUs = meetings.map(r => {
+        const cls = r.outcome === "W" ? "win" : "loss";
+        return `${r.score || "?"} <span class="badge ${cls}">${r.outcome || "?"}</span>`;
+      }).join("<br>");
+      const trStyle = isUs ? ` style="background:rgba(123,182,230,0.25);font-weight:600;"` : "";
+      rows += `<tr${trStyle}>
+        <td>${t.team}</td>
+        <td>${vsUs}</td>
+        ${cols.map(c => {
+          const v = t[c];
+          const cell = c === "PCT" ? (v * 100).toFixed(2) + "%" : v;
+          return `<td>${cell}</td>`;
+        }).join("")}
+      </tr>`;
     });
-    html += `</div>`;
+
+    const header = ["TEAM", "OUR RESULT", "W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
+    html += `<div class="card">
+      <h3>League Standings${standings.lastUpdated ? ` · ${standings.lastUpdated}` : ""}</h3>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead><tr>${header.map(h => `<th>${h}</th>`).join("")}</tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
   }
 
   home.innerHTML = html;
