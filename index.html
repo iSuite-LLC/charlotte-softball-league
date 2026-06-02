@@ -273,6 +273,7 @@ function renderHome() {
         <span class="label">RSVPs:</span>
         ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
       </div>
+      <button class="primary" onclick="openRsvp('${nextGame.date}')" style="margin-top:12px;">RSVP</button>
     </div>`;
   }
 
@@ -389,7 +390,6 @@ function renderSchedule() {
               ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
             </div>
           </div>
-          <button class="primary" onclick="openRsvp('${g.date}')">RSVP</button>
         </div>
       </div>`;
     }
