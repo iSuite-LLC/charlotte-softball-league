@@ -267,13 +267,17 @@ function renderHome() {
     const unconfirmed = mainKeys.size - respondedMains;
     html += `<div class="card">
       <h3>Next Game</h3>
-      <div><strong>${nextGame.date}</strong> · vs. ${nextGame.opponent || "TBD"}</div>
-      <div class="label" style="margin-top:6px;">${nextGame.location || ""} · ${fmtTime(nextGame.time)}</div>
-      <div style="margin-top:10px;">
-        <span class="label">RSVPs:</span>
-        ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
+      <div class="row" style="border:0;padding:0;align-items:center;">
+        <div>
+          <div><strong>${nextGame.date}</strong> · vs. ${nextGame.opponent || "TBD"}</div>
+          <div class="label" style="margin-top:6px;">${nextGame.location || ""} · ${fmtTime(nextGame.time)}</div>
+          <div style="margin-top:10px;">
+            <span class="label">RSVPs:</span>
+            ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
+          </div>
+        </div>
+        <button class="primary" onclick="openRsvp('${nextGame.date}')">RSVP</button>
       </div>
-      <button class="primary" onclick="openRsvp('${nextGame.date}')" style="margin-top:12px;">RSVP</button>
     </div>`;
   }
 
