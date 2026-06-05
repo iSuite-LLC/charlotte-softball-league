@@ -9,27 +9,139 @@
       "L": 3
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-05; batting lines pending.",
-    "lastUpdated": "2026-06-05 10:46 AM ET"
+    "lastUpdated": "2026-06-05 3:02 PM ET"
   },
   "standings": {
     "lastUpdated": "2026-06-02",
     "teams": [
-      { "team": "Ed's Dugout Drinkers", "W": 3, "L": 0, "T": 0, "PF": 56, "PA": 16 },
-      { "team": "Kodiaks-MENS",         "W": 1, "L": 0, "T": 0, "PF": 25, "PA": 6 },
-      { "team": "Slippery Slugs",       "W": 1, "L": 0, "T": 0, "PF": 21, "PA": 4 },
-      { "team": "Back Door Sliders",    "W": 1, "L": 0, "T": 0, "PF": 18, "PA": 3 },
-      { "team": "Boone Goons",          "W": 1, "L": 0, "T": 0, "PF": 7,  "PA": 0 },
-      { "team": "Cobra Kai",            "W": 1, "L": 0, "T": 0, "PF": 20, "PA": 17 },
-      { "team": "YankDeez",             "W": 1, "L": 0, "T": 0, "PF": 9,  "PA": 7 },
-      { "team": "Dirtbags",             "W": 2, "L": 1, "T": 0, "PF": 39, "PA": 13 },
-      { "team": "RawDogs – Thur",       "W": 1, "L": 1, "T": 0, "PF": 20, "PA": 17 },
-      { "team": "Purple Cows",          "W": 1, "L": 1, "T": 0, "PF": 19, "PA": 19 },
-      { "team": "Yap City – Men",       "W": 0, "L": 1, "T": 0, "PF": 17, "PA": 20 },
-      { "team": "Thoinkees",            "W": 0, "L": 1, "T": 0, "PF": 5,  "PA": 10 },
-      { "team": "Bad News Bears",       "W": 0, "L": 1, "T": 0, "PF": 0,  "PA": 7 },
-      { "team": "Icon",                 "W": 0, "L": 2, "T": 0, "PF": 5,  "PA": 36 },
-      { "team": "Goon Squad",           "W": 0, "L": 2, "T": 0, "PF": 10, "PA": 45 },
-      { "team": "Rally Caps",           "W": 0, "L": 3, "T": 0, "PF": 12, "PA": 63 }
+      {
+        "team": "Ed's Dugout Drinkers",
+        "W": 3,
+        "L": 0,
+        "T": 0,
+        "PF": 56,
+        "PA": 16
+      },
+      {
+        "team": "Kodiaks-MENS",
+        "W": 1,
+        "L": 0,
+        "T": 0,
+        "PF": 25,
+        "PA": 6
+      },
+      {
+        "team": "Slippery Slugs",
+        "W": 1,
+        "L": 0,
+        "T": 0,
+        "PF": 21,
+        "PA": 4
+      },
+      {
+        "team": "Back Door Sliders",
+        "W": 1,
+        "L": 0,
+        "T": 0,
+        "PF": 18,
+        "PA": 3
+      },
+      {
+        "team": "Boone Goons",
+        "W": 1,
+        "L": 0,
+        "T": 0,
+        "PF": 7,
+        "PA": 0
+      },
+      {
+        "team": "Cobra Kai",
+        "W": 1,
+        "L": 0,
+        "T": 0,
+        "PF": 20,
+        "PA": 17
+      },
+      {
+        "team": "YankDeez",
+        "W": 1,
+        "L": 0,
+        "T": 0,
+        "PF": 9,
+        "PA": 7
+      },
+      {
+        "team": "Dirtbags",
+        "W": 2,
+        "L": 1,
+        "T": 0,
+        "PF": 39,
+        "PA": 13
+      },
+      {
+        "team": "RawDogs \u00e2\u20ac\u201c Thur",
+        "W": 1,
+        "L": 1,
+        "T": 0,
+        "PF": 20,
+        "PA": 17
+      },
+      {
+        "team": "Purple Cows",
+        "W": 1,
+        "L": 1,
+        "T": 0,
+        "PF": 19,
+        "PA": 19
+      },
+      {
+        "team": "Yap City \u00e2\u20ac\u201c Men",
+        "W": 0,
+        "L": 1,
+        "T": 0,
+        "PF": 17,
+        "PA": 20
+      },
+      {
+        "team": "Thoinkees",
+        "W": 0,
+        "L": 1,
+        "T": 0,
+        "PF": 5,
+        "PA": 10
+      },
+      {
+        "team": "Bad News Bears",
+        "W": 0,
+        "L": 1,
+        "T": 0,
+        "PF": 0,
+        "PA": 7
+      },
+      {
+        "team": "Icon",
+        "W": 0,
+        "L": 2,
+        "T": 0,
+        "PF": 5,
+        "PA": 36
+      },
+      {
+        "team": "Goon Squad",
+        "W": 0,
+        "L": 2,
+        "T": 0,
+        "PF": 10,
+        "PA": 45
+      },
+      {
+        "team": "Rally Caps",
+        "W": 0,
+        "L": 3,
+        "T": 0,
+        "PF": 12,
+        "PA": 63
+      }
     ]
   },
   "roster": [
@@ -311,17 +423,72 @@
       "game": 4,
       "date": "2026-06-04",
       "batting_order": [
-        { "order": 1,  "nickname": "Mad Dog",          "jersey": "07", "eh_only": false },
-        { "order": 2,  "nickname": "E-Train",          "jersey": "16", "eh_only": false },
-        { "order": 3,  "nickname": "Trash Man",        "jersey": "72", "eh_only": false },
-        { "order": 4,  "nickname": "Mahhz",            "jersey": "5",  "eh_only": false },
-        { "order": 5,  "nickname": "Jeremy Phillips",  "jersey": "00", "eh_only": false },
-        { "order": 6,  "nickname": "Woah-Joe",         "jersey": "3",  "eh_only": true  },
-        { "order": 7,  "nickname": "Cogs",             "jersey": "53", "eh_only": false },
-        { "order": 8,  "nickname": "E-Luke",           "jersey": "9",  "eh_only": false },
-        { "order": 9,  "nickname": "HAM",              "jersey": "96", "eh_only": false },
-        { "order": 10, "nickname": "The Rob",          "jersey": "17", "eh_only": false },
-        { "order": 11, "nickname": "All-Star Reserve", "jersey": "4",  "eh_only": false }
+        {
+          "order": 1,
+          "nickname": "Mad Dog",
+          "jersey": "07",
+          "eh_only": false
+        },
+        {
+          "order": 2,
+          "nickname": "E-Train",
+          "jersey": "16",
+          "eh_only": false
+        },
+        {
+          "order": 3,
+          "nickname": "Trash Man",
+          "jersey": "72",
+          "eh_only": false
+        },
+        {
+          "order": 4,
+          "nickname": "Mahhz",
+          "jersey": "5",
+          "eh_only": false
+        },
+        {
+          "order": 5,
+          "nickname": "Jeremy Phillips",
+          "jersey": "00",
+          "eh_only": false
+        },
+        {
+          "order": 6,
+          "nickname": "Woah-Joe",
+          "jersey": "3",
+          "eh_only": true
+        },
+        {
+          "order": 7,
+          "nickname": "Cogs",
+          "jersey": "53",
+          "eh_only": false
+        },
+        {
+          "order": 8,
+          "nickname": "E-Luke",
+          "jersey": "9",
+          "eh_only": false
+        },
+        {
+          "order": 9,
+          "nickname": "HAM",
+          "jersey": "96",
+          "eh_only": false
+        },
+        {
+          "order": 10,
+          "nickname": "The Rob",
+          "jersey": "17",
+          "eh_only": false
+        },
+        {
+          "order": 11,
+          "nickname": "All-Star Reserve",
+          "jersey": "4",
+          "eh_only": false
+        }
       ],
       "defense": {
         "P": "The Rob",
@@ -697,6 +864,20 @@
           "R": 0,
           "errors": 0,
           "innings": {}
+        },
+        "Mahhz": {
+          "PA": 2,
+          "AB": 2,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 1,
+          "BB": 0,
+          "K": 0,
+          "RBI": 2,
+          "R": 1,
+          "errors": 0,
+          "innings": {}
         }
       }
     },
@@ -765,22 +946,22 @@
   ],
   "stats_summary": {
     "Mahhz": {
-      "G": 1,
-      "PA": 3,
-      "AB": 3,
-      "1B": 0,
+      "G": 2,
+      "PA": 5,
+      "AB": 5,
+      "1B": 1,
       "2B": 0,
       "3B": 0,
-      "HR": 0,
+      "HR": 1,
       "BB": 0,
       "K": 0,
-      "RBI": 0,
-      "R": 0,
-      "H": 0,
-      "AVG": 0.0,
-      "OBP": 0.0,
-      "SLG": 0.0,
-      "OPS": 0.0
+      "RBI": 2,
+      "R": 1,
+      "H": 2,
+      "AVG": 0.4,
+      "OBP": 0.4,
+      "SLG": 1.0,
+      "OPS": 1.4
     },
     "E-Train": {
       "G": 2,
@@ -795,10 +976,10 @@
       "RBI": 0,
       "R": 1,
       "H": 2,
-      "AVG": 0.400,
-      "OBP": 0.500,
-      "SLG": 0.800,
-      "OPS": 1.300
+      "AVG": 0.4,
+      "OBP": 0.5,
+      "SLG": 0.8,
+      "OPS": 1.3
     },
     "Cogs": {
       "G": 3,
@@ -849,10 +1030,10 @@
       "RBI": 0,
       "R": 0,
       "H": 1,
-      "AVG": 0.250,
-      "OBP": 0.400,
-      "SLG": 0.250,
-      "OPS": 0.650
+      "AVG": 0.25,
+      "OBP": 0.4,
+      "SLG": 0.25,
+      "OPS": 0.65
     },
     "C-Bass": {
       "G": 1,
@@ -921,10 +1102,10 @@
       "RBI": 3,
       "R": 0,
       "H": 3,
-      "AVG": 0.600,
-      "OBP": 0.600,
-      "SLG": 0.600,
-      "OPS": 1.200
+      "AVG": 0.6,
+      "OBP": 0.6,
+      "SLG": 0.6,
+      "OPS": 1.2
     },
     "HAM": {
       "G": 1,
