@@ -248,7 +248,8 @@ function subscribeRsvps() {
 function renderHome() {
   const home = document.getElementById("home");
   const { season, schedule } = DATA;
-  const played = schedule.filter(g => g.status === "played");
+  const played = schedule.filter(g => g.status === "played")
+                          .sort((a, b) => a.date.localeCompare(b.date));
   const upcoming = schedule.filter(g => g.status === "scheduled" || g.status === "upcoming")
                             .sort((a, b) => a.date.localeCompare(b.date));
   const lastGame = played[played.length - 1];
