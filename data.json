@@ -9,7 +9,7 @@
       "L": 3
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-05; batting lines pending.",
-    "lastUpdated": "2026-06-05 9:00 AM ET"
+    "lastUpdated": "2026-06-05 10:46 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-06-02",
@@ -745,6 +745,20 @@
           "R": 0,
           "errors": 0,
           "innings": {}
+        },
+        "E-Train": {
+          "PA": 3,
+          "AB": 2,
+          "1B": 0,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 1,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {}
         }
       }
     }
@@ -769,22 +783,22 @@
       "OPS": 0.0
     },
     "E-Train": {
-      "G": 1,
-      "PA": 3,
-      "AB": 3,
+      "G": 2,
+      "PA": 6,
+      "AB": 5,
       "1B": 1,
       "2B": 0,
       "3B": 1,
       "HR": 0,
-      "BB": 0,
+      "BB": 1,
       "K": 0,
       "RBI": 0,
       "R": 1,
       "H": 2,
-      "AVG": 0.667,
-      "OBP": 0.667,
-      "SLG": 1.333,
-      "OPS": 2.0
+      "AVG": 0.400,
+      "OBP": 0.500,
+      "SLG": 0.800,
+      "OPS": 1.300
     },
     "Cogs": {
       "G": 3,
