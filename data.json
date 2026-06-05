@@ -6,10 +6,10 @@
     "format": "Slow-pitch \u00b7 EH \u00b7 4-OF \u00b7 3-HR cap \u00b7 280ft \u00b7 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 2
+      "L": 3
     },
-    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending.",
-    "lastUpdated": "2026-06-02 1:23 PM ET"
+    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-05; batting lines pending.",
+    "lastUpdated": "2026-06-05 9:00 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-06-02",
@@ -228,7 +228,24 @@
       "opponent": "Goon Squad",
       "location": "Park Road Park, Field 3",
       "time": "18:30",
-      "status": "scheduled"
+      "status": "played",
+      "result": {
+        "score": "5-20",
+        "outcome": "L"
+      },
+      "attendance": [
+        "E-Train",
+        "Mahhz",
+        "HAM",
+        "Cogs",
+        "Mad Dog",
+        "Trash Man",
+        "E-Luke",
+        "Jeremy Phillips",
+        "The Rob",
+        "All-Star Reserve",
+        "Woah-Joe"
+      ]
     },
     {
       "game": 2,
@@ -290,6 +307,35 @@
     }
   ],
   "lineups": [
+    {
+      "game": 4,
+      "date": "2026-06-04",
+      "batting_order": [
+        { "order": 1,  "nickname": "Mad Dog",          "jersey": "07", "eh_only": false },
+        { "order": 2,  "nickname": "E-Train",          "jersey": "16", "eh_only": false },
+        { "order": 3,  "nickname": "Trash Man",        "jersey": "72", "eh_only": false },
+        { "order": 4,  "nickname": "Mahhz",            "jersey": "5",  "eh_only": false },
+        { "order": 5,  "nickname": "Jeremy Phillips",  "jersey": "00", "eh_only": false },
+        { "order": 6,  "nickname": "Woah-Joe",         "jersey": "3",  "eh_only": true  },
+        { "order": 7,  "nickname": "Cogs",             "jersey": "53", "eh_only": false },
+        { "order": 8,  "nickname": "E-Luke",           "jersey": "9",  "eh_only": false },
+        { "order": 9,  "nickname": "HAM",              "jersey": "96", "eh_only": false },
+        { "order": 10, "nickname": "The Rob",          "jersey": "17", "eh_only": false },
+        { "order": 11, "nickname": "All-Star Reserve", "jersey": "4",  "eh_only": false }
+      ],
+      "defense": {
+        "P": "The Rob",
+        "C": "All-Star Reserve",
+        "1B": "Jeremy Phillips",
+        "2B": "E-Luke",
+        "SS": "Trash Man",
+        "3B": "Mad Dog",
+        "LF": "E-Train",
+        "LCF": "Mahhz",
+        "RCF": "HAM",
+        "RF": "Cogs"
+      }
+    },
     {
       "game": 3,
       "date": "2026-05-28",
@@ -633,6 +679,74 @@
           }
         }
       }
+    },
+    {
+      "game": 3,
+      "date": "2026-05-28",
+      "player_lines": {
+        "Cogs": {
+          "PA": 2,
+          "AB": 2,
+          "1B": 0,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {}
+        }
+      }
+    },
+    {
+      "game": 4,
+      "date": "2026-06-04",
+      "player_lines": {
+        "E-Luke": {
+          "PA": 2,
+          "AB": 2,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 2,
+          "R": 0,
+          "errors": 0,
+          "innings": {}
+        },
+        "Cogs": {
+          "PA": 2,
+          "AB": 2,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {}
+        },
+        "All-Star Reserve": {
+          "PA": 2,
+          "AB": 1,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 1,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {}
+        }
+      }
     }
   ],
   "stats_summary": {
@@ -673,10 +787,10 @@
       "OPS": 2.0
     },
     "Cogs": {
-      "G": 1,
-      "PA": 3,
-      "AB": 3,
-      "1B": 2,
+      "G": 3,
+      "PA": 7,
+      "AB": 7,
+      "1B": 4,
       "2B": 0,
       "3B": 0,
       "HR": 0,
@@ -684,11 +798,11 @@
       "K": 0,
       "RBI": 0,
       "R": 0,
-      "H": 2,
-      "AVG": 0.667,
-      "OBP": 0.667,
-      "SLG": 0.667,
-      "OPS": 1.333
+      "H": 4,
+      "AVG": 0.571,
+      "OBP": 0.571,
+      "SLG": 0.571,
+      "OPS": 1.143
     },
     "Mad Dog": {
       "G": 1,
@@ -709,22 +823,22 @@
       "OPS": 1.333
     },
     "All-Star Reserve": {
-      "G": 1,
-      "PA": 3,
-      "AB": 3,
-      "1B": 0,
+      "G": 2,
+      "PA": 5,
+      "AB": 4,
+      "1B": 1,
       "2B": 0,
       "3B": 0,
       "HR": 0,
-      "BB": 0,
+      "BB": 1,
       "K": 0,
       "RBI": 0,
       "R": 0,
-      "H": 0,
-      "AVG": 0.0,
-      "OBP": 0.0,
-      "SLG": 0.0,
-      "OPS": 0.0
+      "H": 1,
+      "AVG": 0.250,
+      "OBP": 0.400,
+      "SLG": 0.250,
+      "OPS": 0.650
     },
     "C-Bass": {
       "G": 1,
@@ -781,22 +895,22 @@
       "OPS": 1.333
     },
     "E-Luke": {
-      "G": 1,
-      "PA": 3,
-      "AB": 3,
-      "1B": 1,
+      "G": 2,
+      "PA": 5,
+      "AB": 5,
+      "1B": 3,
       "2B": 0,
       "3B": 0,
       "HR": 0,
       "BB": 0,
       "K": 0,
-      "RBI": 1,
+      "RBI": 3,
       "R": 0,
-      "H": 1,
-      "AVG": 0.333,
-      "OBP": 0.333,
-      "SLG": 0.333,
-      "OPS": 0.667
+      "H": 3,
+      "AVG": 0.600,
+      "OBP": 0.600,
+      "SLG": 0.600,
+      "OPS": 1.200
     },
     "HAM": {
       "G": 1,
