@@ -9,138 +9,138 @@
       "L": 3
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-05; batting lines pending.",
-    "lastUpdated": "2026-06-05 3:02 PM ET"
+    "lastUpdated": "2026-06-10 8:30 AM ET"
   },
   "standings": {
-    "lastUpdated": "2026-06-02",
+    "lastUpdated": "2026-06-10",
     "teams": [
       {
-        "team": "Ed's Dugout Drinkers",
-        "W": 3,
+        "team": "Slippery Slugs",
+        "W": 2,
         "L": 0,
         "T": 0,
-        "PF": 56,
-        "PA": 16
+        "PF": 34,
+        "PA": 7
       },
       {
         "team": "Kodiaks-MENS",
-        "W": 1,
+        "W": 2,
         "L": 0,
         "T": 0,
-        "PF": 25,
-        "PA": 6
+        "PF": 43,
+        "PA": 19
       },
       {
-        "team": "Slippery Slugs",
-        "W": 1,
+        "team": "Cobra Kai",
+        "W": 2,
         "L": 0,
         "T": 0,
-        "PF": 21,
-        "PA": 4
+        "PF": 40,
+        "PA": 17
       },
       {
         "team": "Back Door Sliders",
-        "W": 1,
+        "W": 2,
         "L": 0,
         "T": 0,
-        "PF": 18,
+        "PF": 25,
         "PA": 3
       },
       {
         "team": "Boone Goons",
-        "W": 1,
+        "W": 2,
         "L": 0,
         "T": 0,
-        "PF": 7,
-        "PA": 0
+        "PF": 27,
+        "PA": 5
       },
       {
-        "team": "Cobra Kai",
-        "W": 1,
-        "L": 0,
+        "team": "Dirtbags",
+        "W": 3,
+        "L": 1,
         "T": 0,
-        "PF": 20,
-        "PA": 17
+        "PF": 65,
+        "PA": 16
+      },
+      {
+        "team": "Ed's Dugout Drinkers",
+        "W": 3,
+        "L": 1,
+        "T": 0,
+        "PF": 69,
+        "PA": 34
+      },
+      {
+        "team": "Yap City - Men",
+        "W": 1,
+        "L": 1,
+        "T": 0,
+        "PF": 31,
+        "PA": 33
       },
       {
         "team": "YankDeez",
         "W": 1,
-        "L": 0,
+        "L": 1,
         "T": 0,
         "PF": 9,
-        "PA": 7
+        "PA": 14
       },
       {
-        "team": "Dirtbags",
-        "W": 2,
-        "L": 1,
-        "T": 0,
-        "PF": 39,
-        "PA": 13
-      },
-      {
-        "team": "RawDogs \u00e2\u20ac\u201c Thur",
+        "team": "RawDogs - Thur",
         "W": 1,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 20,
-        "PA": 17
+        "PF": 25,
+        "PA": 37
+      },
+      {
+        "team": "Goon Squad",
+        "W": 1,
+        "L": 2,
+        "T": 0,
+        "PF": 30,
+        "PA": 50
       },
       {
         "team": "Purple Cows",
         "W": 1,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 19,
-        "PA": 19
-      },
-      {
-        "team": "Yap City \u00e2\u20ac\u201c Men",
-        "W": 0,
-        "L": 1,
-        "T": 0,
-        "PF": 17,
-        "PA": 20
+        "PF": 22,
+        "PA": 45
       },
       {
         "team": "Thoinkees",
         "W": 0,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 5,
-        "PA": 10
+        "PF": 18,
+        "PA": 24
       },
       {
         "team": "Bad News Bears",
         "W": 0,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 0,
-        "PA": 7
+        "PF": 3,
+        "PA": 20
       },
       {
         "team": "Icon",
         "W": 0,
-        "L": 2,
-        "T": 0,
-        "PF": 5,
-        "PA": 36
-      },
-      {
-        "team": "Goon Squad",
-        "W": 0,
-        "L": 2,
+        "L": 3,
         "T": 0,
         "PF": 10,
-        "PA": 45
+        "PA": 56
       },
       {
         "team": "Rally Caps",
         "W": 0,
-        "L": 3,
+        "L": 4,
         "T": 0,
         "PF": 12,
-        "PA": 63
+        "PA": 83
       }
     ]
   },
@@ -334,6 +334,14 @@
     }
   ],
   "schedule": [
+    {
+      "game": 5,
+      "date": "2026-06-11",
+      "opponent": "Yap City",
+      "location": "Park Road Park, Field 4",
+      "time": "19:30",
+      "status": "scheduled"
+    },
     {
       "game": 4,
       "date": "2026-06-04",
