@@ -9,7 +9,7 @@
       "L": 3
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-05; batting lines pending.",
-    "lastUpdated": "2026-06-10 8:30 AM ET"
+    "lastUpdated": "2026-06-11 8:57 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-06-10",
@@ -335,48 +335,6 @@
   ],
   "schedule": [
     {
-      "game": 5,
-      "date": "2026-06-11",
-      "opponent": "Yap City",
-      "location": "Park Road Park, Field 4",
-      "time": "19:30",
-      "status": "scheduled"
-    },
-    {
-      "game": 4,
-      "date": "2026-06-04",
-      "opponent": "Goon Squad",
-      "location": "Park Road Park, Field 3",
-      "time": "18:30",
-      "status": "played",
-      "result": {
-        "score": "5-20",
-        "outcome": "L"
-      },
-      "attendance": [
-        "E-Train",
-        "Mahhz",
-        "HAM",
-        "Cogs",
-        "Mad Dog",
-        "Trash Man",
-        "E-Luke",
-        "Jeremy Phillips",
-        "The Rob",
-        "All-Star Reserve",
-        "Woah-Joe"
-      ]
-    },
-    {
-      "game": 2,
-      "date": "2026-05-21",
-      "opponent": "Kodiaks-Mens",
-      "location": "Park Road Park, Field 3",
-      "time": "20:30",
-      "status": "postponed",
-      "note": "Rained out \u2014 to be rescheduled"
-    },
-    {
       "game": 1,
       "date": "2026-05-14",
       "opponent": "Dirtbags",
@@ -402,7 +360,7 @@
       ]
     },
     {
-      "game": 3,
+      "game": 2,
       "date": "2026-05-28",
       "opponent": "RawDogs",
       "location": "Park Road Park, Field 3",
@@ -424,11 +382,69 @@
         "HAM",
         "Mad Dog"
       ]
+    },
+    {
+      "game": 3,
+      "date": "2026-06-04",
+      "opponent": "Goon Squad",
+      "location": "Park Road Park, Field 3",
+      "time": "18:30",
+      "status": "played",
+      "result": {
+        "score": "5-20",
+        "outcome": "L"
+      },
+      "attendance": [
+        "E-Train",
+        "Mahhz",
+        "HAM",
+        "Cogs",
+        "Mad Dog",
+        "Trash Man",
+        "E-Luke",
+        "Jeremy Phillips",
+        "The Rob",
+        "All-Star Reserve",
+        "Woah-Joe"
+      ]
+    },
+    {
+      "game": 4,
+      "date": "2026-06-11",
+      "opponent": "Yap City",
+      "location": "Park Road Park, Field 4",
+      "time": "19:30",
+      "status": "scheduled"
+    },
+    {
+      "game": 5,
+      "date": "2026-06-18",
+      "opponent": "Thoinkees",
+      "location": "Park Road Park, Field 3",
+      "time": "20:30",
+      "status": "scheduled"
+    },
+    {
+      "game": 6,
+      "date": "2026-06-25",
+      "opponent": "Boone Goons",
+      "location": "Park Road Park, Field 3",
+      "time": "19:30",
+      "status": "scheduled"
+    },
+    {
+      "game": 7,
+      "date": "2026-07-09",
+      "opponent": "Kodiaks",
+      "location": "Renaissance Park, SB 1",
+      "time": "21:30",
+      "status": "scheduled",
+      "note": "Makeup for 5/21 rainout"
     }
   ],
   "lineups": [
     {
-      "game": 4,
+      "game": 3,
       "date": "2026-06-04",
       "batting_order": [
         {
@@ -512,7 +528,7 @@
       }
     },
     {
-      "game": 3,
+      "game": 2,
       "date": "2026-05-28",
       "batting_order": [
         {
@@ -856,7 +872,7 @@
       }
     },
     {
-      "game": 3,
+      "game": 2,
       "date": "2026-05-28",
       "player_lines": {
         "Cogs": {
@@ -890,7 +906,7 @@
       }
     },
     {
-      "game": 4,
+      "game": 3,
       "date": "2026-06-04",
       "player_lines": {
         "E-Luke": {
