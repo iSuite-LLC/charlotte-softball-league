@@ -167,6 +167,22 @@ function fmtTime(t) {
   return `${h12}:${String(m).padStart(2, "0")} ${period}`;
 }
 
+// Format a "YYYY-MM-DD" string as "June 11th, 2026". Parsed manually (not via
+// Date) so it never shifts across time zones. Empty/invalid input passes through.
+function fmtDate(d) {
+  if (!d) return "";
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d);
+  if (!m) return d;
+  const months = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December"];
+  const year = m[1], month = months[Number(m[2]) - 1], day = Number(m[3]);
+  if (!month) return d;
+  const ones = day % 10, tens = day % 100;
+  const suffix = (tens >= 11 && tens <= 13) ? "th"
+               : ones === 1 ? "st" : ones === 2 ? "nd" : ones === 3 ? "rd" : "th";
+  return `${month} ${day}${suffix}, ${year}`;
+}
+
 // Normalize a team name for fuzzy matching: lowercase, drop a trailing
 // qualifier after a dash/en-dash, strip punctuation, collapse whitespace.
 function normalizeTeamName(name) {
@@ -270,7 +286,7 @@ function renderHome() {
       <h3>Next Game</h3>
       <div class="row" style="border:0;padding:0;align-items:center;">
         <div>
-          <div><strong>${nextGame.date}</strong> · vs. ${nextGame.opponent || "TBD"}</div>
+          <div><strong>${fmtDate(nextGame.date)}</strong> · vs. ${nextGame.opponent || "TBD"}</div>
           <div class="label" style="margin-top:6px;">${nextGame.location || ""} · ${fmtTime(nextGame.time)}</div>
           <div style="margin-top:10px;">
             <span class="label">RSVPs:</span>
@@ -287,7 +303,7 @@ function renderHome() {
     const badgeCls = r.outcome === "W" ? "win" : "loss";
     html += `<div class="card">
       <h3>Last Game</h3>
-      <div><strong>${lastGame.date}</strong> vs. ${lastGame.opponent || "TBD"}</div>
+      <div><strong>${fmtDate(lastGame.date)}</strong> vs. ${lastGame.opponent || "TBD"}</div>
       <div style="margin-top:6px;">${r.score || "?"} <span class="badge ${badgeCls}">${r.outcome || "?"}</span></div>
     </div>`;
   }
@@ -331,7 +347,7 @@ function renderHome() {
 
     const header = ["TEAM", "RESULT", "W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
     html += `<div class="card">
-      <h3>League Standings${standings.lastUpdated ? ` · ${standings.lastUpdated}` : ""}</h3>
+      <h3>League Standings${standings.lastUpdated ? ` · ${fmtDate(standings.lastUpdated)}` : ""}</h3>
       <div style="overflow-x:auto;">
         <table>
           <thead><tr>${header.map(h => `<th>${h}</th>`).join("")}</tr></thead>
@@ -357,7 +373,7 @@ function renderSchedule() {
       html += `<div class="card">
         <div class="row" style="border:0;padding:0;">
           <div>
-            <div class="label">Game ${g.game} · ${g.date}</div>
+            <div class="label">Game ${g.game} · ${fmtDate(g.date)}</div>
             <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
           </div>
           <div style="text-align:right;">
@@ -370,7 +386,7 @@ function renderSchedule() {
       html += `<div class="card">
         <div class="row" style="border:0;padding:0;align-items:flex-start;">
           <div>
-            <div class="label">Game ${g.game} · ${g.date}</div>
+            <div class="label">Game ${g.game} · ${fmtDate(g.date)}</div>
             <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
             <div class="label" style="margin-top:4px;text-decoration:line-through;">${g.location || ""} · ${fmtTime(g.time)}</div>
             ${g.note ? `<div class="label" style="margin-top:6px;font-style:italic;">${g.note}</div>` : ""}
@@ -388,7 +404,7 @@ function renderSchedule() {
       html += `<div class="card">
         <div class="row" style="border:0;padding:0;align-items:flex-start;">
           <div>
-            <div class="label">Game ${g.game} · ${g.date}</div>
+            <div class="label">Game ${g.game} · ${fmtDate(g.date)}</div>
             <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
             <div class="label" style="margin-top:4px;">${g.location || ""} · ${fmtTime(g.time)}</div>
             <div style="margin-top:8px;font-size:13px;">
@@ -432,7 +448,7 @@ function renderRsvpModal() {
 
   let html = `<div style="display:flex;justify-content:space-between;align-items:start;">
     <div>
-      <h2>${date} · vs. ${game.opponent || "TBD"}</h2>
+      <h2>${fmtDate(date)} · vs. ${game.opponent || "TBD"}</h2>
       <div class="label">${game.location || ""} · ${fmtTime(game.time)}</div>
     </div>
     <button class="secondary" onclick="closeRsvp()" style="padding:6px 12px;">Close</button>
@@ -522,12 +538,12 @@ function renderLineup() {
          style="text-decoration:none;display:inline-block;">Print PDF</a>
     </div>
     <div class="label" style="margin:4px 0 16px 0;">
-      ${lineup.date} · vs. ${sched.opponent || "TBD"} · ${sched.location || ""} · ${fmtTime(sched.time)}
+      ${fmtDate(lineup.date)} · vs. ${sched.opponent || "TBD"} · ${sched.location || ""} · ${fmtTime(sched.time)}
     </div>`;
 
     if (lineups.length > 1) {
       html += `<select id="lineup-picker" style="margin-bottom:14px;padding:6px;">
-        ${lineups.map(l => `<option value="${l.date}" ${l.date === lineup.date ? "selected" : ""}>${l.date} — Game ${l.game}</option>`).join("")}
+        ${lineups.map(l => `<option value="${l.date}" ${l.date === lineup.date ? "selected" : ""}>${fmtDate(l.date)} — Game ${l.game}</option>`).join("")}
       </select>`;
     }
 
