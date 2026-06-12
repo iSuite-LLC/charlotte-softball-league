@@ -6,10 +6,10 @@
     "format": "Slow-pitch \u00b7 EH \u00b7 4-OF \u00b7 3-HR cap \u00b7 280ft \u00b7 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 3
+      "L": 4
     },
-    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-05; batting lines pending.",
-    "lastUpdated": "2026-06-11 8:57 AM ET"
+    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending.",
+    "lastUpdated": "2026-06-12 9:15 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-06-10",
@@ -414,7 +414,11 @@
       "opponent": "Yap City",
       "location": "Park Road Park, Field 4",
       "time": "19:30",
-      "status": "scheduled"
+      "status": "played",
+      "result": {
+        "score": "2-17",
+        "outcome": "L"
+      }
     },
     {
       "game": 5,
