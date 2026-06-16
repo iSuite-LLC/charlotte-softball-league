@@ -9,138 +9,138 @@
       "L": 4
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending.",
-    "lastUpdated": "2026-06-12 9:15 AM ET"
+    "lastUpdated": "2026-06-16 10:39 AM ET"
   },
   "standings": {
-    "lastUpdated": "2026-06-10",
+    "lastUpdated": "2026-06-16",
     "teams": [
       {
-        "team": "Slippery Slugs",
-        "W": 2,
-        "L": 0,
-        "T": 0,
-        "PF": 34,
-        "PA": 7
-      },
-      {
         "team": "Kodiaks-MENS",
-        "W": 2,
+        "W": 3,
         "L": 0,
         "T": 0,
-        "PF": 43,
-        "PA": 19
+        "PF": 69,
+        "PA": 22
       },
       {
-        "team": "Cobra Kai",
-        "W": 2,
+        "team": "Slippery Slugs",
+        "W": 3,
         "L": 0,
         "T": 0,
-        "PF": 40,
-        "PA": 17
+        "PF": 58,
+        "PA": 15
       },
       {
         "team": "Back Door Sliders",
-        "W": 2,
+        "W": 3,
         "L": 0,
         "T": 0,
-        "PF": 25,
-        "PA": 3
+        "PF": 43,
+        "PA": 4
+      },
+      {
+        "team": "Cobra Kai",
+        "W": 3,
+        "L": 0,
+        "T": 0,
+        "PF": 59,
+        "PA": 21
       },
       {
         "team": "Boone Goons",
-        "W": 2,
+        "W": 3,
         "L": 0,
         "T": 0,
-        "PF": 27,
-        "PA": 5
+        "PF": 46,
+        "PA": 17
+      },
+      {
+        "team": "Yap City - Men",
+        "W": 2,
+        "L": 1,
+        "T": 0,
+        "PF": 49,
+        "PA": 35
       },
       {
         "team": "Dirtbags",
         "W": 3,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 65,
-        "PA": 16
+        "PF": 69,
+        "PA": 35
       },
       {
         "team": "Ed's Dugout Drinkers",
         "W": 3,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 69,
-        "PA": 34
+        "PF": 81,
+        "PA": 53
       },
       {
-        "team": "Yap City - Men",
+        "team": "Thoinkees",
         "W": 1,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 31,
-        "PA": 33
+        "PF": 33,
+        "PA": 30
+      },
+      {
+        "team": "Bad News Bears",
+        "W": 1,
+        "L": 2,
+        "T": 0,
+        "PF": 24,
+        "PA": 26
       },
       {
         "team": "YankDeez",
         "W": 1,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 9,
-        "PA": 14
+        "PF": 12,
+        "PA": 40
       },
       {
         "team": "RawDogs - Thur",
         "W": 1,
-        "L": 2,
+        "L": 3,
         "T": 0,
-        "PF": 25,
-        "PA": 37
-      },
-      {
-        "team": "Goon Squad",
-        "W": 1,
-        "L": 2,
-        "T": 0,
-        "PF": 30,
-        "PA": 50
+        "PF": 26,
+        "PA": 55
       },
       {
         "team": "Purple Cows",
         "W": 1,
-        "L": 2,
+        "L": 3,
         "T": 0,
-        "PF": 22,
-        "PA": 45
+        "PF": 28,
+        "PA": 60
       },
       {
-        "team": "Thoinkees",
-        "W": 0,
-        "L": 2,
+        "team": "Goon Squad",
+        "W": 1,
+        "L": 3,
         "T": 0,
-        "PF": 18,
-        "PA": 24
-      },
-      {
-        "team": "Bad News Bears",
-        "W": 0,
-        "L": 2,
-        "T": 0,
-        "PF": 3,
-        "PA": 20
+        "PF": 36,
+        "PA": 71
       },
       {
         "team": "Icon",
         "W": 0,
-        "L": 3,
+        "L": 4,
         "T": 0,
-        "PF": 10,
-        "PA": 56
+        "PF": 12,
+        "PA": 74
       },
       {
         "team": "Rally Caps",
         "W": 0,
-        "L": 4,
+        "L": 5,
         "T": 0,
-        "PF": 12,
-        "PA": 83
+        "PF": 20,
+        "PA": 107
       }
     ]
   },
@@ -416,7 +416,7 @@
       "time": "19:30",
       "status": "played",
       "result": {
-        "score": "2-17",
+        "score": "2-18",
         "outcome": "L"
       }
     },
