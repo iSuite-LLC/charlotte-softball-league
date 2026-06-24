@@ -9,11 +9,19 @@
       "L": 4
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending.",
-    "lastUpdated": "2026-06-24 12:05 PM ET"
+    "lastUpdated": "2026-06-24 12:35 PM ET"
   },
   "standings": {
-    "lastUpdated": "2026-06-16",
+    "lastUpdated": "2026-06-24",
     "teams": [
+      {
+        "team": "Back Door Sliders",
+        "W": 4,
+        "L": 0,
+        "T": 0,
+        "PF": 59,
+        "PA": 5
+      },
       {
         "team": "Kodiaks-MENS",
         "W": 3,
@@ -29,14 +37,6 @@
         "T": 0,
         "PF": 58,
         "PA": 15
-      },
-      {
-        "team": "Back Door Sliders",
-        "W": 3,
-        "L": 0,
-        "T": 0,
-        "PF": 43,
-        "PA": 4
       },
       {
         "team": "Cobra Kai",
@@ -55,12 +55,12 @@
         "PA": 17
       },
       {
-        "team": "Yap City - Men",
-        "W": 2,
-        "L": 1,
+        "team": "Ed's Dugout Drinkers",
+        "W": 4,
+        "L": 2,
         "T": 0,
-        "PF": 49,
-        "PA": 35
+        "PF": 99,
+        "PA": 67
       },
       {
         "team": "Dirtbags",
@@ -71,12 +71,28 @@
         "PA": 35
       },
       {
-        "team": "Ed's Dugout Drinkers",
-        "W": 3,
+        "team": "Yap City - Men",
+        "W": 2,
         "L": 2,
         "T": 0,
-        "PF": 81,
+        "PF": 63,
         "PA": 53
+      },
+      {
+        "team": "YankDeez",
+        "W": 2,
+        "L": 2,
+        "T": 0,
+        "PF": 19,
+        "PA": 40
+      },
+      {
+        "team": "Purple Cows",
+        "W": 2,
+        "L": 3,
+        "T": 0,
+        "PF": 35,
+        "PA": 60
       },
       {
         "team": "Thoinkees",
@@ -95,36 +111,20 @@
         "PA": 26
       },
       {
-        "team": "YankDeez",
-        "W": 1,
-        "L": 2,
-        "T": 0,
-        "PF": 12,
-        "PA": 40
-      },
-      {
         "team": "RawDogs - Thur",
         "W": 1,
-        "L": 3,
+        "L": 4,
         "T": 0,
         "PF": 26,
-        "PA": 55
-      },
-      {
-        "team": "Purple Cows",
-        "W": 1,
-        "L": 3,
-        "T": 0,
-        "PF": 28,
-        "PA": 60
+        "PA": 62
       },
       {
         "team": "Goon Squad",
         "W": 1,
-        "L": 3,
+        "L": 4,
         "T": 0,
         "PF": 36,
-        "PA": 71
+        "PA": 78
       },
       {
         "team": "Icon",
@@ -137,10 +137,10 @@
       {
         "team": "Rally Caps",
         "W": 0,
-        "L": 5,
+        "L": 6,
         "T": 0,
-        "PF": 20,
-        "PA": 107
+        "PF": 21,
+        "PA": 123
       }
     ]
   },
