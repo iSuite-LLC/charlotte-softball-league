@@ -6,10 +6,10 @@
     "format": "Slow-pitch \u00b7 EH \u00b7 4-OF \u00b7 3-HR cap \u00b7 280ft \u00b7 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 4
+      "L": 5
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending.",
-    "lastUpdated": "2026-06-24 11:16 AM ET"
+    "lastUpdated": "2026-06-26 8:11 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-06-24",
@@ -426,7 +426,11 @@
       "opponent": "Boone Goons",
       "location": "Park Road Park, Field 3",
       "time": "19:30",
-      "status": "scheduled"
+      "status": "played",
+      "result": {
+        "score": "8-19",
+        "outcome": "L"
+      }
     },
     {
       "game": 6,
@@ -970,6 +974,26 @@
           "innings": {}
         }
       }
+    },
+    {
+      "game": 5,
+      "date": "2026-06-25",
+      "player_lines": {
+        "All-Star Reserve": {
+          "PA": 3,
+          "AB": 3,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 1,
+          "RBI": 0,
+          "R": 0,
+          "errors": 0,
+          "innings": {}
+        }
+      }
     }
   ],
   "stats_summary": {
@@ -1046,22 +1070,22 @@
       "OPS": 1.333
     },
     "All-Star Reserve": {
-      "G": 2,
-      "PA": 5,
-      "AB": 4,
-      "1B": 1,
+      "G": 3,
+      "PA": 8,
+      "AB": 7,
+      "1B": 2,
       "2B": 0,
       "3B": 0,
       "HR": 0,
       "BB": 1,
-      "K": 0,
+      "K": 1,
       "RBI": 0,
       "R": 0,
-      "H": 1,
-      "AVG": 0.25,
-      "OBP": 0.4,
-      "SLG": 0.25,
-      "OPS": 0.65
+      "H": 2,
+      "AVG": 0.286,
+      "OBP": 0.375,
+      "SLG": 0.286,
+      "OPS": 0.661
     },
     "C-Bass": {
       "G": 1,
