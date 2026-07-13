@@ -3,56 +3,48 @@
     "year": 2026,
     "league": "IMI",
     "team": "Icon Mech",
-    "format": "Slow-pitch · EH · 4-OF · 3-HR cap · 280ft · 7 inn / 1 hr",
+    "format": "Slow-pitch Â· EH Â· 4-OF Â· 3-HR cap Â· 280ft Â· 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 5
+      "L": 6
     },
-    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending.",
-    "lastUpdated": "2026-06-29 10:59 AM ET"
+    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending.",
+    "lastUpdated": "2026-07-13 10:59 AM ET"
   },
   "standings": {
-    "lastUpdated": "2026-06-29",
+    "lastUpdated": "2026-07-13",
     "teams": [
       {
-        "team": "Back Door Sliders",
+        "team": "Boone Goons",
         "W": 5,
         "L": 0,
         "T": 0,
-        "PF": 77,
-        "PA": 13
-      },
-      {
-        "team": "Cobra Kai",
-        "W": 4,
-        "L": 0,
-        "T": 0,
-        "PF": 77,
-        "PA": 29
-      },
-      {
-        "team": "Boone Goons",
-        "W": 4,
-        "L": 0,
-        "T": 0,
-        "PF": 65,
-        "PA": 25
-      },
-      {
-        "team": "Kodiaks-MENS",
-        "W": 3,
-        "L": 1,
-        "T": 0,
-        "PF": 75,
+        "PF": 82,
         "PA": 32
       },
       {
-        "team": "Slippery Slugs",
-        "W": 3,
+        "team": "Cobra Kai",
+        "W": 5,
+        "L": 0,
+        "T": 0,
+        "PF": 90,
+        "PA": 41
+      },
+      {
+        "team": "Back Door Sliders",
+        "W": 5,
         "L": 1,
         "T": 0,
-        "PF": 66,
-        "PA": 33
+        "PF": 85,
+        "PA": 23
+      },
+      {
+        "team": "Kodiaks-MENS",
+        "W": 4,
+        "L": 1,
+        "T": 0,
+        "PF": 98,
+        "PA": 34
       },
       {
         "team": "Ed's Dugout Drinkers",
@@ -63,12 +55,28 @@
         "PA": 75
       },
       {
-        "team": "Yap City - Men",
+        "team": "Yap City â€“ Men",
+        "W": 4,
+        "L": 2,
+        "T": 0,
+        "PF": 90,
+        "PA": 63
+      },
+      {
+        "team": "Slippery Slugs",
         "W": 3,
         "L": 2,
         "T": 0,
-        "PF": 80,
-        "PA": 55
+        "PF": 78,
+        "PA": 46
+      },
+      {
+        "team": "Bad News Bears",
+        "W": 3,
+        "L": 2,
+        "T": 0,
+        "PF": 51,
+        "PA": 40
       },
       {
         "team": "Dirtbags",
@@ -81,50 +89,42 @@
       {
         "team": "Thoinkees",
         "W": 2,
-        "L": 2,
-        "T": 0,
-        "PF": 40,
-        "PA": 30
-      },
-      {
-        "team": "Bad News Bears",
-        "W": 2,
-        "L": 2,
-        "T": 0,
-        "PF": 34,
-        "PA": 32
-      },
-      {
-        "team": "YankDeez",
-        "W": 2,
         "L": 3,
         "T": 0,
-        "PF": 25,
+        "PF": 47,
         "PA": 47
       },
       {
-        "team": "Purple Cows",
+        "team": "Goon Squad",
         "W": 2,
         "L": 4,
         "T": 0,
-        "PF": 37,
-        "PA": 77
+        "PF": 59,
+        "PA": 92
       },
       {
-        "team": "RawDogs - Thur",
+        "team": "RawDogs â€“ Thur",
         "W": 1,
-        "L": 5,
+        "L": 4,
         "T": 0,
         "PF": 26,
-        "PA": 69
+        "PA": 62
       },
       {
-        "team": "Goon Squad",
+        "team": "YankDeez",
+        "W": 1,
+        "L": 4,
+        "T": 0,
+        "PF": 26,
+        "PA": 64
+      },
+      {
+        "team": "Purple Cows",
         "W": 1,
         "L": 5,
         "T": 0,
-        "PF": 44,
-        "PA": 96
+        "PF": 33,
+        "PA": 92
       },
       {
         "team": "Rally Caps",
@@ -137,10 +137,10 @@
       {
         "team": "Icon",
         "W": 0,
-        "L": 5,
+        "L": 6,
         "T": 0,
-        "PF": 20,
-        "PA": 93
+        "PF": 22,
+        "PA": 116
       }
     ]
   },
@@ -438,8 +438,12 @@
       "opponent": "Kodiaks",
       "location": "Renaissance Park, SB 1",
       "time": "21:30",
-      "status": "scheduled",
-      "note": "Makeup for 5/21 rainout"
+      "status": "played",
+      "note": "Makeup for 5/21 rainout",
+      "result": {
+        "score": "2-23",
+        "outcome": "L"
+      }
     },
     {
       "game": 7,
