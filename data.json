@@ -9,26 +9,26 @@
       "L": 6
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending.",
-    "lastUpdated": "2026-07-13 10:59 AM ET"
+    "lastUpdated": "2026-07-27 10:26 AM ET"
   },
   "standings": {
-    "lastUpdated": "2026-07-13",
+    "lastUpdated": "2026-07-27",
     "teams": [
       {
         "team": "Boone Goons",
-        "W": 5,
+        "W": 6,
         "L": 0,
         "T": 0,
-        "PF": 82,
-        "PA": 32
+        "PF": 99,
+        "PA": 44
       },
       {
-        "team": "Cobra Kai",
+        "team": "Kodiaks-MENS",
         "W": 5,
-        "L": 0,
+        "L": 1,
         "T": 0,
-        "PF": 90,
-        "PA": 41
+        "PF": 114,
+        "PA": 46
       },
       {
         "team": "Back Door Sliders",
@@ -39,12 +39,12 @@
         "PA": 23
       },
       {
-        "team": "Kodiaks-MENS",
-        "W": 4,
+        "team": "Cobra Kai",
+        "W": 5,
         "L": 1,
         "T": 0,
-        "PF": 98,
-        "PA": 34
+        "PF": 102,
+        "PA": 58
       },
       {
         "team": "Ed's Dugout Drinkers",
@@ -63,20 +63,20 @@
         "PA": 63
       },
       {
-        "team": "Slippery Slugs",
-        "W": 3,
-        "L": 2,
-        "T": 0,
-        "PF": 78,
-        "PA": 46
-      },
-      {
         "team": "Bad News Bears",
         "W": 3,
         "L": 2,
         "T": 0,
         "PF": 51,
         "PA": 40
+      },
+      {
+        "team": "Slippery Slugs",
+        "W": 3,
+        "L": 3,
+        "T": 0,
+        "PF": 90,
+        "PA": 62
       },
       {
         "team": "Dirtbags",
