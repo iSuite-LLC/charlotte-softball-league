@@ -12,3 +12,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+.deploy_key
+.deploy_key.pub
+.known_hosts
