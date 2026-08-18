@@ -110,7 +110,7 @@
   </div>
   <div>
     <h1>Icon Mech · Charlotte</h1>
-    <div class="subtitle">Softball 2026 Season</div>
+    <div class="subtitle" id="season-label">Softball 2026 Season</div>
   </div>
   <div class="header-right">
     <div class="last-updated-label">Updated</div>
@@ -218,11 +218,35 @@ async function load() {
   subscribeRsvps();
   const lu = DATA.season && DATA.season.lastUpdated;
   if (lu) document.getElementById("last-updated").textContent = lu;
+  const label = DATA.season && DATA.season.label;
+  if (label) document.getElementById("season-label").textContent = `Softball · ${label}`;
   renderHome();
   renderSchedule();
   renderLineup();
   renderRoster();
   renderStats();
+  openRsvpFromUrl();
+}
+
+// Support shareable RSVP links: "?rsvp=next" opens the next scheduled game,
+// "?rsvp=2026-08-20" opens that specific date. Anything else is ignored.
+function openRsvpFromUrl() {
+  const want = new URLSearchParams(location.search).get("rsvp");
+  if (!want) return;
+  let date = null;
+  if (want === "next" || want === "1") {
+    date = nextScheduledGame()?.date || null;
+  } else if (/^\d{4}-\d{2}-\d{2}$/.test(want)) {
+    date = DATA.schedule.some(g => g.date === want) ? want : null;
+  }
+  if (date) openRsvp(date);
+}
+
+// The soonest game still awaiting results, by date.
+function nextScheduledGame() {
+  return [...DATA.schedule]
+    .filter(g => g.status === "scheduled" || g.status === "upcoming")
+    .sort((a, b) => a.date.localeCompare(b.date))[0] || null;
 }
 
 async function loadRsvps() {
@@ -411,6 +435,7 @@ function renderSchedule() {
               ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
             </div>
           </div>
+          <button class="primary" onclick="openRsvp('${g.date}')">RSVP</button>
         </div>
       </div>`;
     }
@@ -665,7 +690,14 @@ function renderStats() {
   const leaders = (key) => [...rows].sort((a, b) => b[key] - a[key]).slice(0, 3);
   const fmt = (n, d = 3) => Number(n).toFixed(d);
 
+  // Until the current season has a logged game, the stats below are carryover
+  // from the previous season kept in DATA.archive.
+  const playedThisSeason = DATA.schedule.some(g => g.status === "played");
+  const prior = (DATA.archive || [])[0];
   let html = `<h2 style="margin-top:0;">Stats</h2>`;
+  if (!playedThisSeason && prior && prior.label) {
+    html += `<p class="label" style="margin-top:-6px;">Showing ${prior.label} totals (${prior.record.W}–${prior.record.L}) — ${DATA.season.label || "the new season"} stats begin after Game 1.</p>`;
+  }
   ["AVG", "OBP", "SLG", "OPS"].forEach(key => {
     html += `<div class="card"><h3>Top ${key}</h3>`;
     leaders(key).forEach(r => {

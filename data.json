@@ -1,148 +1,20 @@
 {
   "season": {
     "year": 2026,
+    "label": "Fall 2026",
     "league": "IMI",
     "team": "Icon Mech",
-    "format": "Slow-pitch \u00b7 EH \u00b7 4-OF \u00b7 3-HR cap \u00b7 280ft \u00b7 7 inn / 1 hr",
+    "format": "Slow-pitch · EH · 4-OF · 3-HR cap · 280ft · 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 7
+      "L": 0
     },
-    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending.",
-    "lastUpdated": "2026-07-31 8:13 AM ET"
+    "_data_note": "Fall 2026 season opens 2026-08-20 vs YankDeez. Stats tab still shows Spring 2026 carryover numbers until the first Fall game is logged.",
+    "lastUpdated": "2026-08-18 10:00 AM ET"
   },
   "standings": {
-    "lastUpdated": "2026-07-27",
-    "teams": [
-      {
-        "team": "Boone Goons",
-        "W": 6,
-        "L": 0,
-        "T": 0,
-        "PF": 99,
-        "PA": 44
-      },
-      {
-        "team": "Kodiaks-MENS",
-        "W": 5,
-        "L": 1,
-        "T": 0,
-        "PF": 114,
-        "PA": 46
-      },
-      {
-        "team": "Back Door Sliders",
-        "W": 5,
-        "L": 1,
-        "T": 0,
-        "PF": 85,
-        "PA": 23
-      },
-      {
-        "team": "Cobra Kai",
-        "W": 5,
-        "L": 1,
-        "T": 0,
-        "PF": 102,
-        "PA": 58
-      },
-      {
-        "team": "Ed's Dugout Drinkers",
-        "W": 5,
-        "L": 2,
-        "T": 0,
-        "PF": 116,
-        "PA": 75
-      },
-      {
-        "team": "Yap City \u2013 Men",
-        "W": 4,
-        "L": 2,
-        "T": 0,
-        "PF": 90,
-        "PA": 63
-      },
-      {
-        "team": "Bad News Bears",
-        "W": 3,
-        "L": 2,
-        "T": 0,
-        "PF": 51,
-        "PA": 40
-      },
-      {
-        "team": "Slippery Slugs",
-        "W": 3,
-        "L": 3,
-        "T": 0,
-        "PF": 90,
-        "PA": 62
-      },
-      {
-        "team": "Dirtbags",
-        "W": 3,
-        "L": 3,
-        "T": 0,
-        "PF": 77,
-        "PA": 52
-      },
-      {
-        "team": "Thoinkees",
-        "W": 2,
-        "L": 3,
-        "T": 0,
-        "PF": 47,
-        "PA": 47
-      },
-      {
-        "team": "Goon Squad",
-        "W": 2,
-        "L": 4,
-        "T": 0,
-        "PF": 59,
-        "PA": 92
-      },
-      {
-        "team": "RawDogs \u2013 Thur",
-        "W": 1,
-        "L": 4,
-        "T": 0,
-        "PF": 26,
-        "PA": 62
-      },
-      {
-        "team": "YankDeez",
-        "W": 1,
-        "L": 4,
-        "T": 0,
-        "PF": 26,
-        "PA": 64
-      },
-      {
-        "team": "Purple Cows",
-        "W": 1,
-        "L": 5,
-        "T": 0,
-        "PF": 33,
-        "PA": 92
-      },
-      {
-        "team": "Rally Caps",
-        "W": 1,
-        "L": 6,
-        "T": 0,
-        "PF": 28,
-        "PA": 129
-      },
-      {
-        "team": "Icon",
-        "W": 0,
-        "L": 6,
-        "T": 0,
-        "PF": 22,
-        "PA": 116
-      }
-    ]
+    "lastUpdated": null,
+    "teams": []
   },
   "roster": [
     {
@@ -336,126 +208,11 @@
   "schedule": [
     {
       "game": 1,
-      "date": "2026-05-14",
-      "opponent": "Dirtbags",
-      "location": "Park Road Park, Field 3",
-      "time": "21:30",
-      "status": "played",
-      "result": {
-        "score": "2-18",
-        "outcome": "L"
-      },
-      "attendance": [
-        "Woah-Joe",
-        "Mad Dog",
-        "Pedersen",
-        "E-Luke",
-        "Trash Man",
-        "C-Bass",
-        "HAM",
-        "E-Train",
-        "Mahhz",
-        "Cogs",
-        "All-Star Reserve"
-      ]
-    },
-    {
-      "game": 2,
-      "date": "2026-05-28",
-      "opponent": "RawDogs",
-      "location": "Park Road Park, Field 3",
-      "time": "19:30",
-      "status": "played",
-      "result": {
-        "score": "3-18",
-        "outcome": "L"
-      },
-      "attendance": [
-        "Woah-Joe",
-        "E-Train",
-        "Mahhz",
-        "Trash Man",
-        "C-Bass",
-        "Cogs",
-        "Jeremy Phillips",
-        "The Rob",
-        "HAM",
-        "Mad Dog"
-      ]
-    },
-    {
-      "game": 3,
-      "date": "2026-06-04",
-      "opponent": "Goon Squad",
+      "date": "2026-08-20",
+      "opponent": "YankDeez",
       "location": "Park Road Park, Field 3",
       "time": "18:30",
-      "status": "played",
-      "result": {
-        "score": "5-20",
-        "outcome": "L"
-      },
-      "attendance": [
-        "E-Train",
-        "Mahhz",
-        "HAM",
-        "Cogs",
-        "Mad Dog",
-        "Trash Man",
-        "E-Luke",
-        "Jeremy Phillips",
-        "The Rob",
-        "All-Star Reserve",
-        "Woah-Joe"
-      ]
-    },
-    {
-      "game": 4,
-      "date": "2026-06-11",
-      "opponent": "Yap City",
-      "location": "Park Road Park, Field 4",
-      "time": "19:30",
-      "status": "played",
-      "result": {
-        "score": "2-18",
-        "outcome": "L"
-      }
-    },
-    {
-      "game": 5,
-      "date": "2026-06-25",
-      "opponent": "Boone Goons",
-      "location": "Park Road Park, Field 3",
-      "time": "19:30",
-      "status": "played",
-      "result": {
-        "score": "8-19",
-        "outcome": "L"
-      }
-    },
-    {
-      "game": 6,
-      "date": "2026-07-09",
-      "opponent": "Kodiaks",
-      "location": "Renaissance Park, SB 1",
-      "time": "21:30",
-      "status": "played",
-      "note": "Makeup for 5/21 rainout",
-      "result": {
-        "score": "2-23",
-        "outcome": "L"
-      }
-    },
-    {
-      "game": 7,
-      "date": "2026-07-30",
-      "opponent": "Thoinkees",
-      "location": "Renaissance Park, SB 1",
-      "time": "18:30",
-      "status": "played",
-      "result": {
-        "score": "0-12",
-        "outcome": "L"
-      }
+      "status": "scheduled"
     }
   ],
   "lineups": [
@@ -1229,5 +986,276 @@
       "Tripped to 1B": 1
     }
   },
-  "notes": {}
+  "notes": {},
+  "archive": [
+    {
+      "label": "Spring 2026",
+      "year": 2026,
+      "league": "IMI",
+      "team": "Icon Mech",
+      "record": {
+        "W": 0,
+        "L": 7
+      },
+      "final_standings": {
+        "lastUpdated": "2026-07-27",
+        "teams": [
+          {
+            "team": "Boone Goons",
+            "W": 6,
+            "L": 0,
+            "T": 0,
+            "PF": 99,
+            "PA": 44
+          },
+          {
+            "team": "Kodiaks-MENS",
+            "W": 5,
+            "L": 1,
+            "T": 0,
+            "PF": 114,
+            "PA": 46
+          },
+          {
+            "team": "Back Door Sliders",
+            "W": 5,
+            "L": 1,
+            "T": 0,
+            "PF": 85,
+            "PA": 23
+          },
+          {
+            "team": "Cobra Kai",
+            "W": 5,
+            "L": 1,
+            "T": 0,
+            "PF": 102,
+            "PA": 58
+          },
+          {
+            "team": "Ed's Dugout Drinkers",
+            "W": 5,
+            "L": 2,
+            "T": 0,
+            "PF": 116,
+            "PA": 75
+          },
+          {
+            "team": "Yap City – Men",
+            "W": 4,
+            "L": 2,
+            "T": 0,
+            "PF": 90,
+            "PA": 63
+          },
+          {
+            "team": "Bad News Bears",
+            "W": 3,
+            "L": 2,
+            "T": 0,
+            "PF": 51,
+            "PA": 40
+          },
+          {
+            "team": "Slippery Slugs",
+            "W": 3,
+            "L": 3,
+            "T": 0,
+            "PF": 90,
+            "PA": 62
+          },
+          {
+            "team": "Dirtbags",
+            "W": 3,
+            "L": 3,
+            "T": 0,
+            "PF": 77,
+            "PA": 52
+          },
+          {
+            "team": "Thoinkees",
+            "W": 2,
+            "L": 3,
+            "T": 0,
+            "PF": 47,
+            "PA": 47
+          },
+          {
+            "team": "Goon Squad",
+            "W": 2,
+            "L": 4,
+            "T": 0,
+            "PF": 59,
+            "PA": 92
+          },
+          {
+            "team": "RawDogs – Thur",
+            "W": 1,
+            "L": 4,
+            "T": 0,
+            "PF": 26,
+            "PA": 62
+          },
+          {
+            "team": "YankDeez",
+            "W": 1,
+            "L": 4,
+            "T": 0,
+            "PF": 26,
+            "PA": 64
+          },
+          {
+            "team": "Purple Cows",
+            "W": 1,
+            "L": 5,
+            "T": 0,
+            "PF": 33,
+            "PA": 92
+          },
+          {
+            "team": "Rally Caps",
+            "W": 1,
+            "L": 6,
+            "T": 0,
+            "PF": 28,
+            "PA": 129
+          },
+          {
+            "team": "Icon",
+            "W": 0,
+            "L": 6,
+            "T": 0,
+            "PF": 22,
+            "PA": 116
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "game": 1,
+          "date": "2026-05-14",
+          "opponent": "Dirtbags",
+          "location": "Park Road Park, Field 3",
+          "time": "21:30",
+          "status": "played",
+          "result": {
+            "score": "2-18",
+            "outcome": "L"
+          },
+          "attendance": [
+            "Woah-Joe",
+            "Mad Dog",
+            "Pedersen",
+            "E-Luke",
+            "Trash Man",
+            "C-Bass",
+            "HAM",
+            "E-Train",
+            "Mahhz",
+            "Cogs",
+            "All-Star Reserve"
+          ]
+        },
+        {
+          "game": 2,
+          "date": "2026-05-28",
+          "opponent": "RawDogs",
+          "location": "Park Road Park, Field 3",
+          "time": "19:30",
+          "status": "played",
+          "result": {
+            "score": "3-18",
+            "outcome": "L"
+          },
+          "attendance": [
+            "Woah-Joe",
+            "E-Train",
+            "Mahhz",
+            "Trash Man",
+            "C-Bass",
+            "Cogs",
+            "Jeremy Phillips",
+            "The Rob",
+            "HAM",
+            "Mad Dog"
+          ]
+        },
+        {
+          "game": 3,
+          "date": "2026-06-04",
+          "opponent": "Goon Squad",
+          "location": "Park Road Park, Field 3",
+          "time": "18:30",
+          "status": "played",
+          "result": {
+            "score": "5-20",
+            "outcome": "L"
+          },
+          "attendance": [
+            "E-Train",
+            "Mahhz",
+            "HAM",
+            "Cogs",
+            "Mad Dog",
+            "Trash Man",
+            "E-Luke",
+            "Jeremy Phillips",
+            "The Rob",
+            "All-Star Reserve",
+            "Woah-Joe"
+          ]
+        },
+        {
+          "game": 4,
+          "date": "2026-06-11",
+          "opponent": "Yap City",
+          "location": "Park Road Park, Field 4",
+          "time": "19:30",
+          "status": "played",
+          "result": {
+            "score": "2-18",
+            "outcome": "L"
+          }
+        },
+        {
+          "game": 5,
+          "date": "2026-06-25",
+          "opponent": "Boone Goons",
+          "location": "Park Road Park, Field 3",
+          "time": "19:30",
+          "status": "played",
+          "result": {
+            "score": "8-19",
+            "outcome": "L"
+          }
+        },
+        {
+          "game": 6,
+          "date": "2026-07-09",
+          "opponent": "Kodiaks",
+          "location": "Renaissance Park, SB 1",
+          "time": "21:30",
+          "status": "played",
+          "note": "Makeup for 5/21 rainout",
+          "result": {
+            "score": "2-23",
+            "outcome": "L"
+          }
+        },
+        {
+          "game": 7,
+          "date": "2026-07-30",
+          "opponent": "Thoinkees",
+          "location": "Renaissance Park, SB 1",
+          "time": "18:30",
+          "status": "played",
+          "result": {
+            "score": "0-12",
+            "outcome": "L"
+          }
+        }
+      ],
+      "note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending."
+    }
+  ]
 }
