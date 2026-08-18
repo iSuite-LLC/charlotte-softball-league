@@ -9,8 +9,8 @@
       "W": 0,
       "L": 0
     },
-    "_data_note": "Fall 2026 season opens 2026-08-20 vs YankDeez. Stats tab still shows Spring 2026 carryover numbers until the first Fall game is logged.",
-    "lastUpdated": "2026-08-18 10:00 AM ET"
+    "_data_note": "Fall 2026 season opens 2026-08-20 vs YankDeez. Stats tab still shows Summer 2026 carryover numbers until the first Fall game is logged. Lineup and Roster tabs retired 2026-08-18; roster data is still used by the RSVP picker.",
+    "lastUpdated": "2026-08-18 10:20 AM ET"
   },
   "standings": {
     "lastUpdated": null,
@@ -989,7 +989,7 @@
   "notes": {},
   "archive": [
     {
-      "label": "Spring 2026",
+      "label": "Summer 2026",
       "year": 2026,
       "league": "IMI",
       "team": "Icon Mech",

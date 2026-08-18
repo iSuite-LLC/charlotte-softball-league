@@ -68,11 +68,6 @@
   .row:last-child { border-bottom: 0; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
           gap: 10px; }
-  .roster-card { background: #fff; border: 1px solid var(--border);
-                 border-radius: 8px; padding: 10px; text-align: center; }
-  .roster-card .jersey { font-size: 28px; font-weight: 800; }
-  .roster-card .nick { font-weight: 700; margin-top: 4px; }
-  .roster-card .real { font-size: 12px; color: var(--muted); }
   button.primary { background: var(--navy); color: #fff; border: 0;
                    padding: 10px 16px; border-radius: 6px; font-weight: 600;
                    cursor: pointer; }
@@ -95,8 +90,6 @@
            background: var(--navy); color: #fff; padding: 10px 16px; border-radius: 6px;
            opacity: 0; transition: opacity 0.2s; z-index: 200; pointer-events: none; }
   .toast.show { opacity: 1; }
-  /* Diamond */
-  svg.diamond { width: 100%; height: auto; max-height: 480px; }
 </style>
 </head>
 <body>
@@ -121,17 +114,15 @@
 <nav class="tabs" id="tabs">
   <button data-tab="home" class="active">Home</button>
   <button data-tab="schedule">Schedule</button>
-  <button data-tab="lineup">Lineup</button>
-  <button data-tab="roster">Roster</button>
   <button data-tab="stats">Stats</button>
+  <button data-tab="seasons">Seasons</button>
 </nav>
 
 <main>
   <section id="home" class="panel active"></section>
   <section id="schedule" class="panel"></section>
-  <section id="lineup" class="panel"></section>
-  <section id="roster" class="panel"></section>
   <section id="stats" class="panel"></section>
+  <section id="seasons" class="panel"></section>
 </main>
 
 <div class="modal-bg" id="rsvp-modal">
@@ -194,6 +185,68 @@ function normalizeTeamName(name) {
   return s;
 }
 
+// Build the league standings table for a season. `teams` is a stored standings
+// array; `games` is that season's schedule, used to fill the head-to-head
+// RESULT column against us. Returns "" when the feed has no teams yet.
+function standingsTableHtml(teams, games) {
+  if (!Array.isArray(teams) || teams.length === 0) return "";
+  // The league standings feed lists our team as "Icon" (season.team is "Icon Mech").
+  const US_TEAM_KEY = "icon";
+  const playedByOpp = {};
+  (games || []).filter(g => g.status === "played").forEach(g => {
+    const key = normalizeTeamName(g.opponent);
+    if (!key) return;
+    (playedByOpp[key] = playedByOpp[key] || []).push(g.result || {});
+  });
+
+  const cols = ["W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
+  let rows = "";
+  teams.forEach(raw => {
+    const t = computeStandingsRow(raw);
+    const isUs = normalizeTeamName(t.team) === US_TEAM_KEY;
+    const vsUs = (playedByOpp[normalizeTeamName(t.team)] || []).map(r => {
+      const cls = r.outcome === "W" ? "win" : "loss";
+      return `${r.score || "?"} <span class="badge ${cls}">${r.outcome || "?"}</span>`;
+    }).join("<br>");
+    const trStyle = isUs ? ` style="background:rgba(123,182,230,0.25);font-weight:600;"` : "";
+    rows += `<tr${trStyle}>
+      <td>${t.team}</td>
+      <td>${vsUs}</td>
+      ${cols.map(c => {
+        const v = t[c];
+        return `<td>${c === "PCT" ? (v * 100).toFixed(2) + "%" : v}</td>`;
+      }).join("")}
+    </tr>`;
+  });
+
+  const header = ["TEAM", "RESULT", "W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
+  return `<div style="overflow-x:auto;">
+    <table>
+      <thead><tr>${header.map(h => `<th>${h}</th>`).join("")}</tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
+// Every season we can show, newest first: the live one plus anything archived.
+function seasonList() {
+  const seasons = [{
+    label: DATA.season.label || String(DATA.season.year),
+    record: DATA.season.record,
+    standings: DATA.standings || {},
+    schedule: DATA.schedule || [],
+    current: true,
+  }];
+  (DATA.archive || []).forEach(a => seasons.push({
+    label: a.label || String(a.year),
+    record: a.record,
+    standings: a.final_standings || {},
+    schedule: a.schedule || [],
+    current: false,
+  }));
+  return seasons;
+}
+
 // Augment a stored standings row with computed GP / PD / PCT.
 function computeStandingsRow(t) {
   const GP = t.W + t.L + t.T;
@@ -222,9 +275,8 @@ async function load() {
   if (label) document.getElementById("season-label").textContent = `Softball · ${label}`;
   renderHome();
   renderSchedule();
-  renderLineup();
-  renderRoster();
   renderStats();
+  renderSeasons();
   openRsvpFromUrl();
 }
 
@@ -333,55 +385,61 @@ function renderHome() {
   }
 
   // League standings
-  const standings = DATA.standings;
-  if (standings && Array.isArray(standings.teams) && standings.teams.length) {
-    // The league standings feed lists our team as "Icon" (season.team is "Icon Mech").
-    const US_TEAM_KEY = "icon";
-    // Map normalized opponent name -> array of played-game result objects.
-    const playedByOpp = {};
-    played.forEach(g => {
-      const key = normalizeTeamName(g.opponent);
-      if (!key) return;
-      const r = g.result || {};
-      (playedByOpp[key] = playedByOpp[key] || []).push(r);
-    });
-
-    const cols = ["W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
-
-    let rows = "";
-    standings.teams.forEach(raw => {
-      const t = computeStandingsRow(raw);
-      const isUs = normalizeTeamName(t.team) === US_TEAM_KEY;
-      const meetings = playedByOpp[normalizeTeamName(t.team)] || [];
-      const vsUs = meetings.map(r => {
-        const cls = r.outcome === "W" ? "win" : "loss";
-        return `${r.score || "?"} <span class="badge ${cls}">${r.outcome || "?"}</span>`;
-      }).join("<br>");
-      const trStyle = isUs ? ` style="background:rgba(123,182,230,0.25);font-weight:600;"` : "";
-      rows += `<tr${trStyle}>
-        <td>${t.team}</td>
-        <td>${vsUs}</td>
-        ${cols.map(c => {
-          const v = t[c];
-          const cell = c === "PCT" ? (v * 100).toFixed(2) + "%" : v;
-          return `<td>${cell}</td>`;
-        }).join("")}
-      </tr>`;
-    });
-
-    const header = ["TEAM", "RESULT", "W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
+  const standings = DATA.standings || {};
+  const table = standingsTableHtml(standings.teams, played);
+  if (table) {
     html += `<div class="card">
       <h3>League Standings${standings.lastUpdated ? ` · ${fmtDate(standings.lastUpdated)}` : ""}</h3>
-      <div style="overflow-x:auto;">
-        <table>
-          <thead><tr>${header.map(h => `<th>${h}</th>`).join("")}</tr></thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </div>
+      ${table}
     </div>`;
   }
 
   home.innerHTML = html;
+}
+
+// --- Seasons tab: record + final league standings for any season ---
+let selectedSeason = 0;  // index into seasonList()
+
+function renderSeasons() {
+  const el = document.getElementById("seasons");
+  const seasons = seasonList();
+  const idx = Math.min(selectedSeason, seasons.length - 1);
+  const s = seasons[idx];
+
+  // "(this season)" for the live one, "(last season)" for the newest archive.
+  const suffix = (season, i) => season.current ? " (this season)"
+                              : i === 1 ? " (last season)" : "";
+
+  let html = `<h2 style="margin-top:0;">Seasons</h2>
+    <div class="card">
+      <label class="label" for="season-picker">Select season</label>
+      <select id="season-picker" style="width:100%;padding:8px;font-size:14px;margin-top:6px;">
+        ${seasons.map((x, i) => `<option value="${i}" ${i === idx ? "selected" : ""}>${x.label}${suffix(x, i)}</option>`).join("")}
+      </select>
+    </div>`;
+
+  const rec = s.record || {};
+  const gamesPlayed = (s.schedule || []).filter(g => g.status === "played").length;
+  html += `<div class="card">
+    <h3>${s.label} Record</h3>
+    <div class="big">${rec.W ?? 0}–${rec.L ?? 0}${rec.T ? `–${rec.T}` : ""}</div>
+    <div class="label" style="margin-top:6px;">${gamesPlayed} game${gamesPlayed === 1 ? "" : "s"} played</div>
+  </div>`;
+
+  const table = standingsTableHtml((s.standings || {}).teams, s.schedule);
+  const asOf = (s.standings || {}).lastUpdated;
+  html += `<div class="card">
+    <h3>League Standings${asOf ? ` · ${s.current ? "" : "Final · "}${fmtDate(asOf)}` : ""}</h3>
+    ${table || `<p class="label" style="margin:0;">No standings posted for ${s.label} yet.</p>`}
+  </div>`;
+
+  el.innerHTML = html;
+
+  const picker = document.getElementById("season-picker");
+  if (picker) picker.addEventListener("change", (e) => {
+    selectedSeason = Number(e.target.value) || 0;
+    renderSeasons();
+  });
 }
 function renderSchedule() {
   const el = document.getElementById("schedule");
@@ -543,141 +601,6 @@ async function submitRsvp(status) {
   }
 }
 
-function renderLineup() {
-  const el = document.getElementById("lineup");
-  const lineups = [...DATA.lineups].sort((a, b) => b.date.localeCompare(a.date));
-  if (lineups.length === 0) {
-    el.innerHTML = `<h2>Lineup</h2><p class="label">Lineup posts Wed/Thu. RSVP on the Schedule tab.</p>`;
-    return;
-  }
-
-  let selected = lineups[0];
-  function render(lineup) {
-    const sched = DATA.schedule.find(s => s.date === lineup.date) || {};
-    const nameByNick = Object.fromEntries(DATA.roster.map(p => [p.nickname || p.name, p.name]));
-    const jerseyByNick = Object.fromEntries(DATA.roster.map(p => [p.nickname || p.name, p.jersey]));
-
-    let html = `<div style="display:flex;justify-content:space-between;align-items:center;">
-      <h2 style="margin:0;">Lineup — Game ${lineup.game}</h2>
-      <a class="secondary" href="lineups/${lineup.date}-lineup.pdf" target="_blank"
-         style="text-decoration:none;display:inline-block;">Print PDF</a>
-    </div>
-    <div class="label" style="margin:4px 0 16px 0;">
-      ${fmtDate(lineup.date)} · vs. ${sched.opponent || "TBD"} · ${sched.location || ""} · ${fmtTime(sched.time)}
-    </div>`;
-
-    if (lineups.length > 1) {
-      html += `<select id="lineup-picker" style="margin-bottom:14px;padding:6px;">
-        ${lineups.map(l => `<option value="${l.date}" ${l.date === lineup.date ? "selected" : ""}>${fmtDate(l.date)} — Game ${l.game}</option>`).join("")}
-      </select>`;
-    }
-
-    html += `<div class="card"><h3>Batting Order</h3>`;
-    const order = lineup.batting_order || [];
-    if (order.length === 0) {
-      html += `<p class="label" style="margin:0;">Batting order not recorded.</p>`;
-    } else {
-      order.forEach(b => {
-        const full = nameByNick[b.nickname] || "";
-        const parens = (full && full !== b.nickname) ? `<span class="label">(${full})</span>` : "";
-        html += `<div class="row">
-          <span><strong>${b.order}.</strong> <strong>${b.nickname}</strong> #${jerseyByNick[b.nickname] || "?"}
-            ${parens}
-            ${b.eh_only ? `<span class="badge" style="background:#eee;color:var(--navy);">EH</span>` : ""}
-          </span>
-        </div>`;
-      });
-      if (order.some(b => b.eh_only)) {
-        html += `<div class="label" style="margin-top:10px;font-style:italic;">* EH = Extra Hitter (bats only, does not field)</div>`;
-      }
-    }
-    html += `</div>`;
-
-    html += `<div class="card"><h3>Defense (4-OF)</h3>${diamondSvg(lineup.defense || {})}</div>`;
-
-    el.innerHTML = html;
-    const picker = document.getElementById("lineup-picker");
-    if (picker) picker.addEventListener("change", (e) => {
-      const next = lineups.find(l => l.date === e.target.value);
-      if (next) render(next);
-    });
-  }
-  render(selected);
-}
-
-function diamondSvg(defense) {
-  // viewBox 400x400. Home plate corner at (200, 360). Foul lines extend 45° up-outward
-  // to foul poles at (40, 200) and (360, 200). Fence is a semicircle behind the
-  // outfielders, from foul pole to foul pole, centered at (200, 200), radius 160.
-  const pos = {
-    "P":   [200, 285],
-    "C":   [200, 375],
-    "1B":  [270, 250],
-    "2B":  [240, 195],
-    "SS":  [160, 195],
-    "3B":  [130, 250],
-    "LF":  [100, 130],
-    "LCF": [155, 80],
-    "RCF": [245, 80],
-    "RF":  [300, 130],
-  };
-  // Fence: polyline approximation of a semicircle bulging upward away from home
-  const fencePts = [];
-  for (let i = 0; i <= 60; i++) {
-    const t = Math.PI + Math.PI * (i / 60);    // pi -> 2*pi
-    const x = 200 + 160 * Math.cos(t);
-    const y = 200 + 160 * Math.sin(t);          // sin negative in (pi, 2pi) -> smaller y -> UP
-    fencePts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
-  }
-  const labels = Object.entries(pos).map(([p, [x, y]]) => `
-    <g>
-      <rect x="${x - 32}" y="${y - 11}" width="64" height="22" fill="white" stroke="black" stroke-width="1" rx="4"/>
-      <text x="${x}" y="${y + 4}" text-anchor="middle" font-size="11" font-weight="700">${defense[p] || "?"}</text>
-      <text x="${x}" y="${y + 22}" text-anchor="middle" font-size="9" fill="#666">${p}</text>
-    </g>`).join("");
-  return `<svg class="diamond" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-    <!-- fence (semicircle behind outfielders) -->
-    <polyline points="${fencePts.join(" ")}" stroke="black" fill="none" stroke-width="1.5"/>
-    <!-- foul lines: home plate (200,360) to foul poles (40,200) and (360,200) -->
-    <line x1="200" y1="360" x2="40" y2="200" stroke="black" stroke-width="1"/>
-    <line x1="200" y1="360" x2="360" y2="200" stroke="black" stroke-width="1"/>
-    <!-- infield diamond: home, 1B, 2B, 3B -->
-    <polygon points="200,360 275,285 200,210 125,285" fill="none" stroke="black" stroke-width="1.5"/>
-    <!-- pitcher's mound -->
-    <circle cx="200" cy="285" r="8" fill="none" stroke="black"/>
-    ${labels}
-  </svg>`;
-}
-function renderRoster() {
-  const el = document.getElementById("roster");
-  const main = DATA.roster.filter(p => p.type === "main");
-  const extras = DATA.roster.filter(p => p.type === "extra");
-  let html = `<h2 style="margin-top:0;">Roster</h2><div class="grid">`;
-  main.forEach(p => {
-    html += rosterCard(p);
-  });
-  html += `</div>`;
-  if (extras.length) {
-    html += `<h3 style="margin-top:24px;color:var(--muted);font-size:14px;">EXTRAS</h3><div class="grid">`;
-    extras.forEach(p => html += rosterCard(p));
-    html += `</div>`;
-  }
-  el.innerHTML = html;
-}
-
-function rosterCard(p) {
-  const stats = (DATA.stats_summary || {})[p.nickname];
-  const statLine = stats ? `${stats.AVG.toFixed(3)} / ${stats.OPS.toFixed(3)}` : "";
-  const fun = (DATA.fun_stats || {})[p.nickname];
-  const funLines = fun ? Object.entries(fun).map(([label, v]) => `${label}: ${v}`).join(", ") : "";
-  return `<div class="roster-card">
-    <div class="jersey">#${p.jersey}</div>
-    <div class="nick">${p.nickname}</div>
-    <div class="real">${p.name}</div>
-    ${statLine ? `<div class="label" style="margin-top:6px;">AVG / OPS</div><div style="font-size:13px;">${statLine}</div>` : ""}
-    ${funLines ? `<div class="label" style="margin-top:6px;">FUN STAT</div><div style="font-size:13px;">${funLines}</div>` : ""}
-  </div>`;
-}
 function renderStats() {
   const el = document.getElementById("stats");
   const rows = Object.entries(DATA.stats_summary || {})
