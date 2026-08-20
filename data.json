@@ -10,42 +10,42 @@
       "L": 7
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending.",
-    "lastUpdated": "2026-08-18 11:00 AM ET"
+    "lastUpdated": "2026-08-20 9:10 AM ET"
   },
   "standings": {
-    "lastUpdated": "2026-07-27",
+    "lastUpdated": "2026-08-20",
     "teams": [
       {
         "team": "Boone Goons",
-        "W": 6,
+        "W": 7,
         "L": 0,
         "T": 0,
-        "PF": 99,
-        "PA": 44
+        "PF": 118,
+        "PA": 53
       },
       {
-        "team": "Kodiaks-MENS",
-        "W": 5,
+        "team": "Cobra Kai",
+        "W": 6,
         "L": 1,
         "T": 0,
-        "PF": 114,
-        "PA": 46
+        "PF": 121,
+        "PA": 61
       },
       {
         "team": "Back Door Sliders",
         "W": 5,
         "L": 1,
-        "T": 0,
-        "PF": 85,
-        "PA": 23
+        "T": 1,
+        "PF": 93,
+        "PA": 31
       },
       {
-        "team": "Cobra Kai",
+        "team": "Kodiaks-MENS",
         "W": 5,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 102,
-        "PA": 58
+        "PF": 117,
+        "PA": 65
       },
       {
         "team": "Ed's Dugout Drinkers",
@@ -57,91 +57,91 @@
       },
       {
         "team": "Yap City – Men",
-        "W": 4,
+        "W": 5,
         "L": 2,
         "T": 0,
-        "PF": 90,
-        "PA": 63
-      },
-      {
-        "team": "Bad News Bears",
-        "W": 3,
-        "L": 2,
-        "T": 0,
-        "PF": 51,
-        "PA": 40
+        "PF": 108,
+        "PA": 71
       },
       {
         "team": "Slippery Slugs",
-        "W": 3,
+        "W": 4,
         "L": 3,
         "T": 0,
-        "PF": 90,
-        "PA": 62
+        "PF": 105,
+        "PA": 69
       },
       {
         "team": "Dirtbags",
-        "W": 3,
-        "L": 3,
+        "W": 4,
+        "L": 4,
         "T": 0,
-        "PF": 77,
-        "PA": 52
+        "PF": 90,
+        "PA": 64
       },
       {
         "team": "Thoinkees",
-        "W": 2,
+        "W": 3,
         "L": 3,
-        "T": 0,
-        "PF": 47,
-        "PA": 47
+        "T": 1,
+        "PF": 70,
+        "PA": 55
       },
       {
         "team": "Goon Squad",
-        "W": 2,
+        "W": 3,
         "L": 4,
         "T": 0,
-        "PF": 59,
-        "PA": 92
+        "PF": 69,
+        "PA": 101
       },
       {
         "team": "RawDogs – Thur",
         "W": 1,
-        "L": 4,
-        "T": 0,
-        "PF": 26,
-        "PA": 62
-      },
-      {
-        "team": "YankDeez",
-        "W": 1,
-        "L": 4,
-        "T": 0,
-        "PF": 26,
-        "PA": 64
+        "L": 5,
+        "T": 1,
+        "PF": 46,
+        "PA": 92
       },
       {
         "team": "Purple Cows",
         "W": 1,
-        "L": 5,
+        "L": 6,
+        "T": 1,
+        "PF": 54,
+        "PA": 123
+      },
+      {
+        "team": "YankDeez",
+        "W": 1,
+        "L": 6,
         "T": 0,
-        "PF": 33,
-        "PA": 92
+        "PF": 42,
+        "PA": 89
       },
       {
         "team": "Rally Caps",
         "W": 1,
-        "L": 6,
+        "L": 7,
         "T": 0,
         "PF": 28,
-        "PA": 129
+        "PA": 136
+      },
+      {
+        "team": "Winner of Previous - Men",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
       },
       {
         "team": "Icon",
         "W": 0,
-        "L": 6,
+        "L": 7,
         "T": 0,
         "PF": 22,
-        "PA": 116
+        "PA": 131
       }
     ]
   },
