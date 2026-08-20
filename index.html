@@ -191,7 +191,11 @@ function normalizeTeamName(name) {
 // array; `games` is that season's schedule, used to fill the head-to-head
 // RESULT column against us. Returns "" when the feed has no teams yet.
 function standingsTableHtml(teams, games) {
-  if (!Array.isArray(teams) || teams.length === 0) return "";
+  if (!Array.isArray(teams)) return "";
+  // The feed carries playoff bracket placeholders ("Winner of Previous - Men")
+  // that have played nothing. Drop any 0-game row; it returns once it plays.
+  teams = teams.filter(t => (t.W + t.L + t.T) > 0);
+  if (teams.length === 0) return "";
   // The league standings feed lists our team as "Icon" (season.team is "Icon Mech").
   const US_TEAM_KEY = "icon";
   const playedByOpp = {};

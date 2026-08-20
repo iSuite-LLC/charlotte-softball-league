@@ -9,8 +9,8 @@
       "W": 0,
       "L": 7
     },
-    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending.",
-    "lastUpdated": "2026-08-20 9:10 AM ET"
+    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending. Game 7 score corrected 0-12 -> 0-15 on 2026-08-20 to reconcile with the league PF/PA feed.",
+    "lastUpdated": "2026-08-20 9:20 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-08-20",
@@ -465,7 +465,7 @@
       "time": "18:30",
       "status": "played",
       "result": {
-        "score": "0-12",
+        "score": "0-15",
         "outcome": "L"
       }
     },
