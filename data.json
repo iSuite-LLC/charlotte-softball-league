@@ -10,7 +10,7 @@
       "L": 7
     },
     "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending. Game 7 score corrected 0-12 -> 0-15 on 2026-08-20 to reconcile with the league PF/PA feed.",
-    "lastUpdated": "2026-08-20 9:20 AM ET"
+    "lastUpdated": "2026-08-20 10:05 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-08-20",
@@ -335,6 +335,17 @@
     },
     {
       "name": "Dustin Rhee",
+      "nickname": "",
+      "jersey": "00",
+      "type": "extra",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Colton Crocker",
       "nickname": "",
       "jersey": "00",
       "type": "extra",
