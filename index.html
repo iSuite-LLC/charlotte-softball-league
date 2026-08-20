@@ -63,6 +63,8 @@
            font-size: 12px; font-weight: 700; }
   .badge.win { background: #e6f3ea; color: var(--good); }
   .badge.loss { background: #fbe6e6; color: var(--bad); }
+  .badge.playoff { background: var(--carolina); color: var(--navy); margin-left: 6px;
+                   text-transform: uppercase; letter-spacing: 0.04em; }
   .row { display: flex; justify-content: space-between; align-items: center;
          padding: 10px 0; border-bottom: 1px solid var(--border); }
   .row:last-child { border-bottom: 0; }
@@ -362,7 +364,8 @@ function renderHome() {
       <h3>Next Game</h3>
       <div class="row" style="border:0;padding:0;align-items:center;">
         <div>
-          <div><strong>${fmtDate(nextGame.date)}</strong> · vs. ${nextGame.opponent || "TBD"}</div>
+          <div><strong>${fmtDate(nextGame.date)}</strong> · vs. ${nextGame.opponent || "TBD"}
+            ${nextGame.note ? `<span class="badge playoff">${nextGame.note}</span>` : ""}</div>
           <div class="label" style="margin-top:6px;">${nextGame.location || ""} · ${fmtTime(nextGame.time)}</div>
           <div style="margin-top:10px;">
             <span class="label">RSVPs:</span>
@@ -416,6 +419,7 @@ function renderSeasons() {
       <select id="season-picker" style="width:100%;padding:8px;font-size:14px;margin-top:6px;">
         ${seasons.map((x, i) => `<option value="${i}" ${i === idx ? "selected" : ""}>${x.label}${suffix(x, i)}</option>`).join("")}
       </select>
+      ${seasons.length === 1 ? `<div class="label" style="margin-top:8px;text-transform:none;">Past seasons show up here once this one wraps and the next opens.</div>` : ""}
     </div>`;
 
   const rec = s.record || {};
@@ -487,7 +491,8 @@ function renderSchedule() {
         <div class="row" style="border:0;padding:0;align-items:flex-start;">
           <div>
             <div class="label">Game ${g.game} · ${fmtDate(g.date)}</div>
-            <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
+            <div><strong>vs. ${g.opponent || "TBD"}</strong>
+              ${g.note ? `<span class="badge playoff">${g.note}</span>` : ""}</div>
             <div class="label" style="margin-top:4px;">${g.location || ""} · ${fmtTime(g.time)}</div>
             <div style="margin-top:8px;font-size:13px;">
               ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
