@@ -1017,7 +1017,7 @@
       "team": "Icon Mech",
       "record": {
         "W": 0,
-        "L": 7
+        "L": 8
       },
       "final_standings": {
         "lastUpdated": "2026-08-20",
@@ -1282,8 +1282,12 @@
           "opponent": "YankDeez",
           "location": "Park Road Park, Field 3",
           "time": "18:30",
-          "status": "unreported",
-          "note": "Playoff game — result not logged"
+          "status": "played",
+          "note": "Playoff game",
+          "result": {
+            "score": "9-10",
+            "outcome": "L"
+          }
         }
       ],
       "stats_summary": {
@@ -2057,7 +2061,7 @@
           "Tripped to 1B": 1
         }
       },
-      "note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending. Game 7 score corrected 0-12 -> 0-15 on 2026-08-20 to reconcile with the league PF/PA feed. Archived 2026-10-02 at the Fall 2026 rollover; Game 8 playoff vs YankDeez (2026-08-20) result never logged."
+      "note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending. Game 7 score corrected 0-12 -> 0-15 on 2026-08-20 to reconcile with the league PF/PA feed. Archived 2026-10-02 at the Fall 2026 rollover; Game 8 playoff vs YankDeez (2026-08-20) logged 2026-10-02 as a 9-10 loss; record includes it (0-8), league standings are regular season only."
     }
   ]
 }
