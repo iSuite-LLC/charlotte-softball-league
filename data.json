@@ -1,149 +1,20 @@
 {
   "season": {
     "year": 2026,
-    "label": "Summer 2026",
+    "label": "Fall 2026",
     "league": "IMI",
     "team": "Icon Mech",
     "format": "Slow-pitch · EH · 4-OF · 3-HR cap · 280ft · 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 7
+      "L": 0
     },
-    "_data_note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending. Game 7 score corrected 0-12 -> 0-15 on 2026-08-20 to reconcile with the league PF/PA feed.",
-    "lastUpdated": "2026-08-20 10:05 AM ET"
+    "_data_note": "Fall 2026 opens Mon 2026-10-05; opponent, field and time TBD. Stats tab shows Summer 2026 carryover until the first Fall game is logged (Summer stats also preserved in archive[0]).",
+    "lastUpdated": "2026-10-02 ET"
   },
   "standings": {
-    "lastUpdated": "2026-08-20",
-    "teams": [
-      {
-        "team": "Boone Goons",
-        "W": 7,
-        "L": 0,
-        "T": 0,
-        "PF": 118,
-        "PA": 53
-      },
-      {
-        "team": "Cobra Kai",
-        "W": 6,
-        "L": 1,
-        "T": 0,
-        "PF": 121,
-        "PA": 61
-      },
-      {
-        "team": "Back Door Sliders",
-        "W": 5,
-        "L": 1,
-        "T": 1,
-        "PF": 93,
-        "PA": 31
-      },
-      {
-        "team": "Kodiaks-MENS",
-        "W": 5,
-        "L": 2,
-        "T": 0,
-        "PF": 117,
-        "PA": 65
-      },
-      {
-        "team": "Ed's Dugout Drinkers",
-        "W": 5,
-        "L": 2,
-        "T": 0,
-        "PF": 116,
-        "PA": 75
-      },
-      {
-        "team": "Yap City – Men",
-        "W": 5,
-        "L": 2,
-        "T": 0,
-        "PF": 108,
-        "PA": 71
-      },
-      {
-        "team": "Slippery Slugs",
-        "W": 4,
-        "L": 3,
-        "T": 0,
-        "PF": 105,
-        "PA": 69
-      },
-      {
-        "team": "Dirtbags",
-        "W": 4,
-        "L": 4,
-        "T": 0,
-        "PF": 90,
-        "PA": 64
-      },
-      {
-        "team": "Thoinkees",
-        "W": 3,
-        "L": 3,
-        "T": 1,
-        "PF": 70,
-        "PA": 55
-      },
-      {
-        "team": "Goon Squad",
-        "W": 3,
-        "L": 4,
-        "T": 0,
-        "PF": 69,
-        "PA": 101
-      },
-      {
-        "team": "RawDogs – Thur",
-        "W": 1,
-        "L": 5,
-        "T": 1,
-        "PF": 46,
-        "PA": 92
-      },
-      {
-        "team": "Purple Cows",
-        "W": 1,
-        "L": 6,
-        "T": 1,
-        "PF": 54,
-        "PA": 123
-      },
-      {
-        "team": "YankDeez",
-        "W": 1,
-        "L": 6,
-        "T": 0,
-        "PF": 42,
-        "PA": 89
-      },
-      {
-        "team": "Rally Caps",
-        "W": 1,
-        "L": 7,
-        "T": 0,
-        "PF": 28,
-        "PA": 136
-      },
-      {
-        "team": "Winner of Previous - Men",
-        "W": 0,
-        "L": 0,
-        "T": 0,
-        "PF": 0,
-        "PA": 0
-      },
-      {
-        "team": "Icon",
-        "W": 0,
-        "L": 7,
-        "T": 0,
-        "PF": 22,
-        "PA": 131
-      }
-    ]
+    "lastUpdated": null,
+    "teams": []
   },
   "roster": [
     {
@@ -359,135 +230,11 @@
   "schedule": [
     {
       "game": 1,
-      "date": "2026-05-14",
-      "opponent": "Dirtbags",
-      "location": "Park Road Park, Field 3",
-      "time": "21:30",
-      "status": "played",
-      "result": {
-        "score": "2-18",
-        "outcome": "L"
-      },
-      "attendance": [
-        "Woah-Joe",
-        "Mad Dog",
-        "Pedersen",
-        "E-Luke",
-        "Trash Man",
-        "C-Bass",
-        "HAM",
-        "E-Train",
-        "Mahhz",
-        "Cogs",
-        "All-Star Reserve"
-      ]
-    },
-    {
-      "game": 2,
-      "date": "2026-05-28",
-      "opponent": "RawDogs",
-      "location": "Park Road Park, Field 3",
-      "time": "19:30",
-      "status": "played",
-      "result": {
-        "score": "3-18",
-        "outcome": "L"
-      },
-      "attendance": [
-        "Woah-Joe",
-        "E-Train",
-        "Mahhz",
-        "Trash Man",
-        "C-Bass",
-        "Cogs",
-        "Jeremy Phillips",
-        "The Rob",
-        "HAM",
-        "Mad Dog"
-      ]
-    },
-    {
-      "game": 3,
-      "date": "2026-06-04",
-      "opponent": "Goon Squad",
-      "location": "Park Road Park, Field 3",
-      "time": "18:30",
-      "status": "played",
-      "result": {
-        "score": "5-20",
-        "outcome": "L"
-      },
-      "attendance": [
-        "E-Train",
-        "Mahhz",
-        "HAM",
-        "Cogs",
-        "Mad Dog",
-        "Trash Man",
-        "E-Luke",
-        "Jeremy Phillips",
-        "The Rob",
-        "All-Star Reserve",
-        "Woah-Joe"
-      ]
-    },
-    {
-      "game": 4,
-      "date": "2026-06-11",
-      "opponent": "Yap City",
-      "location": "Park Road Park, Field 4",
-      "time": "19:30",
-      "status": "played",
-      "result": {
-        "score": "2-18",
-        "outcome": "L"
-      }
-    },
-    {
-      "game": 5,
-      "date": "2026-06-25",
-      "opponent": "Boone Goons",
-      "location": "Park Road Park, Field 3",
-      "time": "19:30",
-      "status": "played",
-      "result": {
-        "score": "8-19",
-        "outcome": "L"
-      }
-    },
-    {
-      "game": 6,
-      "date": "2026-07-09",
-      "opponent": "Kodiaks",
-      "location": "Renaissance Park, SB 1",
-      "time": "21:30",
-      "status": "played",
-      "note": "Makeup for 5/21 rainout",
-      "result": {
-        "score": "2-23",
-        "outcome": "L"
-      }
-    },
-    {
-      "game": 7,
-      "date": "2026-07-30",
-      "opponent": "Thoinkees",
-      "location": "Renaissance Park, SB 1",
-      "time": "18:30",
-      "status": "played",
-      "result": {
-        "score": "0-15",
-        "outcome": "L"
-      }
-    },
-    {
-      "game": 8,
-      "date": "2026-08-20",
-      "opponent": "YankDeez",
-      "location": "Park Road Park, Field 3",
-      "time": "18:30",
-      "status": "scheduled",
-      "note": "Playoff game"
+      "date": "2026-10-05",
+      "opponent": "",
+      "location": "",
+      "time": "",
+      "status": "scheduled"
     }
   ],
   "lineups": [
@@ -1262,5 +1009,1055 @@
     }
   },
   "notes": {},
-  "archive": []
+  "archive": [
+    {
+      "label": "Summer 2026",
+      "year": 2026,
+      "league": "IMI",
+      "team": "Icon Mech",
+      "record": {
+        "W": 0,
+        "L": 7
+      },
+      "final_standings": {
+        "lastUpdated": "2026-08-20",
+        "teams": [
+          {
+            "team": "Boone Goons",
+            "W": 7,
+            "L": 0,
+            "T": 0,
+            "PF": 118,
+            "PA": 53
+          },
+          {
+            "team": "Cobra Kai",
+            "W": 6,
+            "L": 1,
+            "T": 0,
+            "PF": 121,
+            "PA": 61
+          },
+          {
+            "team": "Back Door Sliders",
+            "W": 5,
+            "L": 1,
+            "T": 1,
+            "PF": 93,
+            "PA": 31
+          },
+          {
+            "team": "Kodiaks-MENS",
+            "W": 5,
+            "L": 2,
+            "T": 0,
+            "PF": 117,
+            "PA": 65
+          },
+          {
+            "team": "Ed's Dugout Drinkers",
+            "W": 5,
+            "L": 2,
+            "T": 0,
+            "PF": 116,
+            "PA": 75
+          },
+          {
+            "team": "Yap City – Men",
+            "W": 5,
+            "L": 2,
+            "T": 0,
+            "PF": 108,
+            "PA": 71
+          },
+          {
+            "team": "Slippery Slugs",
+            "W": 4,
+            "L": 3,
+            "T": 0,
+            "PF": 105,
+            "PA": 69
+          },
+          {
+            "team": "Dirtbags",
+            "W": 4,
+            "L": 4,
+            "T": 0,
+            "PF": 90,
+            "PA": 64
+          },
+          {
+            "team": "Thoinkees",
+            "W": 3,
+            "L": 3,
+            "T": 1,
+            "PF": 70,
+            "PA": 55
+          },
+          {
+            "team": "Goon Squad",
+            "W": 3,
+            "L": 4,
+            "T": 0,
+            "PF": 69,
+            "PA": 101
+          },
+          {
+            "team": "RawDogs – Thur",
+            "W": 1,
+            "L": 5,
+            "T": 1,
+            "PF": 46,
+            "PA": 92
+          },
+          {
+            "team": "Purple Cows",
+            "W": 1,
+            "L": 6,
+            "T": 1,
+            "PF": 54,
+            "PA": 123
+          },
+          {
+            "team": "YankDeez",
+            "W": 1,
+            "L": 6,
+            "T": 0,
+            "PF": 42,
+            "PA": 89
+          },
+          {
+            "team": "Rally Caps",
+            "W": 1,
+            "L": 7,
+            "T": 0,
+            "PF": 28,
+            "PA": 136
+          },
+          {
+            "team": "Winner of Previous - Men",
+            "W": 0,
+            "L": 0,
+            "T": 0,
+            "PF": 0,
+            "PA": 0
+          },
+          {
+            "team": "Icon",
+            "W": 0,
+            "L": 7,
+            "T": 0,
+            "PF": 22,
+            "PA": 131
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "game": 1,
+          "date": "2026-05-14",
+          "opponent": "Dirtbags",
+          "location": "Park Road Park, Field 3",
+          "time": "21:30",
+          "status": "played",
+          "result": {
+            "score": "2-18",
+            "outcome": "L"
+          },
+          "attendance": [
+            "Woah-Joe",
+            "Mad Dog",
+            "Pedersen",
+            "E-Luke",
+            "Trash Man",
+            "C-Bass",
+            "HAM",
+            "E-Train",
+            "Mahhz",
+            "Cogs",
+            "All-Star Reserve"
+          ]
+        },
+        {
+          "game": 2,
+          "date": "2026-05-28",
+          "opponent": "RawDogs",
+          "location": "Park Road Park, Field 3",
+          "time": "19:30",
+          "status": "played",
+          "result": {
+            "score": "3-18",
+            "outcome": "L"
+          },
+          "attendance": [
+            "Woah-Joe",
+            "E-Train",
+            "Mahhz",
+            "Trash Man",
+            "C-Bass",
+            "Cogs",
+            "Jeremy Phillips",
+            "The Rob",
+            "HAM",
+            "Mad Dog"
+          ]
+        },
+        {
+          "game": 3,
+          "date": "2026-06-04",
+          "opponent": "Goon Squad",
+          "location": "Park Road Park, Field 3",
+          "time": "18:30",
+          "status": "played",
+          "result": {
+            "score": "5-20",
+            "outcome": "L"
+          },
+          "attendance": [
+            "E-Train",
+            "Mahhz",
+            "HAM",
+            "Cogs",
+            "Mad Dog",
+            "Trash Man",
+            "E-Luke",
+            "Jeremy Phillips",
+            "The Rob",
+            "All-Star Reserve",
+            "Woah-Joe"
+          ]
+        },
+        {
+          "game": 4,
+          "date": "2026-06-11",
+          "opponent": "Yap City",
+          "location": "Park Road Park, Field 4",
+          "time": "19:30",
+          "status": "played",
+          "result": {
+            "score": "2-18",
+            "outcome": "L"
+          }
+        },
+        {
+          "game": 5,
+          "date": "2026-06-25",
+          "opponent": "Boone Goons",
+          "location": "Park Road Park, Field 3",
+          "time": "19:30",
+          "status": "played",
+          "result": {
+            "score": "8-19",
+            "outcome": "L"
+          }
+        },
+        {
+          "game": 6,
+          "date": "2026-07-09",
+          "opponent": "Kodiaks",
+          "location": "Renaissance Park, SB 1",
+          "time": "21:30",
+          "status": "played",
+          "note": "Makeup for 5/21 rainout",
+          "result": {
+            "score": "2-23",
+            "outcome": "L"
+          }
+        },
+        {
+          "game": 7,
+          "date": "2026-07-30",
+          "opponent": "Thoinkees",
+          "location": "Renaissance Park, SB 1",
+          "time": "18:30",
+          "status": "played",
+          "result": {
+            "score": "0-15",
+            "outcome": "L"
+          }
+        },
+        {
+          "game": 8,
+          "date": "2026-08-20",
+          "opponent": "YankDeez",
+          "location": "Park Road Park, Field 3",
+          "time": "18:30",
+          "status": "unreported",
+          "note": "Playoff game — result not logged"
+        }
+      ],
+      "stats_summary": {
+        "Mahhz": {
+          "G": 2,
+          "PA": 5,
+          "AB": 5,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 1,
+          "BB": 0,
+          "K": 0,
+          "RBI": 2,
+          "R": 1,
+          "H": 2,
+          "AVG": 0.4,
+          "OBP": 0.4,
+          "SLG": 1.0,
+          "OPS": 1.4
+        },
+        "E-Train": {
+          "G": 2,
+          "PA": 6,
+          "AB": 5,
+          "1B": 1,
+          "2B": 0,
+          "3B": 1,
+          "HR": 0,
+          "BB": 1,
+          "K": 0,
+          "RBI": 0,
+          "R": 1,
+          "H": 2,
+          "AVG": 0.4,
+          "OBP": 0.5,
+          "SLG": 0.8,
+          "OPS": 1.3
+        },
+        "Cogs": {
+          "G": 3,
+          "PA": 7,
+          "AB": 7,
+          "1B": 4,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "H": 4,
+          "AVG": 0.571,
+          "OBP": 0.571,
+          "SLG": 0.571,
+          "OPS": 1.143
+        },
+        "Mad Dog": {
+          "G": 1,
+          "PA": 3,
+          "AB": 3,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "H": 2,
+          "AVG": 0.667,
+          "OBP": 0.667,
+          "SLG": 0.667,
+          "OPS": 1.333
+        },
+        "All-Star Reserve": {
+          "G": 4,
+          "PA": 11,
+          "AB": 10,
+          "1B": 3,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 1,
+          "K": 1,
+          "RBI": 0,
+          "R": 0,
+          "H": 3,
+          "AVG": 0.3,
+          "OBP": 0.364,
+          "SLG": 0.3,
+          "OPS": 0.664
+        },
+        "C-Bass": {
+          "G": 1,
+          "PA": 3,
+          "AB": 3,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "H": 2,
+          "AVG": 0.667,
+          "OBP": 0.667,
+          "SLG": 0.667,
+          "OPS": 1.333
+        },
+        "Pedersen": {
+          "G": 1,
+          "PA": 3,
+          "AB": 3,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "H": 1,
+          "AVG": 0.333,
+          "OBP": 0.333,
+          "SLG": 0.333,
+          "OPS": 0.667
+        },
+        "Trash Man": {
+          "G": 1,
+          "PA": 3,
+          "AB": 3,
+          "1B": 2,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 1,
+          "H": 2,
+          "AVG": 0.667,
+          "OBP": 0.667,
+          "SLG": 0.667,
+          "OPS": 1.333
+        },
+        "E-Luke": {
+          "G": 2,
+          "PA": 5,
+          "AB": 5,
+          "1B": 3,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 3,
+          "R": 0,
+          "H": 3,
+          "AVG": 0.6,
+          "OBP": 0.6,
+          "SLG": 0.6,
+          "OPS": 1.2
+        },
+        "HAM": {
+          "G": 1,
+          "PA": 3,
+          "AB": 3,
+          "1B": 1,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "H": 1,
+          "AVG": 0.333,
+          "OBP": 0.333,
+          "SLG": 0.333,
+          "OPS": 0.667
+        },
+        "Woah-Joe": {
+          "G": 1,
+          "PA": 3,
+          "AB": 3,
+          "1B": 0,
+          "2B": 0,
+          "3B": 0,
+          "HR": 0,
+          "BB": 0,
+          "K": 0,
+          "RBI": 0,
+          "R": 0,
+          "H": 0,
+          "AVG": 0.0,
+          "OBP": 0.0,
+          "SLG": 0.0,
+          "OPS": 0.0
+        }
+      },
+      "game_logs": [
+        {
+          "game": 1,
+          "date": "2026-05-14",
+          "player_lines": {
+            "Mahhz": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 0,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {
+                "RCF": 7
+              }
+            },
+            "E-Train": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 1,
+              "2B": 0,
+              "3B": 1,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 1,
+              "errors": 0,
+              "innings": {
+                "LCF": 7
+              }
+            },
+            "Cogs": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 2,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 1,
+              "innings": {
+                "RF": 7
+              }
+            },
+            "Mad Dog": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 2,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {
+                "C": 7
+              }
+            },
+            "All-Star Reserve": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 0,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {}
+            },
+            "C-Bass": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 2,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {
+                "3B": 7
+              }
+            },
+            "Pedersen": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 1,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {
+                "1B": 7
+              }
+            },
+            "Trash Man": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 2,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 1,
+              "errors": 0,
+              "innings": {
+                "SS": 7
+              }
+            },
+            "E-Luke": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 1,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 1,
+              "R": 0,
+              "errors": 0,
+              "innings": {
+                "2B": 7
+              }
+            },
+            "HAM": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 1,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {
+                "LF": 7
+              }
+            },
+            "Woah-Joe": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 0,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {
+                "P": 7
+              }
+            }
+          }
+        },
+        {
+          "game": 2,
+          "date": "2026-05-28",
+          "player_lines": {
+            "Cogs": {
+              "PA": 2,
+              "AB": 2,
+              "1B": 0,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {}
+            },
+            "Mahhz": {
+              "PA": 2,
+              "AB": 2,
+              "1B": 1,
+              "2B": 0,
+              "3B": 0,
+              "HR": 1,
+              "BB": 0,
+              "K": 0,
+              "RBI": 2,
+              "R": 1,
+              "errors": 0,
+              "innings": {}
+            }
+          }
+        },
+        {
+          "game": 3,
+          "date": "2026-06-04",
+          "player_lines": {
+            "E-Luke": {
+              "PA": 2,
+              "AB": 2,
+              "1B": 2,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 2,
+              "R": 0,
+              "errors": 0,
+              "innings": {}
+            },
+            "Cogs": {
+              "PA": 2,
+              "AB": 2,
+              "1B": 2,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {}
+            },
+            "All-Star Reserve": {
+              "PA": 2,
+              "AB": 1,
+              "1B": 1,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 1,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {}
+            },
+            "E-Train": {
+              "PA": 3,
+              "AB": 2,
+              "1B": 0,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 1,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {}
+            }
+          }
+        },
+        {
+          "game": 5,
+          "date": "2026-06-25",
+          "player_lines": {
+            "All-Star Reserve": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 1,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 1,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {}
+            }
+          }
+        },
+        {
+          "game": 7,
+          "date": "2026-07-30",
+          "player_lines": {
+            "All-Star Reserve": {
+              "PA": 3,
+              "AB": 3,
+              "1B": 1,
+              "2B": 0,
+              "3B": 0,
+              "HR": 0,
+              "BB": 0,
+              "K": 0,
+              "RBI": 0,
+              "R": 0,
+              "errors": 0,
+              "innings": {}
+            }
+          }
+        }
+      ],
+      "lineups": [
+        {
+          "game": 3,
+          "date": "2026-06-04",
+          "batting_order": [
+            {
+              "order": 1,
+              "nickname": "Mad Dog",
+              "jersey": "07",
+              "eh_only": false
+            },
+            {
+              "order": 2,
+              "nickname": "E-Train",
+              "jersey": "16",
+              "eh_only": false
+            },
+            {
+              "order": 3,
+              "nickname": "Trash Man",
+              "jersey": "72",
+              "eh_only": false
+            },
+            {
+              "order": 4,
+              "nickname": "Mahhz",
+              "jersey": "5",
+              "eh_only": false
+            },
+            {
+              "order": 5,
+              "nickname": "Jeremy Phillips",
+              "jersey": "00",
+              "eh_only": false
+            },
+            {
+              "order": 6,
+              "nickname": "Woah-Joe",
+              "jersey": "3",
+              "eh_only": true
+            },
+            {
+              "order": 7,
+              "nickname": "Cogs",
+              "jersey": "53",
+              "eh_only": false
+            },
+            {
+              "order": 8,
+              "nickname": "E-Luke",
+              "jersey": "9",
+              "eh_only": false
+            },
+            {
+              "order": 9,
+              "nickname": "HAM",
+              "jersey": "96",
+              "eh_only": false
+            },
+            {
+              "order": 10,
+              "nickname": "The Rob",
+              "jersey": "17",
+              "eh_only": false
+            },
+            {
+              "order": 11,
+              "nickname": "All-Star Reserve",
+              "jersey": "4",
+              "eh_only": false
+            }
+          ],
+          "defense": {
+            "P": "The Rob",
+            "C": "All-Star Reserve",
+            "1B": "Jeremy Phillips",
+            "2B": "E-Luke",
+            "SS": "Trash Man",
+            "3B": "Mad Dog",
+            "LF": "E-Train",
+            "LCF": "Mahhz",
+            "RCF": "HAM",
+            "RF": "Cogs"
+          }
+        },
+        {
+          "game": 2,
+          "date": "2026-05-28",
+          "batting_order": [
+            {
+              "order": 1,
+              "nickname": "Woah-Joe",
+              "jersey": "3",
+              "eh_only": false
+            },
+            {
+              "order": 2,
+              "nickname": "E-Train",
+              "jersey": "16",
+              "eh_only": false
+            },
+            {
+              "order": 3,
+              "nickname": "Mahhz",
+              "jersey": "5",
+              "eh_only": false
+            },
+            {
+              "order": 4,
+              "nickname": "Trash Man",
+              "jersey": "72",
+              "eh_only": false
+            },
+            {
+              "order": 5,
+              "nickname": "C-Bass",
+              "jersey": "10",
+              "eh_only": false
+            },
+            {
+              "order": 6,
+              "nickname": "Cogs",
+              "jersey": "53",
+              "eh_only": false
+            },
+            {
+              "order": 7,
+              "nickname": "Jeremy Phillips",
+              "jersey": "00",
+              "eh_only": false
+            },
+            {
+              "order": 8,
+              "nickname": "The Rob",
+              "jersey": "17",
+              "eh_only": false
+            },
+            {
+              "order": 9,
+              "nickname": "HAM",
+              "jersey": "96",
+              "eh_only": false
+            },
+            {
+              "order": 10,
+              "nickname": "Mad Dog",
+              "jersey": "07",
+              "eh_only": false
+            }
+          ],
+          "defense": {
+            "P": "The Rob",
+            "C": "Mad Dog",
+            "1B": "Jeremy Phillips",
+            "2B": "HAM",
+            "SS": "Trash Man",
+            "3B": "C-Bass",
+            "LF": "Woah-Joe",
+            "LCF": "Mahhz",
+            "RCF": "E-Train",
+            "RF": "Cogs"
+          }
+        },
+        {
+          "game": 1,
+          "date": "2026-05-14",
+          "batting_order": [
+            {
+              "order": 1,
+              "nickname": "Woah-Joe",
+              "jersey": "3",
+              "eh_only": false
+            },
+            {
+              "order": 2,
+              "nickname": "E-Train",
+              "jersey": "16",
+              "eh_only": false
+            },
+            {
+              "order": 3,
+              "nickname": "C-Bass",
+              "jersey": "10",
+              "eh_only": false
+            },
+            {
+              "order": 4,
+              "nickname": "E-Luke",
+              "jersey": "9",
+              "eh_only": false
+            },
+            {
+              "order": 5,
+              "nickname": "Mahhz",
+              "jersey": "5",
+              "eh_only": false
+            },
+            {
+              "order": 6,
+              "nickname": "HAM",
+              "jersey": "96",
+              "eh_only": false
+            },
+            {
+              "order": 7,
+              "nickname": "Pedersen",
+              "jersey": "99",
+              "eh_only": false
+            },
+            {
+              "order": 8,
+              "nickname": "Cogs",
+              "jersey": "53",
+              "eh_only": false
+            },
+            {
+              "order": 9,
+              "nickname": "Mad Dog",
+              "jersey": "07",
+              "eh_only": false
+            },
+            {
+              "order": 10,
+              "nickname": "Trash Man",
+              "jersey": "72",
+              "eh_only": false
+            },
+            {
+              "order": 11,
+              "nickname": "All-Star Reserve",
+              "jersey": "4",
+              "eh_only": true
+            }
+          ],
+          "defense": {
+            "P": "Woah-Joe",
+            "C": "Mad Dog",
+            "1B": "Pedersen",
+            "2B": "E-Luke",
+            "SS": "Trash Man",
+            "3B": "C-Bass",
+            "LF": "HAM",
+            "LCF": "E-Train",
+            "RCF": "Mahhz",
+            "RF": "Cogs"
+          }
+        }
+      ],
+      "fun_stats": {
+        "E-Luke": {
+          "Tripped to 1B": 1
+        }
+      },
+      "note": "Game 1 batting lines complete as of 2026-05-20. Game 3 result logged 2026-05-29; batting lines pending. Game 4 result logged 2026-06-12; batting lines pending. Game 6 result logged 2026-07-13; batting lines pending. Game 7 result logged 2026-07-31; Jerome (All-Star Reserve) batting line logged, others pending. Game 7 score corrected 0-12 -> 0-15 on 2026-08-20 to reconcile with the league PF/PA feed. Archived 2026-10-02 at the Fall 2026 rollover; Game 8 playoff vs YankDeez (2026-08-20) result never logged."
+    }
+  ]
 }

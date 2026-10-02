@@ -160,6 +160,13 @@ function fmtTime(t) {
   return `${h12}:${String(m).padStart(2, "0")} ${period}`;
 }
 
+// "Park Road Park, Field 3 · 6:30 PM", with TBD filling whichever part isn't set yet.
+function whereWhen(g) {
+  const loc = g.location || "", time = fmtTime(g.time);
+  if (!loc && !time) return "Field &amp; time TBD";
+  return `${loc || "Field TBD"} · ${time || "Time TBD"}`;
+}
+
 // Format a "YYYY-MM-DD" string as "June 11th, 2026". Parsed manually (not via
 // Date) so it never shifts across time zones. Empty/invalid input passes through.
 function fmtDate(d) {
@@ -370,7 +377,7 @@ function renderHome() {
         <div>
           <div><strong>${fmtDate(nextGame.date)}</strong> · vs. ${nextGame.opponent || "TBD"}
             ${nextGame.note ? `<span class="badge playoff">${nextGame.note}</span>` : ""}</div>
-          <div class="label" style="margin-top:6px;">${nextGame.location || ""} · ${fmtTime(nextGame.time)}</div>
+          <div class="label" style="margin-top:6px;">${whereWhen(nextGame)}</div>
           <div style="margin-top:10px;">
             <span class="label">RSVPs:</span>
             ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
@@ -478,7 +485,7 @@ function renderSchedule() {
           <div>
             <div class="label">Game ${g.game} · ${fmtDate(g.date)}</div>
             <div><strong>vs. ${g.opponent || "TBD"}</strong></div>
-            <div class="label" style="margin-top:4px;text-decoration:line-through;">${g.location || ""} · ${fmtTime(g.time)}</div>
+            <div class="label" style="margin-top:4px;text-decoration:line-through;">${whereWhen(g)}</div>
             ${g.note ? `<div class="label" style="margin-top:6px;font-style:italic;">${g.note}</div>` : ""}
           </div>
           <span class="badge" style="background:#eee;color:var(--muted);">POSTPONED</span>
@@ -497,7 +504,7 @@ function renderSchedule() {
             <div class="label">Game ${g.game} · ${fmtDate(g.date)}</div>
             <div><strong>vs. ${g.opponent || "TBD"}</strong>
               ${g.note ? `<span class="badge playoff">${g.note}</span>` : ""}</div>
-            <div class="label" style="margin-top:4px;">${g.location || ""} · ${fmtTime(g.time)}</div>
+            <div class="label" style="margin-top:4px;">${whereWhen(g)}</div>
             <div style="margin-top:8px;font-size:13px;">
               ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
             </div>
@@ -541,7 +548,7 @@ function renderRsvpModal() {
   let html = `<div style="display:flex;justify-content:space-between;align-items:start;">
     <div>
       <h2>${fmtDate(date)} · vs. ${game.opponent || "TBD"}</h2>
-      <div class="label">${game.location || ""} · ${fmtTime(game.time)}</div>
+      <div class="label">${whereWhen(game)}</div>
     </div>
     <button class="secondary" onclick="closeRsvp()" style="padding:6px 12px;">Close</button>
   </div>
