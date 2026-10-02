@@ -13,8 +13,82 @@
     "lastUpdated": "2026-10-02 ET"
   },
   "standings": {
-    "lastUpdated": null,
-    "teams": []
+    "lastUpdated": "2026-10-02",
+    "division": "Monday - Men's - Rec X",
+    "teams": [
+      {
+        "team": "Icon",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
+      {
+        "team": "Hoffman Building Technologies",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
+      {
+        "team": "Vandelay Industries",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
+      {
+        "team": "Goin' Yard",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
+      {
+        "team": "2 Out Terrors (Black)",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
+      {
+        "team": "Farm Bureau Protech's",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
+      {
+        "team": "Gamecocks",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
+      {
+        "team": "Underhanded Tactics",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
+      {
+        "team": "Brew Jays",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      }
+    ]
   },
   "roster": [
     {
