@@ -10,7 +10,7 @@
       "L": 0
     },
     "_data_note": "Fall 2026 opens Mon 2026-10-05; opponent, field and time TBD. Stats tab shows Summer 2026 carryover until the first Fall game is logged (Summer stats also preserved in archive[0]).",
-    "lastUpdated": "2026-10-02 ET"
+    "lastUpdated": "2026-10-05 ET"
   },
   "standings": {
     "lastUpdated": "2026-10-02",
@@ -291,6 +291,17 @@
     },
     {
       "name": "Colton Crocker",
+      "nickname": "",
+      "jersey": "00",
+      "type": "extra",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
+    },
+    {
+      "name": "Alex Palmer",
       "nickname": "",
       "jersey": "00",
       "type": "extra",
