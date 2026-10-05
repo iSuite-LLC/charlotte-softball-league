@@ -9,13 +9,21 @@
       "W": 0,
       "L": 0
     },
-    "_data_note": "Fall 2026 opens Mon 2026-10-05; opponent, field and time TBD. Stats tab shows Summer 2026 carryover until the first Fall game is logged (Summer stats also preserved in archive[0]).",
+    "_data_note": "Fall 2026 opens Mon 2026-10-12 (pushed from 10/5 on 2026-10-05); opponent, field and time TBD. Stats tab shows Summer 2026 carryover until the first Fall game is logged (Summer stats also preserved in archive[0]).",
     "lastUpdated": "2026-10-05 ET"
   },
   "standings": {
-    "lastUpdated": "2026-10-02",
+    "lastUpdated": "2026-10-05",
     "division": "Monday - Men's - Rec X",
     "teams": [
+      {
+        "team": "Kekambas",
+        "W": 0,
+        "L": 0,
+        "T": 0,
+        "PF": 0,
+        "PA": 0
+      },
       {
         "team": "Icon",
         "W": 0,
@@ -315,11 +323,12 @@
   "schedule": [
     {
       "game": 1,
-      "date": "2026-10-05",
+      "date": "2026-10-12",
       "opponent": "",
       "location": "",
       "time": "",
-      "status": "scheduled"
+      "status": "scheduled",
+      "note": "Moved from 10/5"
     }
   ],
   "lineups": [
