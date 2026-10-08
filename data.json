@@ -324,11 +324,20 @@
     {
       "game": 1,
       "date": "2026-10-12",
-      "opponent": "",
-      "location": "",
-      "time": "",
+      "opponent": "Vandelay Industries",
+      "location": "Park Road Park, Field 3",
+      "time": "20:30",
       "status": "scheduled",
-      "note": "Moved from 10/5"
+      "note": "Doubleheader"
+    },
+    {
+      "game": 2,
+      "date": "2026-10-12",
+      "opponent": "Gamecocks",
+      "location": "Park Road Park, Field 3",
+      "time": "21:30",
+      "status": "scheduled",
+      "note": "Doubleheader"
     }
   ],
   "lineups": [

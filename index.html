@@ -309,11 +309,29 @@ function openRsvpFromUrl() {
   if (date) openRsvp(date);
 }
 
+// Chronological order: date, then start time (doubleheaders share a date).
+function byDateTime(a, b) {
+  return a.date.localeCompare(b.date) || String(a.time || "").localeCompare(String(b.time || ""));
+}
+
+// All games on a date, in start-time order. RSVPs are one per night, so a
+// doubleheader shares a single RSVP across both games.
+function gamesOn(date) {
+  return DATA.schedule.filter(g => g.date === date).sort(byDateTime);
+}
+
+// "vs. A (8:30 PM) & B (9:30 PM)" for a doubleheader, "vs. A" otherwise.
+function opponentsLine(date) {
+  const gs = gamesOn(date);
+  if (gs.length <= 1) return `vs. ${gs[0]?.opponent || "TBD"}`;
+  return "vs. " + gs.map(g => `${g.opponent || "TBD"}${g.time ? ` (${fmtTime(g.time)})` : ""}`).join(" &amp; ");
+}
+
 // The soonest game still awaiting results, by date.
 function nextScheduledGame() {
   return [...DATA.schedule]
     .filter(g => g.status === "scheduled" || g.status === "upcoming")
-    .sort((a, b) => a.date.localeCompare(b.date))[0] || null;
+    .sort(byDateTime)[0] || null;
 }
 
 async function loadRsvps() {
@@ -356,9 +374,9 @@ function renderHome() {
   const home = document.getElementById("home");
   const { season, schedule } = DATA;
   const played = schedule.filter(g => g.status === "played")
-                          .sort((a, b) => a.date.localeCompare(b.date));
+                          .sort(byDateTime);
   const upcoming = schedule.filter(g => g.status === "scheduled" || g.status === "upcoming")
-                            .sort((a, b) => a.date.localeCompare(b.date));
+                            .sort(byDateTime);
   const lastGame = played[played.length - 1];
   const nextGame = upcoming[0];
   const recordStr = `${season.record.W}–${season.record.L}`;
@@ -377,9 +395,11 @@ function renderHome() {
       <h3>Next Game</h3>
       <div class="row" style="border:0;padding:0;align-items:center;">
         <div>
-          <div><strong>${fmtDate(nextGame.date)}</strong> · vs. ${nextGame.opponent || "TBD"}
+          <div><strong>${fmtDate(nextGame.date)}</strong> · ${opponentsLine(nextGame.date)}
             ${nextGame.note ? `<span class="badge playoff">${nextGame.note}</span>` : ""}</div>
-          <div class="label" style="margin-top:6px;">${whereWhen(nextGame)}</div>
+          <div class="label" style="margin-top:6px;">${gamesOn(nextGame.date).length > 1
+            ? `${nextGame.location || "Field TBD"} · one RSVP covers both games`
+            : whereWhen(nextGame)}</div>
           <div style="margin-top:10px;">
             <span class="label">RSVPs:</span>
             ${inCount} IN · ${outCount} OUT · ${unconfirmed} ?
@@ -460,7 +480,7 @@ function renderSeasons() {
 }
 function renderSchedule() {
   const el = document.getElementById("schedule");
-  const games = [...DATA.schedule].sort((a, b) => a.date.localeCompare(b.date));
+  const games = [...DATA.schedule].sort(byDateTime);
   let html = `<h2 style="margin-top:0;">Schedule</h2>`;
   if (games.length === 0) {
     html += `<p class="label">No games scheduled yet.</p>`;
@@ -535,7 +555,7 @@ function closeRsvp() {
 
 function renderRsvpModal() {
   const date = currentRsvpDate;
-  const game = DATA.schedule.find(s => s.date === date) || {};
+  const game = gamesOn(date)[0] || {};
   const rsvps = RSVPS[date] || {};
   const myStatus = currentRsvpName ? (rsvps[currentRsvpName]?.status || "unconfirmed") : null;
 
@@ -549,8 +569,10 @@ function renderRsvpModal() {
 
   let html = `<div style="display:flex;justify-content:space-between;align-items:start;">
     <div>
-      <h2>${fmtDate(date)} · vs. ${game.opponent || "TBD"}</h2>
-      <div class="label">${whereWhen(game)}</div>
+      <h2>${fmtDate(date)} · ${opponentsLine(date)}</h2>
+      <div class="label">${gamesOn(date).length > 1
+        ? `${game.location || "Field TBD"} · one RSVP covers both games`
+        : whereWhen(game)}</div>
     </div>
     <button class="secondary" onclick="closeRsvp()" style="padding:6px 12px;">Close</button>
   </div>
