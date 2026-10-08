@@ -318,6 +318,17 @@
         "arm": 0,
         "bat": 0
       }
+    },
+    {
+      "name": "Sean Chadwick",
+      "nickname": "Boat",
+      "jersey": "00",
+      "type": "extra",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
     }
   ],
   "schedule": [
