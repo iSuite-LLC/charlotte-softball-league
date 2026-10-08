@@ -329,6 +329,17 @@
         "arm": 0,
         "bat": 0
       }
+    },
+    {
+      "name": "Leon Torres",
+      "nickname": "Cyborg",
+      "jersey": "1/2",
+      "type": "extra",
+      "skills": {
+        "glove": 0,
+        "arm": 0,
+        "bat": 0
+      }
     }
   ],
   "schedule": [
