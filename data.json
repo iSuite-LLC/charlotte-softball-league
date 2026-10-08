@@ -277,8 +277,8 @@
     },
     {
       "name": "Jeremy Phillips",
-      "nickname": "",
-      "jersey": "00",
+      "nickname": "Bull",
+      "jersey": "66",
       "type": "extra",
       "skills": {
         "glove": 0,
@@ -299,7 +299,7 @@
     },
     {
       "name": "Colton Crocker",
-      "nickname": "",
+      "nickname": "Betty Crocker",
       "jersey": "78",
       "type": "extra",
       "skills": {
@@ -332,7 +332,7 @@
     },
     {
       "name": "Leon Torres",
-      "nickname": "Cyborg",
+      "nickname": "Torres Elbow",
       "jersey": "1/2",
       "type": "extra",
       "skills": {
