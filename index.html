@@ -385,10 +385,10 @@ function renderHome() {
   html += `<div class="card"><h3>Season Record</h3><div class="big">${recordStr}</div></div>`;
 
   if (nextGame) {
-    const rsvps = RSVPS[nextGame.date] || {};
+    const rsvps = rosterRsvps(nextGame.date);
     const inCount = Object.values(rsvps).filter(r => r.status === "IN").length;
     const outCount = Object.values(rsvps).filter(r => r.status === "OUT").length;
-    const mainKeys = new Set(DATA.roster.filter(p => p.type === "main").map(p => p.nickname || p.name));
+    const mainKeys = new Set(DATA.roster.map(p => p.nickname || p.name));
     const respondedMains = Object.keys(rsvps).filter(k => mainKeys.has(k)).length;
     const unconfirmed = mainKeys.size - respondedMains;
     html += `<div class="card">
@@ -514,10 +514,10 @@ function renderSchedule() {
         </div>
       </div>`;
     } else {
-      const rsvps = RSVPS[g.date] || {};
+      const rsvps = rosterRsvps(g.date);
       const inCount = Object.values(rsvps).filter(r => r.status === "IN").length;
       const outCount = Object.values(rsvps).filter(r => r.status === "OUT").length;
-      const mainKeys = new Set(DATA.roster.filter(p => p.type === "main").map(p => p.nickname || p.name));
+      const mainKeys = new Set(DATA.roster.map(p => p.nickname || p.name));
       const respondedMains = Object.keys(rsvps).filter(k => mainKeys.has(k)).length;
       const unconfirmed = mainKeys.size - respondedMains;
       html += `<div class="card">
@@ -539,6 +539,13 @@ function renderSchedule() {
   el.innerHTML = html;
 }
 
+// RSVPs for a date, limited to names on the current roster (stale keys from
+// renamed nicknames can't be deleted under the anon key, so they're ignored here).
+function rosterRsvps(date) {
+  const keys = new Set(DATA.roster.map(p => p.nickname || p.name));
+  return Object.fromEntries(Object.entries(RSVPS[date] || {}).filter(([n]) => keys.has(n)));
+}
+
 let currentRsvpDate = null;
 let currentRsvpName = null;
 
@@ -556,14 +563,13 @@ function closeRsvp() {
 function renderRsvpModal() {
   const date = currentRsvpDate;
   const game = gamesOn(date)[0] || {};
-  const rsvps = RSVPS[date] || {};
+  const rsvps = rosterRsvps(date);
   const myStatus = currentRsvpName ? (rsvps[currentRsvpName]?.status || "unconfirmed") : null;
 
   const inList = Object.entries(rsvps).filter(([, r]) => r.status === "IN").map(([n]) => n);
   const outList = Object.entries(rsvps).filter(([, r]) => r.status === "OUT").map(([n]) => n);
   const responded = new Set([...inList, ...outList]);
   const unconfirmed = DATA.roster
-    .filter(p => p.type === "main")
     .map(p => p.nickname || p.name)
     .filter(n => !responded.has(n));
 
