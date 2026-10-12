@@ -188,17 +188,6 @@
       }
     },
     {
-      "name": "Charlie Stuckey",
-      "nickname": "Charlie",
-      "jersey": "12",
-      "type": "main",
-      "skills": {
-        "glove": 0,
-        "arm": 0,
-        "bat": 0
-      }
-    },
-    {
       "name": "Greg Pedersen",
       "nickname": "Pedersen",
       "jersey": "99",
