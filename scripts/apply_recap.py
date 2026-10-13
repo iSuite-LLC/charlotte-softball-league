@@ -5,7 +5,9 @@ Usage (from repo root):  python scripts/apply_recap.py path/to/recap.json [--dry
 recap.json is the JSON the game_recap widget sends:
   {"games": [{"game": 1, "date": "2026-10-12", "opponent": "...", "us": 8, "them": 10,
               "outcome": "L", "attendance": ["Nick", ...], "player_lines": {"Nick": {"PA":3,"AB":3,"1B":1,...,"errors":0}}}],
-   "notes": "free text"}
+   "notes": "free text",
+   "next_games": [{"date": "2026-10-19", "opponent": "" , "location": "", "time": "20:30"}]}   # "" = TBD
+  games may be [] to only post the next game.
 
 What it does:
   * First recap of a new season: clears the carryover game_logs / stats_summary /
@@ -28,7 +30,7 @@ STAT_KEYS = ["PA", "AB", "1B", "2B", "3B", "HR", "BB", "K", "RBI", "R", "errors"
 
 def apply(data, recap):
     report = []
-    if not any(g.get("status") == "played" for g in data["schedule"]):
+    if recap.get("games") and not any(g.get("status") == "played" for g in data["schedule"]):
         prior = (data.get("archive") or [{}])[0]
         if data.get("game_logs") and not prior.get("game_logs"):
             raise SystemExit("Refusing to reset: archive[0] has no game_logs backup.")
@@ -62,6 +64,8 @@ def apply(data, recap):
         report.append(f"Game {g['game']} vs {sched['opponent']}: {g['outcome']} {g['us']}-{g['them']}, "
                       f"{len(sched['attendance'])} attended, {len(lines)} with stat lines")
 
+    report.extend(add_next_games(data, recap.get("next_games") or []))
+
     rec = {"W": 0, "L": 0}
     for s in data["schedule"]:
         o = (s.get("result") or {}).get("outcome")
@@ -78,6 +82,32 @@ def apply(data, recap):
     rec_txt = "-".join(str(rec[k]) for k in ("W", "L", "T") if k in rec)
     report.append(f"Season record now {rec_txt}; stats for {len(by_player)} players.")
     return report
+
+
+def add_next_games(data, nxt):
+    """Post the next game night. Blank opponent/location/time = TBD on the site.
+
+    RSVPs are keyed by game date, so a new date starts with zero RSVPs - that is
+    the "reset". Any unplayed entries already on that date are replaced.
+    """
+    if not nxt:
+        return []
+    date = nxt[0]["date"]
+    if any(g.get("date") != date for g in nxt):
+        raise SystemExit("next_games must all share one date")
+    if any(s.get("date") == date and s.get("status") == "played" for s in data["schedule"]):
+        raise SystemExit(f"{date} already has a played game")
+    data["schedule"][:] = [s for s in data["schedule"] if s.get("date") != date]
+    num = max((s.get("game", 0) for s in data["schedule"]), default=0)
+    for i, g in enumerate(sorted(nxt, key=lambda g: g.get("time") or "99")):
+        entry = {"game": num + i + 1, "date": date, "opponent": g.get("opponent", ""),
+                 "location": g.get("location", ""), "time": g.get("time", ""), "status": "scheduled"}
+        if len(nxt) > 1:
+            entry["note"] = "Doubleheader"
+        data["schedule"].append(entry)
+    data["schedule"].sort(key=lambda s: (s["date"], s.get("time") or ""))
+    desc = " & ".join(f"{g.get('opponent') or 'TBD'} ({g.get('time') or 'time TBD'})" for g in nxt)
+    return [f"Next game {date}: vs {desc} at {nxt[0].get('location') or 'field TBD'} - RSVPs start fresh."]
 
 
 def main():
