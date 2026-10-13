@@ -80,6 +80,12 @@
           border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
   th, td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--border); }
   th:first-child, td:first-child { text-align: left; }
+  .team-link { background: none; border: 0; padding: 0; font: inherit; color: var(--navy);
+               text-decoration: underline dotted; text-underline-offset: 3px; cursor: pointer; text-align: left; }
+  .team-link[aria-expanded="true"] { text-decoration-style: solid; }
+  tr.team-games td { background: #f7f5ef; text-align: left; font-weight: 400; }
+  .tg-line { padding: 3px 0; white-space: nowrap; }
+  .tg-line .tg-score { font-weight: 600; margin-left: 8px; }
   th { background: #f0f0ed; cursor: pointer; user-select: none; }
   /* Modal */
   .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
@@ -197,7 +203,7 @@ function normalizeTeamName(name) {
 // Build the league standings table for a season. `teams` is a stored standings
 // array; `games` is that season's schedule, used to fill the head-to-head
 // RESULT column against us. Returns "" when the feed has no teams yet.
-function standingsTableHtml(teams, games) {
+function standingsTableHtml(teams, games, leagueGames) {
   if (!Array.isArray(teams)) return "";
   // The feed carries playoff bracket placeholders ("Winner of Previous - Men")
   // that have played nothing. Drop any 0-game row; it returns once it plays.
@@ -214,6 +220,14 @@ function standingsTableHtml(teams, games) {
     (playedByOpp[key] = playedByOpp[key] || []).push(g.result || {});
   });
 
+  // League-wide results (standings.games), from each team's point of view.
+  const resultsFor = key => (leagueGames || []).map(g => {
+    const sideA = normalizeTeamName(g.a) === key, sideB = normalizeTeamName(g.b) === key;
+    if (!sideA && !sideB) return null;
+    const [me, them, opp] = sideA ? [g.a_score, g.b_score, g.b] : [g.b_score, g.a_score, g.a];
+    return { date: g.date, opp, me, them, outcome: me > them ? "W" : me < them ? "L" : "T" };
+  }).filter(Boolean).sort((x, y) => (x.date < y.date ? -1 : 1));
+
   const cols = ["W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
   let rows = "";
   teams.forEach(raw => {
@@ -224,14 +238,25 @@ function standingsTableHtml(teams, games) {
       return `${r.score || "?"} <span class="badge ${cls}">${r.outcome || "?"}</span>`;
     }).join("<br>");
     const trStyle = isUs ? ` style="background:rgba(123,182,230,0.25);font-weight:600;"` : "";
+    const results = resultsFor(normalizeTeamName(t.team));
+    const rowId = "tg-" + Math.random().toString(36).slice(2, 9);
+    const nameCell = results.length
+      ? `<button class="team-link" aria-expanded="false" aria-controls="${rowId}" onclick="toggleTeamGames(this)">${t.team}</button>`
+      : t.team;
     rows += `<tr${trStyle}>
-      <td>${t.team}</td>
+      <td>${nameCell}</td>
       <td>${vsUs}</td>
       ${cols.map(c => {
         const v = t[c];
         return `<td>${c === "PCT" ? (v * 100).toFixed(2) + "%" : v}</td>`;
       }).join("")}
     </tr>`;
+    if (results.length) {
+      rows += `<tr id="${rowId}" class="team-games" hidden><td colspan="10">
+        <div class="label" style="margin-bottom:4px;">${t.team} · games played</div>
+        ${results.map(r => `<div class="tg-line"><span class="tg-score" style="margin-left:0;">${r.me}–${r.them}</span> <span class="badge ${r.outcome === "W" ? "win" : r.outcome === "L" ? "loss" : ""}">${r.outcome}</span> vs. ${r.opp} <span class="label" style="text-transform:none;">· ${fmtDate(r.date)}</span></div>`).join("")}
+      </td></tr>`;
+    }
   });
 
   const header = ["TEAM", "RESULT", "W", "L", "T", "PF", "PA", "PD", "PCT", "GP"];
@@ -241,6 +266,14 @@ function standingsTableHtml(teams, games) {
       <tbody>${rows}</tbody>
     </table>
   </div>`;
+}
+
+// Show/hide the games-played row under a team in the standings table.
+function toggleTeamGames(btn) {
+  const row = document.getElementById(btn.getAttribute("aria-controls"));
+  if (!row) return;
+  row.hidden = !row.hidden;
+  btn.setAttribute("aria-expanded", String(!row.hidden));
 }
 
 // Every season we can show, newest first: the live one plus anything archived.
@@ -422,7 +455,7 @@ function renderHome() {
 
   // League standings
   const standings = DATA.standings || {};
-  const table = standingsTableHtml(standings.teams, played);
+  const table = standingsTableHtml(standings.teams, played, standings.games);
   if (table) {
     html += `<div class="card">
       <h3>League Standings${standings.lastUpdated ? ` · ${fmtDate(standings.lastUpdated)}` : ""}</h3>
@@ -463,7 +496,7 @@ function renderSeasons() {
     <div class="label" style="margin-top:6px;">${gamesPlayed} game${gamesPlayed === 1 ? "" : "s"} played</div>
   </div>`;
 
-  const table = standingsTableHtml((s.standings || {}).teams, s.schedule);
+  const table = standingsTableHtml((s.standings || {}).teams, s.schedule, (s.standings || {}).games);
   const asOf = (s.standings || {}).lastUpdated;
   html += `<div class="card">
     <h3>League Standings${asOf ? ` · ${s.current ? "" : "Final · "}${fmtDate(asOf)}` : ""}</h3>

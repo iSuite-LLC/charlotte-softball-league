@@ -13,67 +13,59 @@
     "lastUpdated": "2026-10-05 ET"
   },
   "standings": {
-    "lastUpdated": "2026-10-05",
+    "lastUpdated": "2026-10-13",
     "division": "Monday - Men's - Rec X",
     "teams": [
       {
-        "team": "Kekambas",
-        "W": 0,
+        "team": "Gamecocks",
+        "W": 1,
         "L": 0,
         "T": 0,
-        "PF": 0,
-        "PA": 0
+        "PF": 19,
+        "PA": 2
       },
       {
-        "team": "Icon",
-        "W": 0,
+        "team": "Brew Jays",
+        "W": 1,
         "L": 0,
         "T": 0,
-        "PF": 0,
-        "PA": 0
-      },
-      {
-        "team": "Hoffman Building Technologies",
-        "W": 0,
-        "L": 0,
-        "T": 0,
-        "PF": 0,
-        "PA": 0
-      },
-      {
-        "team": "Vandelay Industries",
-        "W": 0,
-        "L": 0,
-        "T": 0,
-        "PF": 0,
-        "PA": 0
+        "PF": 12,
+        "PA": 3
       },
       {
         "team": "Goin' Yard",
-        "W": 0,
+        "W": 1,
         "L": 0,
         "T": 0,
-        "PF": 0,
-        "PA": 0
+        "PF": 12,
+        "PA": 7
       },
       {
         "team": "2 Out Terrors (Black)",
-        "W": 0,
+        "W": 1,
         "L": 0,
         "T": 0,
-        "PF": 0,
-        "PA": 0
+        "PF": 16,
+        "PA": 13
       },
       {
         "team": "Farm Bureau Protech's",
-        "W": 0,
+        "W": 1,
         "L": 0,
         "T": 0,
-        "PF": 0,
-        "PA": 0
+        "PF": 17,
+        "PA": 15
       },
       {
-        "team": "Gamecocks",
+        "team": "Vandelay Industries",
+        "W": 1,
+        "L": 1,
+        "T": 0,
+        "PF": 35,
+        "PA": 18
+      },
+      {
+        "team": "Last Minute",
         "W": 0,
         "L": 0,
         "T": 0,
@@ -89,12 +81,78 @@
         "PA": 0
       },
       {
-        "team": "Brew Jays",
+        "team": "Kekambas",
         "W": 0,
-        "L": 0,
+        "L": 1,
         "T": 0,
-        "PF": 0,
-        "PA": 0
+        "PF": 15,
+        "PA": 17
+      },
+      {
+        "team": "Hoffman Building Technologies",
+        "W": 0,
+        "L": 2,
+        "T": 0,
+        "PF": 10,
+        "PA": 24
+      },
+      {
+        "team": "Icon",
+        "W": 0,
+        "L": 2,
+        "T": 0,
+        "PF": 4,
+        "PA": 41
+      }
+    ],
+    "games": [
+      {
+        "date": "2026-10-12",
+        "a": "Vandelay Industries",
+        "a_score": 22,
+        "b": "Icon",
+        "b_score": 2,
+        "source": "inferred 2026-10-13"
+      },
+      {
+        "date": "2026-10-12",
+        "a": "Gamecocks",
+        "a_score": 19,
+        "b": "Icon",
+        "b_score": 2,
+        "source": "inferred 2026-10-13"
+      },
+      {
+        "date": "2026-10-12",
+        "a": "2 Out Terrors (Black)",
+        "a_score": 16,
+        "b": "Vandelay Industries",
+        "b_score": 13,
+        "source": "inferred 2026-10-13"
+      },
+      {
+        "date": "2026-10-12",
+        "a": "Farm Bureau Protech's",
+        "a_score": 17,
+        "b": "Kekambas",
+        "b_score": 15,
+        "source": "inferred 2026-10-13"
+      },
+      {
+        "date": "2026-10-12",
+        "a": "Brew Jays",
+        "a_score": 12,
+        "b": "Hoffman Building Technologies",
+        "b_score": 3,
+        "source": "inferred 2026-10-13"
+      },
+      {
+        "date": "2026-10-12",
+        "a": "Goin' Yard",
+        "a_score": 12,
+        "b": "Hoffman Building Technologies",
+        "b_score": 7,
+        "source": "inferred 2026-10-13"
       }
     ]
   },
