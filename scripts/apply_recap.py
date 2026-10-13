@@ -4,7 +4,7 @@ Usage (from repo root):  python scripts/apply_recap.py path/to/recap.json [--dry
 
 recap.json is the JSON the game_recap widget sends:
   {"games": [{"game": 1, "date": "2026-10-12", "opponent": "...", "us": 8, "them": 10,
-              "outcome": "L", "player_lines": {"Nick": {"PA":3,"AB":3,"1B":1,...,"errors":0}}}],
+              "outcome": "L", "attendance": ["Nick", ...], "player_lines": {"Nick": {"PA":3,"AB":3,"1B":1,...,"errors":0}}}],
    "notes": "free text"}
 
 What it does:
@@ -52,13 +52,15 @@ def apply(data, recap):
             lines[nick] = clean
         sched["status"] = "played"
         sched["result"] = {"score": f"{g['us']}-{g['them']}", "outcome": g["outcome"]}
-        sched["attendance"] = list(lines)
+        # Stats are optional: checked players with a blank row come in "attendance" only.
+        att = list(g.get("attendance") or [])
+        sched["attendance"] = att + [n for n in lines if n not in att]
         logs = data.setdefault("game_logs", [])
         logs[:] = [l for l in logs if not (l["game"] == g["game"] and l["date"] == g["date"])]
         logs.append({"game": g["game"], "date": g["date"], "player_lines": lines})
         logs.sort(key=lambda l: (l["date"], l["game"]))
         report.append(f"Game {g['game']} vs {sched['opponent']}: {g['outcome']} {g['us']}-{g['them']}, "
-                      f"{len(lines)} players")
+                      f"{len(sched['attendance'])} attended, {len(lines)} with stat lines")
 
     rec = {"W": 0, "L": 0}
     for s in data["schedule"]:
@@ -84,7 +86,7 @@ def main():
     data = json.loads(DATA_JSON.read_text(encoding="utf-8"))
     report = apply(data, recap)
     if "--dry-run" not in sys.argv:
-        DATA_JSON.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        DATA_JSON.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print("\n".join(report))
     if recap.get("notes"):
         print("NOTES:", recap["notes"])
