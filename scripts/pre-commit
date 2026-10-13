@@ -1,0 +1,6 @@
+#!/bin/sh
+# Stamp season.lastUpdated (the "Updated" time in the site header) on every commit.
+cd "$(git rev-parse --show-toplevel)" || exit 0
+PY=$(command -v python3 || command -v python || command -v py)
+[ -z "$PY" ] && { echo "pre-commit: python not found, skipping stamp"; exit 0; }
+"$PY" scripts/stamp.py && git add data.json

@@ -1,12 +1,14 @@
 """Set season.lastUpdated in data.json to the current ET timestamp.
 
-Run before every commit/push so the header timestamp on the live site reflects
+Runs automatically from the git pre-commit hook (scripts/install_hooks.py)
+before every commit so the header timestamp on the live site reflects
 the deploy. Idempotent — safe to run any time.
 
 Usage: python scripts/stamp.py
 """
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 DATA_JSON = Path(__file__).resolve().parent.parent / "data.json"
@@ -14,7 +16,7 @@ DATA_JSON = Path(__file__).resolve().parent.parent / "data.json"
 
 def stamp(data):
     """Mutate `data` in place, setting season.lastUpdated to now (ET)."""
-    now = datetime.now()
+    now = datetime.now(ZoneInfo("America/New_York"))
     data.setdefault("season", {})["lastUpdated"] = (
         now.strftime("%Y-%m-%d ") + now.strftime("%I:%M %p").lstrip("0") + " ET"
     )
@@ -24,7 +26,7 @@ def stamp(data):
 def main():
     data = json.loads(DATA_JSON.read_text(encoding="utf-8"))
     value = stamp(data)
-    DATA_JSON.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+    DATA_JSON.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Stamped: {value}")
 
 
