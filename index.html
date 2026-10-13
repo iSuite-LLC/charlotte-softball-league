@@ -206,10 +206,11 @@ function normalizeTeamName(name) {
 function standingsTableHtml(teams, games, leagueGames) {
   if (!Array.isArray(teams)) return "";
   // The feed carries playoff bracket placeholders ("Winner of Previous - Men")
-  // that have played nothing. Drop any 0-game row; it returns once it plays.
-  // Preseason (nobody has played yet) keeps every row so the field still shows.
+  // that have played nothing. Hide those until they play; real teams that
+  // haven't played yet (0-0) still show.
   const gp = t => t.W + t.L + t.T;
-  if (teams.some(t => gp(t) > 0)) teams = teams.filter(t => gp(t) > 0);
+  const isPlaceholder = t => /^(winner|loser) of\b|\bseed\b|\btbd\b/i.test(t.team || "");
+  teams = teams.filter(t => gp(t) > 0 || !isPlaceholder(t));
   if (teams.length === 0) return "";
   // The league standings feed lists our team as "Icon" (season.team is "Icon Mech").
   const US_TEAM_KEY = "icon";
