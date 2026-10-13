@@ -10,7 +10,7 @@
       "L": 2
     },
     "_data_note": "Fall 2026 opened Mon 2026-10-12 (doubleheader, attendance logged, no player stats entered). Summer 2026 stats preserved in archive[0].",
-    "lastUpdated": "2026-10-13 9:25 AM ET"
+    "lastUpdated": "2026-10-13 9:30 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-10-13",
@@ -441,6 +441,14 @@
         "Betty Crocker",
         "Pom Poms"
       ]
+    },
+    {
+      "game": 3,
+      "date": "2026-10-19",
+      "opponent": "",
+      "location": "",
+      "time": "",
+      "status": "scheduled"
     }
   ],
   "lineups": [],
