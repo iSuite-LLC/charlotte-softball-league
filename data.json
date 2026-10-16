@@ -10,7 +10,7 @@
       "L": 2
     },
     "_data_note": "Fall 2026 opened Mon 2026-10-12 (doubleheader, attendance logged, no player stats entered). Summer 2026 stats preserved in archive[0].",
-    "lastUpdated": "2026-10-13 9:30 AM ET"
+    "lastUpdated": "2026-10-16 8:37 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-10-13",
@@ -445,9 +445,41 @@
     {
       "game": 3,
       "date": "2026-10-19",
-      "opponent": "",
-      "location": "",
-      "time": "",
+      "opponent": "Farm Bureau Protech's",
+      "location": "Park Road Park, Field 4",
+      "time": "21:30",
+      "status": "scheduled"
+    },
+    {
+      "game": 4,
+      "date": "2026-10-26",
+      "opponent": "Goin' Yard",
+      "location": "Park Road Park, Field 2",
+      "time": "18:30",
+      "status": "scheduled"
+    },
+    {
+      "game": 5,
+      "date": "2026-11-02",
+      "opponent": "2 Out Terrors (Black)",
+      "location": "Park Road Park, Field 3",
+      "time": "20:30",
+      "status": "scheduled"
+    },
+    {
+      "game": 6,
+      "date": "2026-11-09",
+      "opponent": "Brew Jays",
+      "location": "Park Road Park, Field 2",
+      "time": "18:30",
+      "status": "scheduled"
+    },
+    {
+      "game": 7,
+      "date": "2026-11-16",
+      "opponent": "Last Minute",
+      "location": "Park Road Park, Field 4",
+      "time": "20:30",
       "status": "scheduled"
     }
   ],
