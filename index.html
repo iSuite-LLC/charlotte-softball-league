@@ -313,8 +313,8 @@ function toast(msg) {
 
 // --- Bootstrap ---
 async function load() {
-  DATA = await fetch("data.json").then(r => r.json());
-  KEYS = await fetch("keys.json").then(r => r.json());
+  DATA = await fetch("data.json", { cache: "no-cache" }).then(r => r.json());
+  KEYS = await fetch("keys.json", { cache: "no-cache" }).then(r => r.json());
   sb = supabase.createClient(KEYS.supabaseUrl, KEYS.supabaseAnonKey);
   await loadRsvps();
   subscribeRsvps();
