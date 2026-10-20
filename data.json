@@ -10,99 +10,99 @@
       "L": 3
     },
     "_data_note": "Fall 2026 opened Mon 2026-10-12 (doubleheader). Games logged with scores and attendance; no player stats entered yet. Summer 2026 stats preserved in archive[0].",
-    "lastUpdated": "2026-10-20 11:14 AM ET"
+    "lastUpdated": "2026-10-20 2:19 PM ET"
   },
   "standings": {
-    "lastUpdated": "2026-10-13",
+    "lastUpdated": "2026-10-20",
     "division": "Monday - Men's - Rec X",
     "teams": [
       {
         "team": "Gamecocks",
-        "W": 1,
+        "W": 2,
         "L": 0,
         "T": 0,
-        "PF": 19,
-        "PA": 2
+        "PF": 41,
+        "PA": 6
+      },
+      {
+        "team": "Farm Bureau Protech's",
+        "W": 2,
+        "L": 0,
+        "T": 0,
+        "PF": 36,
+        "PA": 19
+      },
+      {
+        "team": "Last Minute",
+        "W": 2,
+        "L": 0,
+        "T": 0,
+        "PF": 33,
+        "PA": 23
+      },
+      {
+        "team": "Vandelay Industries",
+        "W": 2,
+        "L": 1,
+        "T": 0,
+        "PF": 47,
+        "PA": 29
+      },
+      {
+        "team": "Kekambas",
+        "W": 2,
+        "L": 1,
+        "T": 0,
+        "PF": 48,
+        "PA": 31
       },
       {
         "team": "Brew Jays",
         "W": 1,
-        "L": 0,
+        "L": 1,
         "T": 0,
-        "PF": 12,
-        "PA": 3
-      },
-      {
-        "team": "Goin' Yard",
-        "W": 1,
-        "L": 0,
-        "T": 0,
-        "PF": 12,
-        "PA": 7
+        "PF": 21,
+        "PA": 16
       },
       {
         "team": "2 Out Terrors (Black)",
         "W": 1,
-        "L": 0,
+        "L": 1,
         "T": 0,
-        "PF": 16,
-        "PA": 13
+        "PF": 29,
+        "PA": 28
       },
       {
-        "team": "Farm Bureau Protech's",
-        "W": 1,
-        "L": 0,
-        "T": 0,
-        "PF": 17,
-        "PA": 15
-      },
-      {
-        "team": "Vandelay Industries",
+        "team": "Goin' Yard",
         "W": 1,
         "L": 1,
         "T": 0,
-        "PF": 35,
-        "PA": 18
-      },
-      {
-        "team": "Last Minute",
-        "W": 0,
-        "L": 0,
-        "T": 0,
-        "PF": 0,
-        "PA": 0
+        "PF": 17,
+        "PA": 27
       },
       {
         "team": "Underhanded Tactics",
         "W": 0,
-        "L": 0,
+        "L": 2,
         "T": 0,
-        "PF": 0,
-        "PA": 0
-      },
-      {
-        "team": "Kekambas",
-        "W": 0,
-        "L": 1,
-        "T": 0,
-        "PF": 15,
-        "PA": 17
+        "PF": 21,
+        "PA": 30
       },
       {
         "team": "Hoffman Building Technologies",
         "W": 0,
-        "L": 2,
+        "L": 3,
         "T": 0,
-        "PF": 10,
-        "PA": 24
+        "PF": 14,
+        "PA": 46
       },
       {
         "team": "Icon",
         "W": 0,
-        "L": 2,
+        "L": 3,
         "T": 0,
-        "PF": 4,
-        "PA": 41
+        "PF": 8,
+        "PA": 60
       }
     ],
     "games": [
@@ -153,6 +153,62 @@
         "b": "Hoffman Building Technologies",
         "b_score": 7,
         "source": "inferred 2026-10-13"
+      },
+      {
+        "date": "2026-10-19",
+        "a": "Farm Bureau Protech's",
+        "a_score": 19,
+        "b": "Icon",
+        "b_score": 4,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-19",
+        "a": "Vandelay Industries",
+        "a_score": 12,
+        "b": "Underhanded Tactics",
+        "b_score": 11,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-19",
+        "a": "Gamecocks",
+        "a_score": 22,
+        "b": "Hoffman Building Technologies",
+        "b_score": 4,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-19",
+        "a": "Kekambas",
+        "a_score": 13,
+        "b": "Brew Jays",
+        "b_score": 9,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-19",
+        "a": "Kekambas",
+        "a_score": 20,
+        "b": "Goin' Yard",
+        "b_score": 5,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-19",
+        "a": "Last Minute",
+        "a_score": 15,
+        "b": "2 Out Terrors (Black)",
+        "b_score": 13,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-19",
+        "a": "Last Minute",
+        "a_score": 18,
+        "b": "Underhanded Tactics",
+        "b_score": 10,
+        "source": "inferred from standings"
       }
     ]
   },
