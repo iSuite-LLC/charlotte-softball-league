@@ -7,10 +7,10 @@
     "format": "Slow-pitch · EH · 4-OF · 3-HR cap · 280ft · 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 2
+      "L": 3
     },
-    "_data_note": "Fall 2026 opened Mon 2026-10-12 (doubleheader, attendance logged, no player stats entered). Summer 2026 stats preserved in archive[0].",
-    "lastUpdated": "2026-10-16 8:45 AM ET"
+    "_data_note": "Fall 2026 opened Mon 2026-10-12 (doubleheader). Games logged with scores and attendance; no player stats entered yet. Summer 2026 stats preserved in archive[0].",
+    "lastUpdated": "2026-10-20 11:14 AM ET"
   },
   "standings": {
     "lastUpdated": "2026-10-13",
@@ -448,7 +448,25 @@
       "opponent": "Farm Bureau Protech's",
       "location": "Park Road Park, Field 4",
       "time": "21:30",
-      "status": "scheduled"
+      "status": "played",
+      "result": {
+        "score": "4-19",
+        "outcome": "L"
+      },
+      "attendance": [
+        "Woah-Joe",
+        "Mahhz",
+        "Mad Dog",
+        "All-Star Reserve",
+        "The Rob",
+        "HAM",
+        "Trash Man",
+        "Blue",
+        "Bull",
+        "Victorhee",
+        "Pom Poms",
+        "Torres Elbow"
+      ]
     },
     {
       "game": 4,
@@ -494,10 +512,19 @@
       "game": 2,
       "date": "2026-10-12",
       "player_lines": {}
+    },
+    {
+      "game": 3,
+      "date": "2026-10-19",
+      "player_lines": {}
     }
   ],
   "stats_summary": {},
-  "fun_stats": {},
+  "fun_stats": {
+    "The Rob": {
+      "Trash talk in a blowout": 1
+    }
+  },
   "notes": {},
   "archive": [
     {
