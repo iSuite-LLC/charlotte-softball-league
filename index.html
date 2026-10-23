@@ -139,7 +139,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js"></script>
 <script>
 // Global state
 let DATA = null;
@@ -315,9 +315,17 @@ function toast(msg) {
 async function load() {
   DATA = await fetch("data.json", { cache: "no-cache" }).then(r => r.json());
   KEYS = await fetch("keys.json", { cache: "no-cache" }).then(r => r.json());
-  sb = supabase.createClient(KEYS.supabaseUrl, KEYS.supabaseAnonKey);
-  await loadRsvps();
-  subscribeRsvps();
+  // RSVPs are optional: if the Supabase script is blocked/fails (work networks,
+  // content blockers, old browsers), still render the rest of the site.
+  try {
+    sb = supabase.createClient(KEYS.supabaseUrl, KEYS.supabaseAnonKey);
+    await loadRsvps();
+    subscribeRsvps();
+  } catch (e) {
+    console.error("RSVP service unavailable:", e);
+    sb = null;
+    RSVPS = {};
+  }
   const lu = DATA.season && DATA.season.lastUpdated;
   if (lu) document.getElementById("last-updated").textContent = lu;
   const label = DATA.season && DATA.season.label;
