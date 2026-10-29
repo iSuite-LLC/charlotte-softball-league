@@ -7,102 +7,102 @@
     "format": "Slow-pitch · EH · 4-OF · 3-HR cap · 280ft · 7 inn / 1 hr",
     "record": {
       "W": 0,
-      "L": 3
+      "L": 4
     },
     "_data_note": "Fall 2026 opened Mon 2026-10-12 (doubleheader). Games logged with scores and attendance; no player stats entered yet. Summer 2026 stats preserved in archive[0].",
-    "lastUpdated": "2026-10-23 2:50 PM ET"
+    "lastUpdated": "2026-10-29 12:28 PM ET"
   },
   "standings": {
-    "lastUpdated": "2026-10-20",
+    "lastUpdated": "2026-10-29",
     "division": "Monday - Men's - Rec X",
     "teams": [
       {
-        "team": "Gamecocks",
-        "W": 2,
+        "team": "Last Minute",
+        "W": 3,
         "L": 0,
         "T": 0,
-        "PF": 41,
-        "PA": 6
+        "PF": 49,
+        "PA": 29
+      },
+      {
+        "team": "Gamecocks",
+        "W": 3,
+        "L": 1,
+        "T": 0,
+        "PF": 68,
+        "PA": 28
       },
       {
         "team": "Farm Bureau Protech's",
         "W": 2,
-        "L": 0,
+        "L": 1,
         "T": 0,
-        "PF": 36,
-        "PA": 19
+        "PF": 42,
+        "PA": 35
       },
       {
-        "team": "Last Minute",
+        "team": "Goin' Yard",
         "W": 2,
-        "L": 0,
+        "L": 1,
         "T": 0,
         "PF": 33,
-        "PA": 23
+        "PA": 28
+      },
+      {
+        "team": "2 Out Terrors (Black)",
+        "W": 2,
+        "L": 1,
+        "T": 0,
+        "PF": 45,
+        "PA": 43
+      },
+      {
+        "team": "Kekambas",
+        "W": 3,
+        "L": 2,
+        "T": 0,
+        "PF": 69,
+        "PA": 55
+      },
+      {
+        "team": "Underhanded Tactics",
+        "W": 2,
+        "L": 2,
+        "T": 0,
+        "PF": 56,
+        "PA": 40
       },
       {
         "team": "Vandelay Industries",
         "W": 2,
-        "L": 1,
+        "L": 2,
         "T": 0,
-        "PF": 47,
-        "PA": 29
-      },
-      {
-        "team": "Kekambas",
-        "W": 2,
-        "L": 1,
-        "T": 0,
-        "PF": 48,
-        "PA": 31
+        "PF": 59,
+        "PA": 44
       },
       {
         "team": "Brew Jays",
         "W": 1,
-        "L": 1,
-        "T": 0,
-        "PF": 21,
-        "PA": 16
-      },
-      {
-        "team": "2 Out Terrors (Black)",
-        "W": 1,
-        "L": 1,
-        "T": 0,
-        "PF": 29,
-        "PA": 28
-      },
-      {
-        "team": "Goin' Yard",
-        "W": 1,
-        "L": 1,
-        "T": 0,
-        "PF": 17,
-        "PA": 27
-      },
-      {
-        "team": "Underhanded Tactics",
-        "W": 0,
         "L": 2,
         "T": 0,
-        "PF": 21,
-        "PA": 30
+        "PF": 28,
+        "PA": 37
       },
       {
         "team": "Hoffman Building Technologies",
         "W": 0,
-        "L": 3,
+        "L": 4,
         "T": 0,
-        "PF": 14,
-        "PA": 46
+        "PF": 17,
+        "PA": 60
       },
       {
         "team": "Icon",
         "W": 0,
-        "L": 3,
+        "L": 4,
         "T": 0,
-        "PF": 8,
-        "PA": 60
+        "PF": 9,
+        "PA": 76
       }
     ],
     "games": [
@@ -208,6 +208,62 @@
         "a_score": 18,
         "b": "Underhanded Tactics",
         "b_score": 10,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-26",
+        "a": "Goin' Yard",
+        "a_score": 16,
+        "b": "Icon",
+        "b_score": 1,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-26",
+        "a": "Last Minute",
+        "a_score": 16,
+        "b": "Farm Bureau Protech's",
+        "b_score": 6,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-26",
+        "a": "2 Out Terrors (Black)",
+        "a_score": 16,
+        "b": "Gamecocks",
+        "b_score": 15,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-26",
+        "a": "Gamecocks",
+        "a_score": 12,
+        "b": "Kekambas",
+        "b_score": 6,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-26",
+        "a": "Kekambas",
+        "a_score": 15,
+        "b": "Vandelay Industries",
+        "b_score": 12,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-26",
+        "a": "Underhanded Tactics",
+        "a_score": 21,
+        "b": "Brew Jays",
+        "b_score": 7,
+        "source": "inferred from standings"
+      },
+      {
+        "date": "2026-10-26",
+        "a": "Underhanded Tactics",
+        "a_score": 14,
+        "b": "Hoffman Building Technologies",
+        "b_score": 3,
         "source": "inferred from standings"
       }
     ]
@@ -530,7 +586,26 @@
       "opponent": "Goin' Yard",
       "location": "Park Road Park, Field 2",
       "time": "18:30",
-      "status": "scheduled"
+      "status": "played",
+      "result": {
+        "score": "1-16",
+        "outcome": "L"
+      },
+      "attendance": [
+        "Woah-Joe",
+        "Mahhz",
+        "Cogs",
+        "Mad Dog",
+        "All-Star Reserve",
+        "E-Train",
+        "Trash Man",
+        "Blue",
+        "Bull",
+        "Betty Crocker",
+        "Pom Poms",
+        "Boat",
+        "Torres Elbow"
+      ]
     },
     {
       "game": 5,
@@ -572,6 +647,11 @@
     {
       "game": 3,
       "date": "2026-10-19",
+      "player_lines": {}
+    },
+    {
+      "game": 4,
+      "date": "2026-10-26",
       "player_lines": {}
     }
   ],
