@@ -96,7 +96,8 @@
   .modal h2 { margin: 0 0 4px 0; font-size: 18px; }
   .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
            background: var(--navy); color: #fff; padding: 10px 16px; border-radius: 6px;
-           opacity: 0; transition: opacity 0.2s; z-index: 200; pointer-events: none; }
+           opacity: 0; transition: opacity 0.2s; z-index: 200; pointer-events: none;
+           max-width: calc(100vw - 32px); width: max-content; text-align: center; }
   .toast.show { opacity: 1; }
 </style>
 </head>
@@ -139,7 +140,9 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js"></script>
+<!-- Self-hosted copy of supabase-js 2.118.0 (from npm) so networks/blockers that
+     block jsdelivr don't break RSVPs. -->
+<script src="vendor/supabase-js-2.118.0.js"></script>
 <script>
 // Global state
 let DATA = null;
@@ -304,12 +307,23 @@ function computeStandingsRow(t) {
   return { ...t, GP, PD, PCT };
 }
 
-function toast(msg) {
+let toastTimer = null;
+function toast(msg, ms = 2200) {
   const el = document.getElementById("toast");
   el.textContent = msg;
   el.classList.add("show");
-  setTimeout(() => el.classList.remove("show"), 2200);
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), ms);
 }
+
+// True when the RSVP database can't be reached at all (script failed to load,
+// or the network blocks supabase.co) rather than a one-off save error.
+function isRsvpBlocked(e) {
+  if (!sb) return true;
+  const msg = String((e && (e.message || e.details)) || e || "");
+  return /failed to fetch|load failed|networkerror|network request failed/i.test(msg);
+}
+const RSVP_BLOCKED_MSG = "RSVPs are blocked on this network. Try cell data or text Ethan.";
 
 // --- Bootstrap ---
 async function load() {
@@ -686,7 +700,8 @@ async function submitRsvp(status) {
     renderRsvpModal();
     renderSchedule();
     renderHome();
-    toast("Couldn't save — try again");
+    if (isRsvpBlocked(e)) toast(RSVP_BLOCKED_MSG, 6000);
+    else toast("Couldn't save — try again");
   }
 }
 
