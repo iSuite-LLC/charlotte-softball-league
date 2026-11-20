@@ -10,7 +10,121 @@
       "L": 7
     },
     "_data_note": "Fall 2026 opened Mon 2026-10-12 (doubleheader). Games logged with scores and attendance; player stats are partial (first stat lines entered for Game 5, 2026-11-02). Summer 2026 stats preserved in archive[0].",
-    "lastUpdated": "2026-11-17 9:08 AM ET"
+    "lastUpdated": "2026-11-20 3:59 PM ET",
+    "pointsFor": 39,
+    "pointsAgainst": 142,
+    "standings": [
+      {
+        "team": "Last Minute",
+        "W": 7,
+        "L": 0,
+        "T": 0,
+        "PF": 135,
+        "PA": 59,
+        "PD": 76,
+        "PCT": 1.0
+      },
+      {
+        "team": "Underhanded Tactics",
+        "W": 5,
+        "L": 2,
+        "T": 0,
+        "PF": 112,
+        "PA": 65,
+        "PD": 47,
+        "PCT": 0.7143
+      },
+      {
+        "team": "Farm Bureau Protech's",
+        "W": 5,
+        "L": 2,
+        "T": 0,
+        "PF": 107,
+        "PA": 63,
+        "PD": 44,
+        "PCT": 0.7143
+      },
+      {
+        "team": "Gamecocks",
+        "W": 4,
+        "L": 3,
+        "T": 0,
+        "PF": 106,
+        "PA": 65,
+        "PD": 41,
+        "PCT": 0.5714
+      },
+      {
+        "team": "Brew Jays",
+        "W": 4,
+        "L": 3,
+        "T": 0,
+        "PF": 93,
+        "PA": 82,
+        "PD": 11,
+        "PCT": 0.5714
+      },
+      {
+        "team": "2 Out Terrors (Black)",
+        "W": 4,
+        "L": 3,
+        "T": 0,
+        "PF": 91,
+        "PA": 83,
+        "PD": 8,
+        "PCT": 0.5714
+      },
+      {
+        "team": "Kekambas",
+        "W": 4,
+        "L": 4,
+        "T": 0,
+        "PF": 100,
+        "PA": 102,
+        "PD": -2,
+        "PCT": 0.5
+      },
+      {
+        "team": "Vandelay Industries",
+        "W": 3,
+        "L": 4,
+        "T": 0,
+        "PF": 92,
+        "PA": 92,
+        "PD": 0,
+        "PCT": 0.4286
+      },
+      {
+        "team": "Goin' Yard",
+        "W": 2,
+        "L": 5,
+        "T": 0,
+        "PF": 58,
+        "PA": 114,
+        "PD": -56,
+        "PCT": 0.2857
+      },
+      {
+        "team": "Hoffman Building Technologies",
+        "W": 1,
+        "L": 6,
+        "T": 0,
+        "PF": 34,
+        "PA": 100,
+        "PD": -66,
+        "PCT": 0.1429
+      },
+      {
+        "team": "Icon",
+        "W": 0,
+        "L": 7,
+        "T": 0,
+        "PF": 39,
+        "PA": 142,
+        "PD": -103,
+        "PCT": 0.0
+      }
+    ]
   },
   "standings": {
     "lastUpdated": "2026-11-17",
