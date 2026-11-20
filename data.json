@@ -10,7 +10,7 @@
       "L": 7
     },
     "_data_note": "Fall 2026 opened Mon 2026-10-12 (doubleheader). Games logged with scores and attendance; player stats are partial (first stat lines entered for Game 5, 2026-11-02). Summer 2026 stats preserved in archive[0].",
-    "lastUpdated": "2026-11-20 4:06 PM ET",
+    "lastUpdated": "2026-11-20 4:32 PM ET",
     "pointsFor": 39,
     "pointsAgainst": 142,
     "standings": [
@@ -511,11 +511,11 @@
       },
       {
         "date": "2026-11-17",
-        "a": "Goin' Yard",
+        "a": "Last Minute",
         "a_score": 30,
-        "b": "Last Minute",
+        "b": "Goin' Yard",
         "b_score": 1,
-        "source": "inferred from standings"
+        "source": "2026-11-20 standings update"
       },
       {
         "date": "2026-11-17",
@@ -935,7 +935,7 @@
       "time": "20:30",
       "status": "played",
       "result": {
-        "score": "1-30",
+        "score": "14-20",
         "outcome": "L"
       },
       "attendance": [
